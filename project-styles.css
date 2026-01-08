@@ -1,0 +1,137 @@
+/* Project Page Specific Styles */
+
+.project-header {
+    margin-bottom: 40px;
+}
+
+.project-category {
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #888888;
+    text-transform: uppercase;
+}
+
+.project-details {
+    margin-bottom: 50px;
+    max-width: 1400px;
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #888888;
+    max-width: 1400px;
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1400px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #2b2b2b;
+}
+
+/* Mosaic Layout for Illustration Project */
+.image-block {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.mosaic-layout {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+/* First block - comic-general mosaic (5 images) - solid rectangle contact sheet */
+.mosaic-general {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 0;
+    width: 100%;
+}
+
+.mosaic-general img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout matching example-grid.png:
+   Left column: large image + character sketches
+   Middle column: 2 stacked images
+   Right column: tall vertical comic */
+.mosaic-general img:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.mosaic-general img:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.mosaic-general img:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.mosaic-general img:nth-child(4) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.mosaic-general img:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+@media (max-width: 1200px) {
+    .mosaic-general {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 250px);
+        gap: 0;
+    }
+
+    .mosaic-general img:nth-child(1),
+    .mosaic-general img:nth-child(2),
+    .mosaic-general img:nth-child(3),
+    .mosaic-general img:nth-child(4),
+    .mosaic-general img:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-images {
+        grid-template-columns: 1fr;
+    }
+
+    .mosaic-general {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 200px);
+        gap: 0;
+    }
+
+    .mosaic-general img {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
