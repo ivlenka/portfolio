@@ -5,28 +5,23 @@ const projects = {
         title: 'Testarossa Winery',
         description: 'Highlighted text groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted grooving highlighted groovinghighlighted grooving highlighted grooving highlighted grooving'
     },
-    copy1: {
-        category: 'COPY OF BRANDS',
+    magazines: {
+        category: 'MAGAZINES',
         title: 'Project Name',
         description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
     },
-    copy2: {
-        category: 'COPY OF BRANDS',
+    prints: {
+        category: 'PRINTS',
         title: 'Project Name',
         description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
     },
-    copy3: {
-        category: 'COPY OF BRANDS',
+    digital: {
+        category: 'DIGITAL',
         title: 'Project Name',
         description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
     },
-    copy4: {
-        category: 'COPY OF BRANDS',
-        title: 'Project Name',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
-    },
-    copy5: {
-        category: 'COPY OF BRANDS',
+    logos: {
+        category: 'LOGOS',
         title: 'Project Name',
         description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
     },
