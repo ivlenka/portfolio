@@ -97,7 +97,7 @@ function normalizeRow(row, containerWidth, targetRowHeight, gap) {
 }
 
 function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
-    const visibleRows = 5;
+    const visibleRows = 3;
     let html = '<div class="bin-packed-layout">';
 
     rows.forEach((row, rowIndex) => {
@@ -117,7 +117,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
 
     html += '</div>';
 
-    // Add "See more" button if there are more than 5 rows
+    // Add "See more" button if there are more than 3 rows
     if (rows.length > visibleRows) {
         html += `<div class="see-more-container"><button class="see-more-btn" data-section="${sectionId}">See more</button></div>`;
     }
@@ -243,8 +243,8 @@ function loadProject() {
         // Custom content for magazines project - using dynamic loading
         if (projectId === 'magazines') {
             renderDynamicGallery('2-magazines', {
-                '1-ellegirl': 'Elle Girl',
-                '2-elle': 'Elle',
+                '1-elle': 'Elle',
+                '2-ellegirl': 'Elle Girl',
                 '3-cosmo': 'Cosmopolitan'
             });
         }

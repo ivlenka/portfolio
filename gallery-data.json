@@ -11,48 +11,48 @@
     },
     "2-magazines": {
       "sections": {
-        "1-ellegirl": {
+        "1-elle": {
           "images": [
-            "images/gallery/2-magazines/1-ellegirl/0220644d-dbf2-4f5c-ab35-05f72f9b4c5e_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/1063d72f-0c96-42a6-9acc-1680f9881208_rw_1200.jpg",
-            "images/gallery/2-magazines/1-ellegirl/106cover-eg1.jpg",
-            "images/gallery/2-magazines/1-ellegirl/1203cover-eg8.jpg",
-            "images/gallery/2-magazines/1-ellegirl/12050884145_1e2ea017f8_b.jpg",
-            "images/gallery/2-magazines/1-ellegirl/12051741376_88c6a9e88f_b.jpg",
-            "images/gallery/2-magazines/1-ellegirl/1cover-e7.jpg",
-            "images/gallery/2-magazines/1-ellegirl/20f73b9e-f29d-4e04-9527-f00236cd5194_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/304cover-eg5.jpg",
-            "images/gallery/2-magazines/1-ellegirl/394d0a47-eb32-4657-a16b-3ebe94afa665_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/405cover-eg2.jpg",
-            "images/gallery/2-magazines/1-ellegirl/505cover-eg4.jpg",
-            "images/gallery/2-magazines/1-ellegirl/61d0ef13-2081-49df-9a97-4637e469c8d0_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/63c2c79b-88e4-4dff-887e-5b2c50d4f07b_rw_1200.jpg",
-            "images/gallery/2-magazines/1-ellegirl/7011b3d7-1fb4-4746-ae49-d62abe767887_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/7276e34b-b9d0-40f2-a778-792ac15b7371_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/891298dd-12a1-4328-bda9-4f79bbfe0d0d_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/8b1a1038-4c27-420f-86c0-14a84c974e6d_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/8f67f8bf-e822-4e5a-9bae-4b496d2fd6ab_rw_1200.jpg",
-            "images/gallery/2-magazines/1-ellegirl/97cc4e7d-b4d7-44ea-84ac-418d9de19072_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/c3a63d0-6509-417d-ba6a-4993ae8b9666_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/c7c49e3e-2343-4fc0-a0fe-85d3a8f89086_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/colage_eg.jpg",
-            "images/gallery/2-magazines/1-ellegirl/cover-eg6.jpg",
-            "images/gallery/2-magazines/1-ellegirl/d126e0df-45ae-441d-bb0d-262cff2af466_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/d9d3e1a4-80db-4f71-ad0a-10abe4baf0f1_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/e0f3ae85-6f88-41ad-8dbe-e8246005871f_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/e859315e-0bab-4003-8760-be1eecf0b611_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/f7138b42-e295-408c-ad66-0d5f9b9c3855_rw_1920.jpg",
-            "images/gallery/2-magazines/1-ellegirl/G51_022_FashionTrends2.jpg",
-            "images/gallery/2-magazines/1-ellegirl/G51_032_BeautyTrends1.jpg",
-            "images/gallery/2-magazines/1-ellegirl/ycover-eg3.jpg"
+            "images/gallery/2-magazines/1-elle/elle1.jpg",
+            "images/gallery/2-magazines/1-elle/elle2.jpg",
+            "images/gallery/2-magazines/1-elle/elle3.jpg",
+            "images/gallery/2-magazines/1-elle/elle4.jpg"
           ]
         },
-        "2-elle": {
+        "2-ellegirl": {
           "images": [
-            "images/gallery/2-magazines/2-elle/elle1.jpg",
-            "images/gallery/2-magazines/2-elle/elle2.jpg",
-            "images/gallery/2-magazines/2-elle/elle3.jpg",
-            "images/gallery/2-magazines/2-elle/elle4.jpg"
+            "images/gallery/2-magazines/2-ellegirl/01cover-e7.jpg",
+            "images/gallery/2-magazines/2-ellegirl/0220644d-dbf2-4f5c-ab35-05f72f9b4c5e_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/10663c7c49e3e-2343-4fc0-a0fe-85d3a8f89086_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/106cover-eg1.jpg",
+            "images/gallery/2-magazines/2-ellegirl/1203cover-eg8.jpg",
+            "images/gallery/2-magazines/2-ellegirl/12050884145_1e2ea017f8_b.jpg",
+            "images/gallery/2-magazines/2-ellegirl/12colage_eg.jpg",
+            "images/gallery/2-magazines/2-ellegirl/20f73b9e-f29d-4e04-9527-f00236cd5194_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/304cover-eg5.jpg",
+            "images/gallery/2-magazines/2-ellegirl/35405cover-eg2.jpg",
+            "images/gallery/2-magazines/2-ellegirl/394d0a47-eb32-4657-a16b-3ebe94afa665_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/505cover-eg4.jpg",
+            "images/gallery/2-magazines/2-ellegirl/63c3a63d0-6509-417d-ba6a-4993ae8b9666_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/67011b3d7-1fb4-4746-ae49-d62abe767887_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/670G51_032_BeautyTrends1.jpg",
+            "images/gallery/2-magazines/2-ellegirl/7276e34b-b9d0-40f2-a778-792ac15b7371_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/8861d0ef13-2081-49df-9a97-4637e469c8d0_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/88c6a9e88f_b.jpg",
+            "images/gallery/2-magazines/2-ellegirl/891298dd-12a1-4328-bda9-4f79bbfe0d0d_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/8b1a1038-4c27-420f-86c0-14a84c974e6d_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/8f67f8bf-e822-4e5a-9bae-4b496d2fd6ab_rw_1200.jpg",
+            "images/gallery/2-magazines/2-ellegirl/97cc4e7d-b4d7-44ea-84ac-418d9de19072_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/991063d72f-0c96-42a6-9acc-1680f9881208_rw_1200.jpg",
+            "images/gallery/2-magazines/2-ellegirl/c2c79b-88e4-4dff-887e-5b2c50d4f07b_rw_1200.jpg",
+            "images/gallery/2-magazines/2-ellegirl/cover-eg6.jpg",
+            "images/gallery/2-magazines/2-ellegirl/d126e0df-45ae-441d-bb0d-262cff2af466_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/d9d3e1a4-80db-4f71-ad0a-10abe4baf0f1_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/e0f3ae85-6f88-41ad-8dbe-e8246005871f_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/e859315e-0bab-4003-8760-be1eecf0b611_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/f7138b42-e295-408c-ad66-0d5f9b9c3855_rw_1920.jpg",
+            "images/gallery/2-magazines/2-ellegirl/G51_022_FashionTrends2.jpg",
+            "images/gallery/2-magazines/2-ellegirl/ycover-eg3.jpg"
           ]
         },
         "3-cosmo": {
@@ -111,45 +111,85 @@
     },
     "6-illustrations": {
       "sections": {
-        "comic_zina-lyucia": {
+        "1-comic-general": {
           "images": [
-            "images/gallery/6-illustrations/comic_zina-lyucia/1-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/10-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/11-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/12-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/13-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/14-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/15-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/16-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/17-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/18-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/19-gor.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/2-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/3-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/4-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/5-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/6-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/7-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/8-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/9-vert.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/comic_first1.jpg",
-            "images/gallery/6-illustrations/comic_zina-lyucia/comic_first2.jpg"
+            "images/gallery/6-illustrations/1-comic-general/comic1.jpg",
+            "images/gallery/6-illustrations/1-comic-general/comic2.jpg",
+            "images/gallery/6-illustrations/1-comic-general/comic3.jpg",
+            "images/gallery/6-illustrations/1-comic-general/comic4.jpg",
+            "images/gallery/6-illustrations/1-comic-general/comic5.jpg"
           ]
         },
-        "comic-general": {
+        "2-comic_zina-lyucia": {
           "images": [
-            "images/gallery/6-illustrations/comic-general/comic1.jpg",
-            "images/gallery/6-illustrations/comic-general/comic2.jpg",
-            "images/gallery/6-illustrations/comic-general/comic3.jpg",
-            "images/gallery/6-illustrations/comic-general/comic4.jpg",
-            "images/gallery/6-illustrations/comic-general/comic5.jpg"
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/12-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/13-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/14-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/17-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/17-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/18-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/19-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/21-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/32-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/40-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/41-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/42-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/50-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/60-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/61-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/62-gor.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/63-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/80-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/81-vert.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/90-comic_first1.jpg",
+            "images/gallery/6-illustrations/2-comic_zina-lyucia/90-comic_first2.jpg"
+          ]
+        },
+        "3-kids-books": {
+          "images": [
+            "images/gallery/6-illustrations/3-kids-books/1IMG_7709.JPG",
+            "images/gallery/6-illustrations/3-kids-books/2fox_cover14.jpg",
+            "images/gallery/6-illustrations/3-kids-books/2fox_cover2.jpg",
+            "images/gallery/6-illustrations/3-kids-books/3fox_cover13.jpg",
+            "images/gallery/6-illustrations/3-kids-books/4IMG_7710.JPG",
+            "images/gallery/6-illustrations/3-kids-books/5-petya.jpg",
+            "images/gallery/6-illustrations/3-kids-books/6fox_cover12.jpg",
+            "images/gallery/6-illustrations/3-kids-books/7IMG_7711.JPG"
           ]
         }
       }
     },
     "7-animation": {
       "sections": {
-        "main": {
+        "1-three stories": {
+          "images": [
+
+          ]
+        },
+        "2-dances": {
+          "images": [
+
+          ]
+        },
+        "3-testarossa-winery": {
+          "images": [
+            "images/gallery/7-animation/3-testarossa-winery/1Easter-2.gif",
+            "images/gallery/7-animation/3-testarossa-winery/1Easter-4.gif",
+            "images/gallery/7-animation/3-testarossa-winery/2T-logo.gif",
+            "images/gallery/7-animation/3-testarossa-winery/3galen-day.gif"
+          ]
+        },
+        "4-leaky people": {
+          "images": [
+
+          ]
+        },
+        "5-work-in-progress": {
+          "images": [
+
+          ]
+        },
+        "6-lake house": {
           "images": [
 
           ]
