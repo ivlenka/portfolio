@@ -96,13 +96,91 @@ function renderBinPackedLayout(rows, gap = 10) {
     rows.forEach(row => {
         html += '<div class="bin-packed-row" style="margin-bottom: ' + gap + 'px;">';
         row.forEach(img => {
-            html += `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; margin-right: ${gap}px; object-fit: cover;">`;
+            html += `<img src="${img.src}" alt="${img.alt}" data-index="${img.index}" style="width: ${img.width}px; height: ${img.height}px; margin-right: ${gap}px; object-fit: cover; cursor: pointer;">`;
         });
         html += '</div>';
     });
 
     html += '</div>';
     return html;
+}
+
+// Lightbox functionality
+let lightboxImages = [];
+let currentLightboxIndex = 0;
+
+function initLightbox(images) {
+    lightboxImages = images;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxDescription = document.getElementById('lightboxDescription');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    // Add click handlers to all images
+    document.querySelectorAll('.bin-packed-layout img').forEach(img => {
+        img.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            openLightbox(index);
+        });
+    });
+
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Navigation
+    lightboxPrev.addEventListener('click', showPrevImage);
+    lightboxNext.addEventListener('click', showNextImage);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    });
+}
+
+function openLightbox(index) {
+    currentLightboxIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxDescription = document.getElementById('lightboxDescription');
+
+    lightbox.classList.add('active');
+    lightboxImage.src = lightboxImages[index].src;
+    lightboxImage.alt = lightboxImages[index].alt;
+    lightboxDescription.textContent = lightboxImages[index].description || lightboxImages[index].alt;
+
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showPrevImage() {
+    currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    openLightbox(currentLightboxIndex);
+}
+
+function showNextImage() {
+    currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
+    openLightbox(currentLightboxIndex);
 }
 
 // Load project content
@@ -129,15 +207,17 @@ function loadProject() {
             ];
 
             // Load images and get their dimensions
-            Promise.all(imagePaths.map(src => {
+            Promise.all(imagePaths.map((src, index) => {
                 return new Promise((resolve) => {
                     const img = new Image();
                     img.onload = () => {
                         resolve({
                             src: src,
                             alt: src.split('/').pop(),
+                            description: `Comic illustration ${index + 1}`,
                             width: img.naturalWidth,
-                            height: img.naturalHeight
+                            height: img.naturalHeight,
+                            index: index
                         });
                     };
                     img.onerror = () => {
@@ -145,8 +225,10 @@ function loadProject() {
                         resolve({
                             src: src,
                             alt: src.split('/').pop(),
+                            description: `Comic illustration ${index + 1}`,
                             width: 800,
-                            height: 600
+                            height: 600,
+                            index: index
                         });
                     };
                     img.src = src;
@@ -155,6 +237,9 @@ function loadProject() {
                 const containerWidth = Math.min(1000, projectImagesDiv.offsetWidth || 1000);
                 const rows = createBinPackedLayout(images, containerWidth, 300, 10);
                 projectImagesDiv.innerHTML = renderBinPackedLayout(rows, 10);
+
+                // Initialize lightbox after images are rendered
+                initLightbox(images);
             });
         }
     }
