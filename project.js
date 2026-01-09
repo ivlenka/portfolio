@@ -32,8 +32,8 @@ const projects = {
     },
     animation: {
         category: 'ANIMATION',
-        title: 'Animation Project',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Animation & Motion Graphics',
+        description: 'Collection of animated works including character animation, motion graphics, and experimental video projects exploring movement and storytelling.'
     },
     unsorted: {
         category: 'UNSORTED',
@@ -105,8 +105,18 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
         const hiddenClass = isHidden ? ' hidden-row' : '';
         html += `<div class="bin-packed-row${hiddenClass}" style="margin-bottom: ${gap}px;" data-section="${sectionId}">`;
         row.forEach((img, imgIndex) => {
+            let mediaElement;
+            if (img.isVideo) {
+                // Generate thumbnail path (video_name_thumb.jpg)
+                const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
+                const posterPath = `${videoPath}_thumb.jpg`;
+                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline></video>`;
+            } else {
+                mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
+            }
+
             html += `<div class="gallery-image-wrapper" style="margin-right: ${imgIndex < row.length - 1 ? gap : 0}px; cursor: pointer;" data-index="${img.index}">
-                <img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">
+                ${mediaElement}
                 <div class="gallery-image-overlay">
                     <div class="gallery-image-description">${img.description || img.alt}</div>
                 </div>
@@ -159,6 +169,13 @@ function initLightbox(images) {
             const index = parseInt(this.getAttribute('data-index'));
             openLightbox(index);
         });
+
+        // Add hover play/pause for videos
+        const video = wrapper.querySelector('video');
+        if (video) {
+            wrapper.addEventListener('mouseenter', () => video.play());
+            wrapper.addEventListener('mouseleave', () => video.pause());
+        }
     });
 
     // Close lightbox
@@ -203,14 +220,44 @@ function initLightbox(images) {
 function openLightbox(index) {
     currentLightboxIndex = index;
     const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxImageWrapper = document.querySelector('.lightbox-image-wrapper');
     const lightboxDescription = document.getElementById('lightboxDescription');
+    const currentMedia = lightboxImages[index];
 
     lightbox.classList.add('active');
-    lightboxImage.src = lightboxImages[index].src;
-    lightboxImage.alt = lightboxImages[index].alt;
-    lightboxDescription.textContent = lightboxImages[index].description || lightboxImages[index].alt;
 
+    // Clear previous content and create new media element
+    const existingMedia = lightboxImageWrapper.querySelector('img, video');
+    if (existingMedia) {
+        existingMedia.remove();
+    }
+
+    if (currentMedia.isVideo) {
+        const video = document.createElement('video');
+        video.src = currentMedia.src;
+
+        // Add poster thumbnail
+        const videoPath = currentMedia.src.substring(0, currentMedia.src.lastIndexOf('.'));
+        video.poster = `${videoPath}_thumb.jpg`;
+
+        video.id = 'lightboxImage';
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.style.maxWidth = '100%';
+        video.style.maxHeight = '90vh';
+        video.style.objectFit = 'contain';
+        video.style.display = 'block';
+        lightboxImageWrapper.insertBefore(video, lightboxDescription);
+    } else {
+        const img = document.createElement('img');
+        img.src = currentMedia.src;
+        img.alt = currentMedia.alt;
+        img.id = 'lightboxImage';
+        lightboxImageWrapper.insertBefore(img, lightboxDescription);
+    }
+
+    lightboxDescription.textContent = currentMedia.description || currentMedia.alt;
     document.body.style.overflow = 'hidden';
 }
 
@@ -252,8 +299,22 @@ function loadProject() {
         // Custom content for illustration project - using dynamic loading
         if (projectId === 'illustration') {
             renderDynamicGallery('6-illustrations', {
-                'comic_zina-lyucia': 'Zina & Lyucia Comic',
-                'comic-general': 'General Comics'
+                '1-comic-general': 'General Comics',
+                '2-comic_zina-lyucia': 'Zina & Lyucia Comic',
+                '3-kids-books': 'Kids Books',
+                'character-design': 'Character Design'
+            });
+        }
+
+        // Custom content for animation project - using dynamic loading
+        if (projectId === 'animation') {
+            renderDynamicGallery('7-animation', {
+                '1-three stories': 'Three Stories',
+                '2-dances': 'Character Animation',
+                '3-testarossa-winery': 'Testarossa Winery',
+                '4-leaky people': 'Leaky People',
+                '5-work-in-progress': 'Work in Progress',
+                '6-lake house': 'Lake House'
             });
         }
     }
@@ -290,17 +351,28 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
     let html = '';
     let allImages = [];
 
-    // Load actual image dimensions
+    // Load actual image/video dimensions
     const loadImageDimensions = (imageObj) => {
         return new Promise((resolve) => {
-            const img = new Image();
-            img.onload = () => {
-                imageObj.width = img.naturalWidth;
-                imageObj.height = img.naturalHeight;
-                resolve(imageObj);
-            };
-            img.onerror = () => resolve(imageObj); // Keep placeholder dimensions
-            img.src = imageObj.src;
+            if (imageObj.isVideo) {
+                const video = document.createElement('video');
+                video.onloadedmetadata = () => {
+                    imageObj.width = video.videoWidth;
+                    imageObj.height = video.videoHeight;
+                    resolve(imageObj);
+                };
+                video.onerror = () => resolve(imageObj); // Keep placeholder dimensions
+                video.src = imageObj.src;
+            } else {
+                const img = new Image();
+                img.onload = () => {
+                    imageObj.width = img.naturalWidth;
+                    imageObj.height = img.naturalHeight;
+                    resolve(imageObj);
+                };
+                img.onerror = () => resolve(imageObj); // Keep placeholder dimensions
+                img.src = imageObj.src;
+            }
         });
     };
 
@@ -316,7 +388,7 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
     // Render sections
     sections.forEach(section => {
         const description = section.description || `Collection of ${section.title.toLowerCase()} designs and layouts showcasing creative work.`;
-        const minImagesPerRow = section.title === 'Elle' ? 2 : 3;
+        const minImagesPerRow = (section.title === 'Elle' || section.title === 'Three Stories') ? 2 : 3;
         html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow);
     });
 

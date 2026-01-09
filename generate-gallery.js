@@ -4,9 +4,11 @@
  * Gallery Generator Script
  *
  * This script scans the images/gallery folder and generates a gallery-data.json file
- * containing all image paths organized by project folders.
+ * containing all image and video paths organized by project folders.
  *
  * Usage: node generate-gallery.js
+ *
+ * Supported formats: jpg, jpeg, png, gif, webp, svg, mp4, mov
  *
  * Folder structure expected:
  * images/gallery/
@@ -25,12 +27,16 @@ const path = require('path');
 const GALLERY_BASE = path.join(__dirname, 'images', 'gallery');
 const OUTPUT_FILE = path.join(__dirname, 'gallery-data.json');
 
-// Supported image extensions
-const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+// Supported image and video extensions
+const MEDIA_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.mp4', '.mov'];
 
-function isImageFile(filename) {
+function isMediaFile(filename) {
+    // Exclude thumbnail files
+    if (filename.endsWith('_thumb.jpg')) {
+        return false;
+    }
     const ext = path.extname(filename).toLowerCase();
-    return IMAGE_EXTENSIONS.includes(ext);
+    return MEDIA_EXTENSIONS.includes(ext);
 }
 
 function scanDirectory(dirPath, relativePath = '') {
@@ -50,7 +56,7 @@ function scanDirectory(dirPath, relativePath = '') {
         if (stat.isDirectory()) {
             const subRelativePath = relativePath ? `${relativePath}/${item}` : item;
             result.folders[item] = scanDirectory(fullPath, subRelativePath);
-        } else if (isImageFile(item)) {
+        } else if (isMediaFile(item)) {
             const imagePath = relativePath ? `images/gallery/${relativePath}/${item}` : `images/gallery/${item}`;
             result.images.push(imagePath);
         }
@@ -84,7 +90,7 @@ function generateGalleryData() {
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(galleryData, null, 2));
 
     console.log(`✓ Gallery data generated: ${OUTPUT_FILE}`);
-    console.log(`  Found ${countImages(galleryData)} images`);
+    console.log(`  Found ${countImages(galleryData)} media files (images + videos)`);
 }
 
 function countImages(data) {

@@ -2,6 +2,7 @@
 
 # Gallery Generator Script
 # Scans the images/gallery folder and generates gallery-data.json
+# Supports: images (jpg, jpeg, png, gif, webp, svg) and videos (mp4, mov)
 
 GALLERY_BASE="images/gallery"
 OUTPUT_FILE="gallery-data.json"
@@ -19,10 +20,10 @@ fi
 
 echo "Scanning gallery directory..."
 
-# Function to list image files in a directory
+# Function to list image and video files in a directory
 list_images() {
     local dir="$1"
-    find "$dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) | sort
+    find "$dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb.jpg" | sort
 }
 
 # Start JSON
@@ -117,9 +118,9 @@ echo "" >> "$OUTPUT_FILE"
 echo "  }" >> "$OUTPUT_FILE"
 echo "}" >> "$OUTPUT_FILE"
 
-# Count total images
-total_images=$(find "$GALLERY_BASE" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) | wc -l)
+# Count total media files (images + videos, excluding thumbnails)
+total_media=$(find "$GALLERY_BASE" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb.jpg" | wc -l)
 
 echo "✓ Gallery data generated: $OUTPUT_FILE"
-echo "  Found $total_images images"
-echo "  Run this script whenever you add/remove images from the gallery."
+echo "  Found $total_media media files (images + videos)"
+echo "  Run this script whenever you add/remove images or videos from the gallery."

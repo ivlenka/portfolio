@@ -156,6 +156,30 @@
             "images/gallery/6-illustrations/3-kids-books/6fox_cover12.jpg",
             "images/gallery/6-illustrations/3-kids-books/7IMG_7711.JPG"
           ]
+        },
+        "character-design": {
+          "images": [
+            "images/gallery/6-illustrations/character-design/all-2IMG_1412.jpg",
+            "images/gallery/6-illustrations/character-design/friends.jpg",
+            "images/gallery/6-illustrations/character-design/IMG_1411.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1629.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1630.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1631.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1632.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1633.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1634.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1635.JPG",
+            "images/gallery/6-illustrations/character-design/IMG_1636.JPG",
+            "images/gallery/6-illustrations/character-design/okovtash_ActionPoses1.jpg",
+            "images/gallery/6-illustrations/character-design/okovtash_ActionPoses2.jpg",
+            "images/gallery/6-illustrations/character-design/okovtash_character-designs1.jpg",
+            "images/gallery/6-illustrations/character-design/okovtash_characterTurnaround.JPG",
+            "images/gallery/6-illustrations/character-design/okovtash_Clean-upLine_color.JPG",
+            "images/gallery/6-illustrations/character-design/okovtash_emotionalCharacters.JPG",
+            "images/gallery/6-illustrations/character-design/okovtash_facialExpressions.JPG",
+            "images/gallery/6-illustrations/character-design/okovtash_silhouettes_details.jpg",
+            "images/gallery/6-illustrations/character-design/okovtash_style-variations.jpg"
+          ]
         }
       }
     },
@@ -163,16 +187,25 @@
       "sections": {
         "1-three stories": {
           "images": [
-
+            "images/gallery/7-animation/1-three stories/1-impact_olenakovtash.mp4",
+            "images/gallery/7-animation/1-three stories/2-neveralone_nocopyright.mp4",
+            "images/gallery/7-animation/1-three stories/3-shapes_nocopyright.mp4",
+            "images/gallery/7-animation/1-three stories/4-effect_match_olenakovtash.mp4"
           ]
         },
         "2-dances": {
           "images": [
-
+            "images/gallery/7-animation/2-dances/1-olenakovtash_personalitywalk1.mp4",
+            "images/gallery/7-animation/2-dances/2-OlenaKovtash_dance-pink.mp4",
+            "images/gallery/7-animation/2-dances/3BW_2.mp4",
+            "images/gallery/7-animation/2-dances/4clip3.mp4",
+            "images/gallery/7-animation/2-dances/5bcb61b6f912447f299bab593de9e3341.mp4"
           ]
         },
         "3-testarossa-winery": {
           "images": [
+            "images/gallery/7-animation/3-testarossa-winery/0CHARD_1_low.mp4",
+            "images/gallery/7-animation/3-testarossa-winery/0PINOT_1_low.mp4",
             "images/gallery/7-animation/3-testarossa-winery/1Easter-2.gif",
             "images/gallery/7-animation/3-testarossa-winery/1Easter-4.gif",
             "images/gallery/7-animation/3-testarossa-winery/2T-logo.gif",
@@ -181,17 +214,20 @@
         },
         "4-leaky people": {
           "images": [
-
+            "images/gallery/7-animation/4-leaky people/LeakyPeople_final_low.mp4"
           ]
         },
         "5-work-in-progress": {
           "images": [
-
+            "images/gallery/7-animation/5-work-in-progress/1comics_heroes_video_3.mp4",
+            "images/gallery/7-animation/5-work-in-progress/2Untitled_Artwork 2.mp4",
+            "images/gallery/7-animation/5-work-in-progress/3Untitled_Artwork copy.mp4"
           ]
         },
         "6-lake house": {
           "images": [
-
+            "images/gallery/7-animation/6-lake house/1LakeHouse_low copy.mp4",
+            "images/gallery/7-animation/6-lake house/2My Movie.mp4"
           ]
         }
       }

@@ -17,13 +17,19 @@ async function loadGalleryData() {
     }
 }
 
+function isVideoFile(src) {
+    const ext = src.split('.').pop().toLowerCase();
+    return ['mp4', 'mov', 'webm', 'ogg'].includes(ext);
+}
+
 function createImageObject(src, index, description) {
     return {
         src: src,
         alt: src.split('/').pop(),
         description: description || src.split('/').pop(),
         index: index,
-        // Placeholder dimensions - will be replaced when image loads
+        isVideo: isVideoFile(src),
+        // Placeholder dimensions - will be replaced when image/video loads
         width: 800,
         height: 600
     };
