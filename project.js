@@ -7,8 +7,8 @@ const projects = {
     },
     magazines: {
         category: 'MAGAZINES',
-        title: 'Elle Girl Magazine',
-        description: 'Magazine layout and design work for Elle Girl, featuring editorial spreads, cover designs, and fashion photography layouts.'
+        title: 'Magazine Design',
+        description: 'Editorial design work featuring magazine layouts, cover designs, and fashion photography for Elle Girl, Elle, and Cosmopolitan publications.'
     },
     prints: {
         category: 'PRINTS',
@@ -28,7 +28,7 @@ const projects = {
     illustration: {
         category: 'ILLUSTRATION',
         title: 'Comic Illustration',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        description: 'Original comic and illustration work featuring character designs, sequential storytelling, and narrative art exploring themes of friendship and adventure.'
     },
     animation: {
         category: 'ANIMATION',
@@ -54,24 +54,24 @@ function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, ga
     let currentRow = [];
     let currentRowWidth = 0;
 
-    images.forEach((img, index) => {
+    images.forEach((img) => {
         const aspectRatio = img.width / img.height;
         const scaledWidth = targetRowHeight * aspectRatio;
 
         // Always add to current row if we have less than minimum images
         if (currentRow.length < minImagesPerRow) {
-            currentRow.push({ ...img, index, scaledWidth });
+            currentRow.push({ ...img, scaledWidth });
             currentRowWidth += scaledWidth;
         } else if (currentRowWidth + scaledWidth + (currentRow.length * gap) <= containerWidth) {
             // After minimum, only add if it fits
-            currentRow.push({ ...img, index, scaledWidth });
+            currentRow.push({ ...img, scaledWidth });
             currentRowWidth += scaledWidth;
         } else {
             // Start new row
             if (currentRow.length > 0) {
                 rows.push(normalizeRow(currentRow, containerWidth, targetRowHeight, gap));
             }
-            currentRow = [{ ...img, index, scaledWidth }];
+            currentRow = [{ ...img, scaledWidth }];
             currentRowWidth = scaledWidth;
         }
     });
@@ -284,15 +284,6 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
     if (!sections) {
         projectImagesDiv.innerHTML = '<p style="color: #888;">No images found. Run generate-gallery.sh to scan your gallery folder.</p>';
         return;
-    }
-
-    // Hide the initial project title and description (but keep category header)
-    const projectDetails = document.querySelector('.project-details');
-    if (projectDetails) {
-        const title = projectDetails.querySelector('.project-title');
-        const description = projectDetails.querySelector('.project-description');
-        if (title) title.style.display = 'none';
-        if (description) description.style.display = 'none';
     }
 
     const containerWidth = Math.min(1000, projectImagesDiv.offsetWidth || 1000);
