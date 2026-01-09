@@ -9,7 +9,7 @@
 }
 
 .project-category {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: normal;
     letter-spacing: 0.5px;
     color: #888888;
@@ -22,7 +22,7 @@
 }
 
 .project-title {
-    font-size: 24px;
+    font-size: 19px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -66,6 +66,39 @@
 
 .bin-packed-row img:last-child {
     margin-right: 0 !important;
+}
+
+/* Gallery Image Hover Overlay */
+.gallery-image-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gallery-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.gallery-image-wrapper:hover .gallery-image-overlay {
+    opacity: 1;
+}
+
+.gallery-image-description {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 /* Mosaic Layout for Illustration Project */

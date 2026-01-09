@@ -95,8 +95,13 @@ function renderBinPackedLayout(rows, gap = 10) {
 
     rows.forEach(row => {
         html += '<div class="bin-packed-row" style="margin-bottom: ' + gap + 'px;">';
-        row.forEach(img => {
-            html += `<img src="${img.src}" alt="${img.alt}" data-index="${img.index}" style="width: ${img.width}px; height: ${img.height}px; margin-right: ${gap}px; object-fit: cover; cursor: pointer;">`;
+        row.forEach((img, imgIndex) => {
+            html += `<div class="gallery-image-wrapper" style="margin-right: ${imgIndex < row.length - 1 ? gap : 0}px; cursor: pointer;" data-index="${img.index}">
+                <img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">
+                <div class="gallery-image-overlay">
+                    <div class="gallery-image-description">${img.description || img.alt}</div>
+                </div>
+            </div>`;
         });
         html += '</div>';
     });
@@ -119,9 +124,9 @@ function initLightbox(images) {
     const lightboxPrev = document.getElementById('lightboxPrev');
     const lightboxNext = document.getElementById('lightboxNext');
 
-    // Add click handlers to all images
-    document.querySelectorAll('.bin-packed-layout img').forEach(img => {
-        img.addEventListener('click', function() {
+    // Add click handlers to all image wrappers
+    document.querySelectorAll('.gallery-image-wrapper').forEach(wrapper => {
+        wrapper.addEventListener('click', function() {
             const index = parseInt(this.getAttribute('data-index'));
             openLightbox(index);
         });
