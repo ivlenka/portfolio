@@ -1,0 +1,44 @@
+{
+  "projects": {
+    "magazines": {
+      "sections": {
+        "ellegirl": {
+          "images": [
+            "images/gallery/magazines/ellegirl/image1.jpg",
+            "images/gallery/magazines/ellegirl/image2.jpg",
+            "images/gallery/magazines/ellegirl/image3.jpg"
+          ]
+        },
+        "elle": {
+          "images": [
+            "images/gallery/magazines/elle/image1.jpg",
+            "images/gallery/magazines/elle/image2.jpg"
+          ]
+        },
+        "cosmo": {
+          "images": [
+            "images/gallery/magazines/cosmo/image1.jpg"
+          ]
+        }
+      }
+    },
+    "illustration": {
+      "sections": {
+        "main": {
+          "images": [
+            "images/gallery/illustration/comic1.jpg",
+            "images/gallery/illustration/comic2.jpg",
+            "images/gallery/illustration/comic3.jpg"
+          ]
+        }
+      }
+    },
+    "brands": {
+      "sections": {
+        "main": {
+          "images": []
+        }
+      }
+    }
+  }
+}

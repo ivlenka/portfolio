@@ -7,8 +7,8 @@ const projects = {
     },
     magazines: {
         category: 'MAGAZINES',
-        title: 'Project Name',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Elle Girl Magazine',
+        description: 'Magazine layout and design work for Elle Girl, featuring editorial spreads, cover designs, and fashion photography layouts.'
     },
     prints: {
         category: 'PRINTS',
@@ -49,7 +49,7 @@ function getProjectId() {
 }
 
 // Bin packing algorithm for optimal image layout
-function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, gap = 10) {
+function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, gap = 10, minImagesPerRow = 3) {
     const rows = [];
     let currentRow = [];
     let currentRowWidth = 0;
@@ -58,10 +58,16 @@ function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, ga
         const aspectRatio = img.width / img.height;
         const scaledWidth = targetRowHeight * aspectRatio;
 
-        if (currentRowWidth + scaledWidth + (currentRow.length * gap) <= containerWidth) {
+        // Always add to current row if we have less than minimum images
+        if (currentRow.length < minImagesPerRow) {
+            currentRow.push({ ...img, index, scaledWidth });
+            currentRowWidth += scaledWidth;
+        } else if (currentRowWidth + scaledWidth + (currentRow.length * gap) <= containerWidth) {
+            // After minimum, only add if it fits
             currentRow.push({ ...img, index, scaledWidth });
             currentRowWidth += scaledWidth;
         } else {
+            // Start new row
             if (currentRow.length > 0) {
                 rows.push(normalizeRow(currentRow, containerWidth, targetRowHeight, gap));
             }
@@ -90,11 +96,14 @@ function normalizeRow(row, containerWidth, targetRowHeight, gap) {
     }));
 }
 
-function renderBinPackedLayout(rows, gap = 10) {
+function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
+    const visibleRows = 5;
     let html = '<div class="bin-packed-layout">';
 
-    rows.forEach(row => {
-        html += '<div class="bin-packed-row" style="margin-bottom: ' + gap + 'px;">';
+    rows.forEach((row, rowIndex) => {
+        const isHidden = rowIndex >= visibleRows && rows.length > visibleRows;
+        const hiddenClass = isHidden ? ' hidden-row' : '';
+        html += `<div class="bin-packed-row${hiddenClass}" style="margin-bottom: ${gap}px;" data-section="${sectionId}">`;
         row.forEach((img, imgIndex) => {
             html += `<div class="gallery-image-wrapper" style="margin-right: ${imgIndex < row.length - 1 ? gap : 0}px; cursor: pointer;" data-index="${img.index}">
                 <img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">
@@ -107,6 +116,26 @@ function renderBinPackedLayout(rows, gap = 10) {
     });
 
     html += '</div>';
+
+    // Add "See more" button if there are more than 5 rows
+    if (rows.length > visibleRows) {
+        html += `<div class="see-more-container"><button class="see-more-btn" data-section="${sectionId}">See more</button></div>`;
+    }
+
+    return html;
+}
+
+function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3) {
+    const rows = createBinPackedLayout(images, containerWidth, 300, 10, minImagesPerRow);
+    let html = `<div class="gallery-section">`;
+    if (title) {
+        html += `<h2 class="project-title">${title}</h2>`;
+    }
+    if (description) {
+        html += `<p class="project-description">${description}</p>`;
+    }
+    html += renderBinPackedLayout(rows, 10, sectionId);
+    html += `</div>`;
     return html;
 }
 
@@ -156,6 +185,19 @@ function initLightbox(images) {
             showNextImage();
         }
     });
+
+    // "See more" button functionality for all sections
+    document.querySelectorAll('.see-more-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const sectionId = this.getAttribute('data-section');
+            // Show all hidden rows in this section
+            document.querySelectorAll(`.hidden-row[data-section="${sectionId}"]`).forEach(row => {
+                row.classList.remove('hidden-row');
+            });
+            // Hide the button
+            this.parentElement.style.display = 'none';
+        });
+    });
 }
 
 function openLightbox(index) {
@@ -198,56 +240,97 @@ function loadProject() {
         document.getElementById('projectTitle').textContent = project.title;
         document.getElementById('projectDescription').textContent = project.description;
 
-        // Custom content for illustration project with bin packing
+        // Custom content for magazines project - using dynamic loading
+        if (projectId === 'magazines') {
+            renderDynamicGallery('2-magazines', {
+                '1-ellegirl': 'Elle Girl',
+                '2-elle': 'Elle',
+                '3-cosmo': 'Cosmopolitan'
+            });
+        }
+
+        // Custom content for illustration project - using dynamic loading
         if (projectId === 'illustration') {
-            const projectImagesDiv = document.querySelector('.project-images');
-
-            // Define images with their paths
-            const imagePaths = [
-                'images/comic/comic-general/comic1.jpg',
-                'images/comic/comic-general/comic2.jpg',
-                'images/comic/comic-general/comic3.jpg',
-                'images/comic/comic-general/comic4.jpg',
-                'images/comic/comic-general/comic5.jpg'
-            ];
-
-            // Load images and get their dimensions
-            Promise.all(imagePaths.map((src, index) => {
-                return new Promise((resolve) => {
-                    const img = new Image();
-                    img.onload = () => {
-                        resolve({
-                            src: src,
-                            alt: src.split('/').pop(),
-                            description: `Comic illustration ${index + 1}`,
-                            width: img.naturalWidth,
-                            height: img.naturalHeight,
-                            index: index
-                        });
-                    };
-                    img.onerror = () => {
-                        // If image doesn't exist, use placeholder dimensions
-                        resolve({
-                            src: src,
-                            alt: src.split('/').pop(),
-                            description: `Comic illustration ${index + 1}`,
-                            width: 800,
-                            height: 600,
-                            index: index
-                        });
-                    };
-                    img.src = src;
-                });
-            })).then(images => {
-                const containerWidth = Math.min(1000, projectImagesDiv.offsetWidth || 1000);
-                const rows = createBinPackedLayout(images, containerWidth, 300, 10);
-                projectImagesDiv.innerHTML = renderBinPackedLayout(rows, 10);
-
-                // Initialize lightbox after images are rendered
-                initLightbox(images);
+            renderDynamicGallery('6-illustrations', {
+                'comic_zina-lyucia': 'Zina & Lyucia Comic',
+                'comic-general': 'General Comics'
             });
         }
     }
+}
+
+// Helper function to load project from gallery-data.json
+async function loadDynamicProject(projectId, sectionTitles) {
+    if (!window.loadProjectGallery) {
+        console.error('Gallery loader not available');
+        return null;
+    }
+
+    const sections = await window.loadProjectGallery(projectId, sectionTitles);
+
+    if (!sections || sections.length === 0) {
+        console.warn(`No sections found for project: ${projectId}`);
+        return null;
+    }
+
+    return sections;
+}
+
+// Helper to render dynamic gallery sections
+async function renderDynamicGallery(projectId, sectionTitles = {}) {
+    const projectImagesDiv = document.querySelector('.project-images');
+    const sections = await loadDynamicProject(projectId, sectionTitles);
+
+    if (!sections) {
+        projectImagesDiv.innerHTML = '<p style="color: #888;">No images found. Run generate-gallery.sh to scan your gallery folder.</p>';
+        return;
+    }
+
+    // Hide the initial project title and description (but keep category header)
+    const projectDetails = document.querySelector('.project-details');
+    if (projectDetails) {
+        const title = projectDetails.querySelector('.project-title');
+        const description = projectDetails.querySelector('.project-description');
+        if (title) title.style.display = 'none';
+        if (description) description.style.display = 'none';
+    }
+
+    const containerWidth = Math.min(1000, projectImagesDiv.offsetWidth || 1000);
+    let html = '';
+    let allImages = [];
+
+    // Load actual image dimensions
+    const loadImageDimensions = (imageObj) => {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+                imageObj.width = img.naturalWidth;
+                imageObj.height = img.naturalHeight;
+                resolve(imageObj);
+            };
+            img.onerror = () => resolve(imageObj); // Keep placeholder dimensions
+            img.src = imageObj.src;
+        });
+    };
+
+    // Load all images with dimensions
+    for (const section of sections) {
+        const loadedImages = await Promise.all(
+            section.images.map(img => loadImageDimensions(img))
+        );
+        section.images = loadedImages;
+        allImages = allImages.concat(loadedImages);
+    }
+
+    // Render sections
+    sections.forEach(section => {
+        const description = section.description || `Collection of ${section.title.toLowerCase()} designs and layouts showcasing creative work.`;
+        const minImagesPerRow = section.title === 'Elle' ? 2 : 3;
+        html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow);
+    });
+
+    projectImagesDiv.innerHTML = html;
+    initLightbox(allImages);
 }
 
 // Load project when page loads

@@ -78,6 +78,7 @@
     line-height: 1.8;
     color: #444444d1;
     max-width: 1400px;
+    margin-bottom: 60px;
 }
 
 .project-images {
@@ -145,6 +146,39 @@
     font-size: 15px;
     text-align: center;
     line-height: 1.6;
+}
+
+/* Gallery Section Styling */
+.gallery-section {
+    margin-bottom: 80px;
+}
+
+/* Hidden Row and See More Button */
+.hidden-row {
+    display: none;
+}
+
+.see-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.see-more-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    font-weight: normal;
+}
+
+.see-more-btn:hover {
+    opacity: 0.8;
 }
 
 /* Mosaic Layout for Illustration Project */
