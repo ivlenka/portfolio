@@ -212,15 +212,12 @@
         },
         "5-work-in-progress": {
           "images": [
+            "images/gallery/7-animation/5-work-in-progress/0My Movie.mp4",
             "images/gallery/7-animation/5-work-in-progress/1comics_heroes_video_3.mp4",
-            "images/gallery/7-animation/5-work-in-progress/2Untitled_Artwork 2.mp4",
+            "images/gallery/7-animation/5-work-in-progress/1LakeHouse_low copy.mp4",
+            "images/gallery/7-animation/5-work-in-progress/1p_Match_Framerate-low.mp4",
+            "images/gallery/7-animation/5-work-in-progress/1Untitled_Artwork 2.mp4",
             "images/gallery/7-animation/5-work-in-progress/3Untitled_Artwork copy.mp4"
-          ]
-        },
-        "6-lake house": {
-          "images": [
-            "images/gallery/7-animation/6-lake house/1LakeHouse_low copy.mp4",
-            "images/gallery/7-animation/6-lake house/2My Movie.mp4"
           ]
         }
       }
