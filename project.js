@@ -129,7 +129,10 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
                                        img.src.includes('LeakyPeople_final_low');
             const invertedClass = needsInvertedButton ? ' inverted' : '';
 
-            const soundButtonHtml = isAnimationProject && img.isVideo
+            // Exclude Testarossa section from sound buttons
+            const isTestarossaVideo = img.src.includes('testarossa-winery');
+
+            const soundButtonHtml = isAnimationProject && img.isVideo && !isTestarossaVideo
                 ? `<button class="sound-toggle-btn${invertedClass}" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M11 5L6 9H2v6h4l5 4V5z"/>
