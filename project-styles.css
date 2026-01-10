@@ -148,21 +148,8 @@
     line-height: 1.6;
 }
 
-/* Video Play Button Overlay */
-.gallery-image-wrapper video::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.gallery-image-wrapper:has(video)::before {
+/* Video Play Button Overlay - Only for non-animation videos */
+.gallery-image-wrapper:not(.animation-video):has(video)::before {
     content: '▶';
     position: absolute;
     top: 50%;
@@ -184,8 +171,84 @@
     padding-left: 4px;
 }
 
-.gallery-image-wrapper:has(video):hover::before {
+.gallery-image-wrapper:not(.animation-video):has(video):hover::before {
     opacity: 0;
+}
+
+/* Hide overlay for animation videos */
+.gallery-image-wrapper.animation-video .gallery-image-overlay {
+    display: none;
+}
+
+/* Sound Toggle Button for Animation Videos */
+.sound-toggle-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 31px;
+    height: 31px;
+    background: transparent;
+    border: 1.5px solid #000000;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.sound-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: transparent;
+}
+
+.sound-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+    color: #000000;
+    transition: color 0.2s ease;
+}
+
+.sound-toggle-btn:hover svg {
+    color: #ffffff;
+}
+
+/* Inverted button for dark videos */
+.sound-toggle-btn.inverted {
+    border-color: #ffffff;
+}
+
+.sound-toggle-btn.inverted svg {
+    color: #ffffff;
+}
+
+.sound-toggle-btn.inverted:hover {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: transparent;
+}
+
+.sound-toggle-btn.inverted:hover svg {
+    color: #000000;
+}
+
+/* Hide the X lines when unmuted, show sound waves */
+.sound-toggle-btn[data-muted="false"] .sound-off-indicator {
+    display: none;
+}
+
+.sound-toggle-btn[data-muted="false"] .sound-on-indicator {
+    display: block;
+}
+
+/* Hide sound waves when muted, show X */
+.sound-toggle-btn[data-muted="true"] .sound-on-indicator {
+    display: none;
+}
+
+.sound-toggle-btn[data-muted="true"] .sound-off-indicator {
+    display: block;
 }
 
 /* Gallery Section Styling */

@@ -96,7 +96,7 @@ function normalizeRow(row, containerWidth, targetRowHeight, gap) {
     }));
 }
 
-function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
+function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProject = false) {
     const visibleRows = 3;
     let html = '<div class="bin-packed-layout">';
 
@@ -106,20 +106,45 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
         html += `<div class="bin-packed-row${hiddenClass}" style="margin-bottom: ${gap}px;" data-section="${sectionId}">`;
         row.forEach((img, imgIndex) => {
             let mediaElement;
+            const animationClass = isAnimationProject ? ' animation-video' : '';
+
             if (img.isVideo) {
                 // Generate thumbnail path (video_name_thumb.jpg)
                 const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const posterPath = `${videoPath}_thumb.jpg`;
-                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline></video>`;
+                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline data-has-audio="false"></video>`;
             } else {
                 mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
             }
 
-            html += `<div class="gallery-image-wrapper" style="margin-right: ${imgIndex < row.length - 1 ? gap : 0}px; cursor: pointer;" data-index="${img.index}">
-                ${mediaElement}
-                <div class="gallery-image-overlay">
+            const overlayHtml = isAnimationProject && img.isVideo
+                ? '' // No overlay for animation videos
+                : `<div class="gallery-image-overlay">
                     <div class="gallery-image-description">${img.description || img.alt}</div>
-                </div>
+                </div>`;
+
+            // Check if this video needs inverted button colors (for dark videos)
+            const needsInvertedButton = img.src.includes('0-effect_match_olenakovtash') ||
+                                       img.src.includes('3-neveralone_nocopyright') ||
+                                       img.src.includes('LeakyPeople_final_low');
+            const invertedClass = needsInvertedButton ? ' inverted' : '';
+
+            const soundButtonHtml = isAnimationProject && img.isVideo
+                ? `<button class="sound-toggle-btn${invertedClass}" data-muted="true" style="display: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path class="sound-on-indicator" d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke-width="2"/>
+                        <path class="sound-on-indicator" d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke-width="2"/>
+                        <line class="sound-off-indicator" x1="23" y1="9" x2="17" y2="15" stroke-width="2"/>
+                        <line class="sound-off-indicator" x1="17" y1="9" x2="23" y2="15" stroke-width="2"/>
+                    </svg>
+                </button>`
+                : '';
+
+            html += `<div class="gallery-image-wrapper${animationClass}" style="margin-right: ${imgIndex < row.length - 1 ? gap : 0}px; cursor: pointer;" data-index="${img.index}">
+                ${mediaElement}
+                ${overlayHtml}
+                ${soundButtonHtml}
             </div>`;
         });
         html += '</div>';
@@ -135,7 +160,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '') {
     return html;
 }
 
-function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3) {
+function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3, isAnimationProject = false) {
     const rows = createBinPackedLayout(images, containerWidth, 300, 10, minImagesPerRow);
     let html = `<div class="gallery-section">`;
     if (title) {
@@ -144,7 +169,7 @@ function renderGallerySection(title, description, images, containerWidth, sectio
     if (description) {
         html += `<p class="project-description">${description}</p>`;
     }
-    html += renderBinPackedLayout(rows, 10, sectionId);
+    html += renderBinPackedLayout(rows, 10, sectionId, isAnimationProject);
     html += `</div>`;
     return html;
 }
@@ -165,16 +190,102 @@ function initLightbox(images) {
 
     // Add click handlers to all image wrappers
     document.querySelectorAll('.gallery-image-wrapper').forEach(wrapper => {
-        wrapper.addEventListener('click', function() {
+        const isAnimationVideo = wrapper.classList.contains('animation-video');
+        const video = wrapper.querySelector('video');
+        const soundBtn = wrapper.querySelector('.sound-toggle-btn');
+
+        // Click to open lightbox
+        wrapper.addEventListener('click', function(e) {
+            // Don't open lightbox if clicking the sound button
+            if (e.target.closest('.sound-toggle-btn')) {
+                return;
+            }
             const index = parseInt(this.getAttribute('data-index'));
             openLightbox(index);
         });
 
         // Add hover play/pause for videos
-        const video = wrapper.querySelector('video');
         if (video) {
-            wrapper.addEventListener('mouseenter', () => video.play());
-            wrapper.addEventListener('mouseleave', () => video.pause());
+            let audioCheckDone = false;
+
+            // Quick initial check on metadata
+            video.addEventListener('loadedmetadata', function() {
+                checkVideoAudio();
+            });
+
+            // Check for audio tracks
+            const checkVideoAudio = () => {
+                let hasAudio = false;
+
+                // Method 1: Check audioTracks API
+                if (video.audioTracks && video.audioTracks.length > 0) {
+                    hasAudio = true;
+                }
+                // Method 2: Mozilla-specific property
+                else if (typeof video.mozHasAudio !== 'undefined') {
+                    hasAudio = video.mozHasAudio;
+                }
+                // Method 3: Webkit - assume has audio and verify during playback
+                else if (typeof video.webkitAudioDecodedByteCount !== 'undefined') {
+                    hasAudio = true; // Optimistic for webkit, will verify on play
+                }
+
+                video.setAttribute('data-has-audio', hasAudio ? 'true' : 'false');
+                audioCheckDone = true;
+            };
+
+            // Double-check for webkit browsers after brief playback
+            video.addEventListener('playing', function checkWebkitAudio() {
+                setTimeout(() => {
+                    if (typeof video.webkitAudioDecodedByteCount !== 'undefined') {
+                        const hasAudio = video.webkitAudioDecodedByteCount > 0;
+                        video.setAttribute('data-has-audio', hasAudio ? 'true' : 'false');
+
+                        // Update button visibility if it's currently shown
+                        if (soundBtn && soundBtn.style.display === 'flex' && !hasAudio) {
+                            soundBtn.style.display = 'none';
+                        }
+                    }
+                }, 100);
+                video.removeEventListener('playing', checkWebkitAudio);
+            });
+
+            // Hover behavior for animation videos
+            if (isAnimationVideo) {
+                wrapper.addEventListener('mouseenter', () => {
+                    video.play();
+
+                    // If audio check not done yet, do it now
+                    if (!audioCheckDone) {
+                        checkVideoAudio();
+                    }
+
+                    // Show sound button if video has audio
+                    if (soundBtn && video.getAttribute('data-has-audio') === 'true') {
+                        soundBtn.style.display = 'flex';
+                    }
+                });
+                wrapper.addEventListener('mouseleave', () => {
+                    video.pause();
+                    if (soundBtn) {
+                        soundBtn.style.display = 'none';
+                    }
+                });
+
+                // Sound toggle button handler
+                if (soundBtn) {
+                    soundBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const isMuted = video.muted;
+                        video.muted = !isMuted;
+                        this.setAttribute('data-muted', !isMuted);
+                    });
+                }
+            } else {
+                // Regular hover play/pause for non-animation videos
+                wrapper.addEventListener('mouseenter', () => video.play());
+                wrapper.addEventListener('mouseleave', () => video.pause());
+            }
         }
     });
 
@@ -224,11 +335,19 @@ function openLightbox(index) {
     const lightboxDescription = document.getElementById('lightboxDescription');
     const currentMedia = lightboxImages[index];
 
+    // Check if this is an animation project video (7-animation in the path)
+    const isAnimationVideo = currentMedia.src.includes('7-animation') && currentMedia.isVideo;
+
     lightbox.classList.add('active');
 
-    // Clear previous content and create new media element
+    // Clear previous content and stop any playing video
     const existingMedia = lightboxImageWrapper.querySelector('img, video');
     if (existingMedia) {
+        // If it's a video, stop it before removing
+        if (existingMedia.tagName === 'VIDEO') {
+            existingMedia.pause();
+            existingMedia.currentTime = 0;
+        }
         existingMedia.remove();
     }
 
@@ -257,12 +376,27 @@ function openLightbox(index) {
         lightboxImageWrapper.insertBefore(img, lightboxDescription);
     }
 
-    lightboxDescription.textContent = currentMedia.description || currentMedia.alt;
+    // Hide description for animation videos, show for others
+    if (isAnimationVideo) {
+        lightboxDescription.style.display = 'none';
+    } else {
+        lightboxDescription.style.display = 'block';
+        lightboxDescription.textContent = currentMedia.description || currentMedia.alt;
+    }
+
     document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
+
+    // Stop any playing video
+    const video = lightbox.querySelector('video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
+
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
 }
@@ -385,11 +519,14 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
         allImages = allImages.concat(loadedImages);
     }
 
+    // Check if this is the animation project
+    const isAnimationProject = projectId === '7-animation';
+
     // Render sections
     sections.forEach(section => {
         const description = section.description || `Collection of ${section.title.toLowerCase()} designs and layouts showcasing creative work.`;
         const minImagesPerRow = (section.title === 'Elle' || section.title === 'Three Stories') ? 2 : 3;
-        html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow);
+        html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow, isAnimationProject);
     });
 
     projectImagesDiv.innerHTML = html;
