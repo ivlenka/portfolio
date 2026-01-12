@@ -155,9 +155,10 @@ html {
     aspect-ratio: 4/3;
     background-color: #2b2b2b;
     margin: 0 auto 8px auto;
-    transition: filter 0.3s ease-in-out;
-    overflow: hidden;
+    overflow: visible;
     filter: grayscale(100%);
+    position: relative;
+    transition: filter 0s;
 }
 
 .project-thumbnail img {
@@ -170,6 +171,11 @@ html {
 
 .project-item {
     position: relative;
+    overflow: visible;
+}
+
+.project-item:hover {
+    z-index: 10;
 }
 
 .project-item a:hover .project-thumbnail {
@@ -180,8 +186,8 @@ html {
     display: none;
     position: absolute;
     top: 50%;
-    left: 10px;
-    right: 10px;
+    left: calc(4% - 20px);
+    right: calc(4% - 20px);
     transform: translateY(-50%);
     font-size: 10.5px;
     letter-spacing: 0.5px;
