@@ -21,7 +21,7 @@
             requestAnimationFrame(() => {
                 // Now transition to the target scale
                 thumbnail.style.transition = 'filter 0s, transform 1.2s ease-out';
-                thumbnail.style.transform = 'scale(1.6)';
+                thumbnail.style.transform = 'scale(3.0)';
             });
         });
 
