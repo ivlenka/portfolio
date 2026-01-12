@@ -155,7 +155,7 @@ html {
     aspect-ratio: 4/3;
     background-color: #2b2b2b;
     margin: 0 auto 8px auto;
-    transition: opacity 0.2s;
+    transition: filter 0.3s ease-in-out;
     overflow: hidden;
     filter: grayscale(100%);
 }

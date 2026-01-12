@@ -36,7 +36,7 @@ const projects = {
         description: 'Collection of animated works including character animation, motion graphics, and experimental video projects exploring movement and storytelling.'
     },
     unsorted: {
-        category: 'UNSORTED',
+        category: 'DISPLAY',
         title: 'Mixed Work',
         description: 'Collection of various studies and experimental work including hand poses and character development.'
     }
