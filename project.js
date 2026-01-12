@@ -2,28 +2,28 @@
 const projects = {
     brands: {
         category: 'BRANDS',
-        title: 'Testarossa Winery',
-        description: 'Highlighted text groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted groovinghighlighted grooving highlighted groovinghighlighted grooving highlighted grooving highlighted grooving'
+        title: 'Brand Design',
+        description: 'Brand identity and design work featuring Testarossa Winery and Passion Embrace collections.'
     },
     magazines: {
         category: 'MAGAZINES',
         title: 'Magazine Design',
-        description: 'Editorial design work featuring magazine layouts, cover designs, and fashion photography for Elle Girl, Elle, and Cosmopolitan publications.'
+        description: 'Editorial design work featuring magazine layouts, cover designs, and fashion photography for Elle, Elle Girl, and Cosmopolitan publications.'
     },
     prints: {
         category: 'PRINTS',
-        title: 'Project Name',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Print Design',
+        description: 'Print design projects including greeting cards, editorial layouts, and publication designs.'
     },
     digital: {
         category: 'DIGITAL',
-        title: 'Project Name',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Digital Design',
+        description: 'Digital design work including email campaigns, web graphics, and digital marketing materials.'
     },
     logos: {
         category: 'LOGOS',
-        title: 'Project Name',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Logo Design',
+        description: 'Logo design and brand identity work for various clients including Linguamill and OST.'
     },
     illustration: {
         category: 'ILLUSTRATION',
@@ -37,8 +37,8 @@ const projects = {
     },
     unsorted: {
         category: 'UNSORTED',
-        title: 'Unsorted Project',
-        description: 'Add your project description here. Describe what the project is about, your role, and any interesting details about the work you did.'
+        title: 'Mixed Work',
+        description: 'Collection of various studies and experimental work including hand poses and character development.'
     }
 };
 
@@ -424,12 +424,45 @@ function loadProject() {
         document.getElementById('projectTitle').textContent = project.title;
         document.getElementById('projectDescription').textContent = project.description;
 
+        // Custom content for brands project - using dynamic loading
+        if (projectId === 'brands') {
+            renderDynamicGallery('1-brands', {
+                '1-testarossa': 'Testarossa Winery',
+                '2-passion-embrace': 'Passion Embrace'
+            });
+        }
+
         // Custom content for magazines project - using dynamic loading
         if (projectId === 'magazines') {
             renderDynamicGallery('2-magazines', {
                 '1-elle': 'Elle',
                 '2-ellegirl': 'Elle Girl',
-                '3-cosmo': 'Cosmopolitan'
+                '3-cosmo': 'Cosmopolitan',
+                '4-tech': 'Tech Magazine'
+            });
+        }
+
+        // Custom content for prints project - using dynamic loading
+        if (projectId === 'prints') {
+            renderDynamicGallery('3-print', {
+                '1-cards_cali': 'California Cards',
+                '4-zoomer': 'Zoomer Magazine'
+            });
+        }
+
+        // Custom content for digital project - using dynamic loading
+        if (projectId === 'digital') {
+            renderDynamicGallery('4-digital', {
+                '1-swin-email': 'Swinburne Email Campaign',
+                '3-elleicon': 'Elle Icon'
+            });
+        }
+
+        // Custom content for logos project - using dynamic loading
+        if (projectId === 'logos') {
+            renderDynamicGallery('5-logos', {
+                '1-linguamill': 'Linguamill',
+                '2-ost': 'OST'
             });
         }
 
@@ -439,7 +472,7 @@ function loadProject() {
                 '1-comic-general': 'General Comics',
                 '2-comic_zina-lyucia': 'Zina & Lyucia Comic',
                 '3-kids-books': 'Kids Books',
-                'character-design': 'Character Design'
+                '4-character-design': 'Character Design'
             });
         }
 
@@ -450,8 +483,15 @@ function loadProject() {
                 '2-dances': 'Character Animation',
                 '3-testarossa-winery': 'Testarossa Winery',
                 '4-leaky people': 'Leaky People',
-                '5-work-in-progress': 'Work in Progress',
-                '6-lake house': 'Lake House'
+                '5-work-in-progress': 'Work in Progress'
+            });
+        }
+
+        // Custom content for unsorted project - using dynamic loading
+        if (projectId === 'unsorted') {
+            renderDynamicGallery('8-unsorted', {
+                '1-hands': 'Hand Studies',
+                '2-comparsita': 'Comparsita'
             });
         }
     }
@@ -528,7 +568,12 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
     // Render sections
     sections.forEach(section => {
         const description = section.description || `Collection of ${section.title.toLowerCase()} designs and layouts showcasing creative work.`;
-        const minImagesPerRow = (section.title === 'Elle' || section.title === 'Three Stories') ? 2 : 3;
+        let minImagesPerRow = 3; // Default
+        if (section.title === 'Elle' || section.title === 'Three Stories') {
+            minImagesPerRow = 2;
+        } else if (section.title === 'Work in Progress') {
+            minImagesPerRow = 3;
+        }
         html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow, isAnimationProject);
     });
 

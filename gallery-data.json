@@ -2,9 +2,14 @@
   "projects": {
     "1-brands": {
       "sections": {
-        "main": {
+        "1-testarossa": {
           "images": [
-
+            "images/gallery/1-brands/1-testarossa/WineProfiles_2021_18PDO.jpg"
+          ]
+        },
+        "2-passion-embrace": {
+          "images": [
+            "images/gallery/1-brands/2-passion-embrace/PE_behance_tango2-2-cover.jpg"
           ]
         }
       }
@@ -84,27 +89,59 @@
     },
     "3-print": {
       "sections": {
-        "main": {
+        "1-cards_cali": {
           "images": [
-
+            "images/gallery/3-print/1-cards_cali/0dfa69f7-ae15-483b-bf7c-ba32d8b8e0a2_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/3089aa35-bdc5-475b-901e-5143e49cbbf1_rw_1920.jpg"
+          ]
+        },
+        "4-zoomer": {
+          "images": [
+            "images/gallery/3-print/4-zoomer/tatoo.png",
+            "images/gallery/3-print/4-zoomer/uor.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer2.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer210.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer211.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer212.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer213.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer214.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer22.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer23.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer24.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer25.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer26.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer27.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer28.jpg",
+            "images/gallery/3-print/4-zoomer/zoomer29.jpg"
           ]
         }
       }
     },
     "4-digital": {
       "sections": {
-        "main": {
+        "1-swin-email": {
           "images": [
-
+            "images/gallery/4-digital/1-swin-email/8391b4fc-38b8-4e3f-8839-1475367b4691_rw_1200.jpg",
+            "images/gallery/4-digital/1-swin-email/caa10bf8-395a-4502-93b1-49b78cab17b4_rw_1920.png"
+          ]
+        },
+        "3-elleicon": {
+          "images": [
+            "images/gallery/4-digital/3-elleicon/f0478846311553.584fc37478ad7.jpg"
           ]
         }
       }
     },
     "5-logos": {
       "sections": {
-        "main": {
+        "1-linguamill": {
           "images": [
-
+            "images/gallery/5-logos/1-linguamill/logo-cover.jpg"
+          ]
+        },
+        "2-ost": {
+          "images": [
+            "images/gallery/5-logos/2-ost/Logo_OST_2_big.jpg"
           ]
         }
       }
@@ -224,9 +261,16 @@
     },
     "8-unsorted": {
       "sections": {
-        "main": {
+        "1-hands": {
           "images": [
-
+            "images/gallery/8-unsorted/1-hands/okovtash_handPoses1.jpg",
+            "images/gallery/8-unsorted/1-hands/okovtash_handPoses2.jpg"
+          ]
+        },
+        "2-comparsita": {
+          "images": [
+            "images/gallery/8-unsorted/2-comparsita/IMG_9664.jpg",
+            "images/gallery/8-unsorted/2-comparsita/IMG_9674.jpg"
           ]
         }
       }
