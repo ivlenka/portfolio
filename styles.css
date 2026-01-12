@@ -190,9 +190,10 @@ html {
     right: calc(4% - 20px);
     transform: translateY(-50%);
     font-size: 10.5px;
+    font-weight: 600;
     letter-spacing: 0.5px;
     text-align: center;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     padding: 3px 0;
     margin: 0;

@@ -20,7 +20,7 @@
             // Wait for next frame to allow the browser to process the freeze
             requestAnimationFrame(() => {
                 // Now transition to the target scale
-                thumbnail.style.transition = 'filter 0s, transform 2.5s ease-out';
+                thumbnail.style.transition = 'filter 0s, transform 1.2s ease-out';
                 thumbnail.style.transform = 'scale(1.6)';
             });
         });
@@ -36,7 +36,7 @@
             // Wait for next frame
             requestAnimationFrame(() => {
                 // Transition back to scale(1)
-                thumbnail.style.transition = 'filter 0s, transform 2.5s ease-out';
+                thumbnail.style.transition = 'filter 0s, transform 1.2s ease-out';
                 thumbnail.style.transform = 'scale(1)';
 
                 // After transition completes, re-enable the animation
@@ -44,7 +44,7 @@
                     thumbnail.style.animation = '';
                     thumbnail.style.transform = '';
                     thumbnail.style.transition = '';
-                }, 2500);
+                }, 1200);
             });
         });
     });
