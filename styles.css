@@ -141,7 +141,7 @@ html {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 80px 7.5px;
 }
 
@@ -151,7 +151,7 @@ html {
 }
 
 .project-thumbnail {
-    width: 50%;
+    width: 57.5%;
     aspect-ratio: 4/3;
     background-color: #2b2b2b;
     margin: 0 auto 8px auto;
@@ -180,14 +180,15 @@ html {
     display: none;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 10px;
+    right: 10px;
+    transform: translateY(-50%);
     font-size: 10.5px;
     letter-spacing: 0.5px;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
-    padding: 4px 12px;
+    padding: 3px 0;
     margin: 0;
     white-space: nowrap;
 }
@@ -254,8 +255,72 @@ html {
     animation: scale-130 36s ease-in-out infinite;
 }
 
+.project-item:nth-child(9) .project-thumbnail {
+    animation: scale-125 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(10) .project-thumbnail {
+    animation: scale-130 36s ease-in-out infinite;
+}
+
+.project-item:nth-child(11) .project-thumbnail {
+    animation: scale-115 12s ease-in-out infinite;
+}
+
+.project-item:nth-child(12) .project-thumbnail {
+    animation: scale-120 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(13) .project-thumbnail {
+    animation: scale-110 36s ease-in-out infinite;
+}
+
+.project-item:nth-child(14) .project-thumbnail {
+    animation: scale-125 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(15) .project-thumbnail {
+    animation: scale-115 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(16) .project-thumbnail {
+    animation: scale-130 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(17) .project-thumbnail {
+    animation: scale-120 36s ease-in-out infinite;
+}
+
+.project-item:nth-child(18) .project-thumbnail {
+    animation: scale-130 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(19) .project-thumbnail {
+    animation: scale-125 24s ease-in-out infinite;
+}
+
+.project-item:nth-child(20) .project-thumbnail {
+    animation: scale-130 36s ease-in-out infinite;
+}
+
+.project-item:nth-child(21) .project-thumbnail {
+    animation: scale-115 24s ease-in-out infinite;
+}
+
 /* Responsive Design */
+@media (max-width: 1400px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
     }
