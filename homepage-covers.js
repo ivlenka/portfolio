@@ -15,12 +15,24 @@
     // Store all images for each project
     const projectImages = {};
 
-    // Get random image from array, excluding video files
-    function getRandomImage(images) {
-        const imageFiles = images.filter(img => {
+    // Get random image from array, including video thumbnails for animation
+    function getRandomImage(images, projectId) {
+        const imageFiles = [];
+
+        images.forEach(img => {
             const ext = img.toLowerCase().split('.').pop();
-            return ['jpg', 'jpeg', 'png', 'gif'].includes(ext);
+
+            // Include regular image files
+            if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
+                imageFiles.push(img);
+            }
+            // For animation project, convert video files to thumbnail paths
+            else if (projectId === 'animation' && ext === 'mp4') {
+                const thumbnailPath = img.replace('.mp4', '_thumb.jpg');
+                imageFiles.push(thumbnailPath);
+            }
         });
+
         if (imageFiles.length === 0) return null;
         return imageFiles[Math.floor(Math.random() * imageFiles.length)];
     }
@@ -30,7 +42,7 @@
         const images = projectImages[projectId];
         if (!images || images.length === 0) return;
 
-        const newImage = getRandomImage(images);
+        const newImage = getRandomImage(images, projectId);
         if (newImage) {
             // Fade out
             imgElement.style.opacity = '0';
