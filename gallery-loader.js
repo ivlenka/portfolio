@@ -35,6 +35,21 @@ function createImageObject(src, index, description) {
     };
 }
 
+function generateSectionTitle(sectionKey) {
+    // Remove number prefix (e.g., "1-", "2-")
+    let title = sectionKey.replace(/^\d+-/, '');
+
+    // Replace dashes and underscores with spaces
+    title = title.replace(/[-_]/g, ' ');
+
+    // Capitalize each word
+    title = title.split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+
+    return title;
+}
+
 async function loadProjectGallery(projectId, sectionTitles = {}) {
     const galleryData = await loadGalleryData();
 
@@ -47,9 +62,14 @@ async function loadProjectGallery(projectId, sectionTitles = {}) {
     const sections = [];
     let globalIndex = 0;
 
-    // Process each section
-    Object.entries(projectData.sections).forEach(([sectionKey, sectionData]) => {
-        const sectionTitle = sectionTitles[sectionKey] || sectionKey.charAt(0).toUpperCase() + sectionKey.slice(1);
+    // Get section entries and sort by key name (respects number prefixes like "1-", "2-")
+    const sortedSectionEntries = Object.entries(projectData.sections).sort((a, b) => {
+        return a[0].localeCompare(b[0], undefined, { numeric: true, sensitivity: 'base' });
+    });
+
+    // Process each section in sorted order
+    sortedSectionEntries.forEach(([sectionKey, sectionData]) => {
+        const sectionTitle = sectionTitles[sectionKey] || generateSectionTitle(sectionKey);
         const images = sectionData.images || [];
 
         const sectionImages = images.map((imagePath, localIndex) => {

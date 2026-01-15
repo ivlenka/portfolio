@@ -44,6 +44,21 @@
             "images/gallery/1-brands/2-passion-embrace/5_PE.jpg",
             "images/gallery/1-brands/2-passion-embrace/PE_behance_tango2-2-cover.jpg"
           ]
+        },
+        "3-pivotpoint": {
+          "images": [
+
+          ]
+        },
+        "4-springerschool": {
+          "images": [
+
+          ]
+        },
+        "5-happytowasteless": {
+          "images": [
+
+          ]
         }
       }
     },
@@ -181,38 +196,30 @@
     },
     "6-illustrations": {
       "sections": {
-        "1-comic-general": {
+        "1-character-design": {
           "images": [
-            "images/gallery/6-illustrations/1-comic-general/comic1.jpg",
-            "images/gallery/6-illustrations/1-comic-general/comic2.jpg",
-            "images/gallery/6-illustrations/1-comic-general/comic3.jpg",
-            "images/gallery/6-illustrations/1-comic-general/comic4.jpg",
-            "images/gallery/6-illustrations/1-comic-general/comic5.jpg"
+            "images/gallery/6-illustrations/1-character-design/0okovtash_style-variations.jpg",
+            "images/gallery/6-illustrations/1-character-design/0oMG_1411.JPG",
+            "images/gallery/6-illustrations/1-character-design/0pall-2IMG_1412.jpg",
+            "images/gallery/6-illustrations/1-character-design/2okovtash_silhouettes_details.jpg",
+            "images/gallery/6-illustrations/1-character-design/3aokovtash_ActionPoses2.jpg",
+            "images/gallery/6-illustrations/1-character-design/3character_girl1.jpg",
+            "images/gallery/6-illustrations/1-character-design/7friends.jpg",
+            "images/gallery/6-illustrations/1-character-design/8character-3.jpg",
+            "images/gallery/6-illustrations/1-character-design/9okovtash_character-designs1.jpg",
+            "images/gallery/6-illustrations/1-character-design/9pcharacter_girl2.jpg",
+            "images/gallery/6-illustrations/1-character-design/9qokovtash_facialExpressions.JPG",
+            "images/gallery/6-illustrations/1-character-design/9rokovtash_ActionPoses1.jpg",
+            "images/gallery/6-illustrations/1-character-design/9sokovtash_characterTurnaround.JPG"
           ]
         },
-        "2-comic_zina-lyucia": {
+        "2-comic-general": {
           "images": [
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/12-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/13-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/14-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/17-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/17-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/18-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/19-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/21-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/32-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/40-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/41-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/42-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/50-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/60-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/61-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/62-gor.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/63-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/80-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/81-vert.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/90-comic_first1.jpg",
-            "images/gallery/6-illustrations/2-comic_zina-lyucia/90-comic_first2.jpg"
+            "images/gallery/6-illustrations/2-comic-general/comic1.jpg",
+            "images/gallery/6-illustrations/2-comic-general/comic2.jpg",
+            "images/gallery/6-illustrations/2-comic-general/comic3.jpg",
+            "images/gallery/6-illustrations/2-comic-general/comic4.jpg",
+            "images/gallery/6-illustrations/2-comic-general/comic5.jpg"
           ]
         },
         "3-kids-books": {
@@ -227,21 +234,29 @@
             "images/gallery/6-illustrations/3-kids-books/7IMG_7710.JPG"
           ]
         },
-        "4-character-design": {
+        "4-comic_zina-lyucia": {
           "images": [
-            "images/gallery/6-illustrations/4-character-design/0okovtash_style-variations.jpg",
-            "images/gallery/6-illustrations/4-character-design/0oMG_1411.JPG",
-            "images/gallery/6-illustrations/4-character-design/0pall-2IMG_1412.jpg",
-            "images/gallery/6-illustrations/4-character-design/2okovtash_silhouettes_details.jpg",
-            "images/gallery/6-illustrations/4-character-design/3aokovtash_ActionPoses2.jpg",
-            "images/gallery/6-illustrations/4-character-design/3character_girl1.jpg",
-            "images/gallery/6-illustrations/4-character-design/7friends.jpg",
-            "images/gallery/6-illustrations/4-character-design/8character-3.jpg",
-            "images/gallery/6-illustrations/4-character-design/9okovtash_character-designs1.jpg",
-            "images/gallery/6-illustrations/4-character-design/9pcharacter_girl2.jpg",
-            "images/gallery/6-illustrations/4-character-design/9qokovtash_facialExpressions.JPG",
-            "images/gallery/6-illustrations/4-character-design/9rokovtash_ActionPoses1.jpg",
-            "images/gallery/6-illustrations/4-character-design/9sokovtash_characterTurnaround.JPG"
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/12-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/13-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/14-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/17-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/17-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/18-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/19-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/21-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/32-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/40-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/41-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/42-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/50-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/60-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/61-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/62-gor.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/63-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/80-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/81-vert.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/90-comic_first1.jpg",
+            "images/gallery/6-illustrations/4-comic_zina-lyucia/90-comic_first2.jpg"
           ]
         }
       }
