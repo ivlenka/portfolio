@@ -96,7 +96,7 @@ function normalizeRow(row, containerWidth, targetRowHeight, gap) {
     }));
 }
 
-function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProject = false) {
+function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProject = false, sectionOptions = {}) {
     const visibleRows = 3;
     let html = '<div class="bin-packed-layout">';
 
@@ -106,19 +106,26 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
         html += `<div class="bin-packed-row${hiddenClass}" style="margin-bottom: ${gap}px;" data-section="${sectionId}">`;
         row.forEach((img, imgIndex) => {
             let mediaElement;
-            const animationClass = isAnimationProject ? ' animation-video' : '';
+
+            // Check if this is a Pivot Point video (blue or pink)
+            const isPivotPointVideo = img.src.includes('3-pivotpoint') &&
+                                     (img.src.includes('5-PP-sm_blue.mp4') ||
+                                      img.src.includes('8a-PP-sm_pink2.mp4'));
+
+            const animationClass = isAnimationProject || isPivotPointVideo ? ' animation-video' : '';
+            const autoplayAttr = isPivotPointVideo ? ' autoplay' : '';
 
             if (img.isVideo) {
                 // Generate thumbnail path (video_name_thumb.jpg)
                 const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const posterPath = `${videoPath}_thumb.jpg`;
-                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline data-has-audio="false"></video>`;
+                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false"></video>`;
             } else {
                 mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
             }
 
-            const overlayHtml = isAnimationProject && img.isVideo
-                ? '' // No overlay for animation videos
+            const overlayHtml = (isAnimationProject || isPivotPointVideo) && img.isVideo
+                ? '' // No overlay for animation-style videos
                 : `<div class="gallery-image-overlay">
                     <div class="gallery-image-description">${img.description || img.alt}</div>
                 </div>`;
@@ -132,7 +139,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
             // Exclude Testarossa section from sound buttons
             const isTestarossaVideo = img.src.includes('testarossa-winery');
 
-            const soundButtonHtml = isAnimationProject && img.isVideo && !isTestarossaVideo
+            const soundButtonHtml = (isAnimationProject || isPivotPointVideo) && img.isVideo && !isTestarossaVideo
                 ? `<button class="sound-toggle-btn${invertedClass}" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M11 5L6 9H2v6h4l5 4V5z"/>
@@ -163,7 +170,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
     return html;
 }
 
-function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3, isAnimationProject = false) {
+function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3, isAnimationProject = false, sectionOptions = {}) {
     const rows = createBinPackedLayout(images, containerWidth, 300, 10, minImagesPerRow);
     let html = `<div class="gallery-section">`;
     if (title) {
@@ -172,7 +179,7 @@ function renderGallerySection(title, description, images, containerWidth, sectio
     if (description) {
         html += `<p class="project-description">${description}</p>`;
     }
-    html += renderBinPackedLayout(rows, 10, sectionId, isAnimationProject);
+    html += renderBinPackedLayout(rows, 10, sectionId, isAnimationProject, sectionOptions);
     html += `</div>`;
     return html;
 }
@@ -255,8 +262,13 @@ function initLightbox(images) {
 
             // Hover behavior for animation videos
             if (isAnimationVideo) {
+                const hasAutoplay = video.hasAttribute('autoplay');
+
                 wrapper.addEventListener('mouseenter', () => {
-                    video.play();
+                    // Only start playing if not autoplay (autoplay videos are already playing)
+                    if (!hasAutoplay) {
+                        video.play();
+                    }
 
                     // If audio check not done yet, do it now
                     if (!audioCheckDone) {
@@ -269,7 +281,10 @@ function initLightbox(images) {
                     }
                 });
                 wrapper.addEventListener('mouseleave', () => {
-                    video.pause();
+                    // Only pause if not autoplay (autoplay videos should keep playing)
+                    if (!hasAutoplay) {
+                        video.pause();
+                    }
                     if (soundBtn) {
                         soundBtn.style.display = 'none';
                     }
@@ -283,6 +298,16 @@ function initLightbox(images) {
                         video.muted = !isMuted;
                         this.setAttribute('data-muted', !isMuted);
                     });
+                }
+
+                // For autoplay videos, check audio immediately and show button if has audio
+                if (hasAutoplay) {
+                    video.addEventListener('loadedmetadata', function checkAutoplayAudio() {
+                        checkVideoAudio();
+                        if (video.getAttribute('data-has-audio') === 'true' && soundBtn) {
+                            soundBtn.style.display = 'flex';
+                        }
+                    }, { once: true });
                 }
             } else {
                 // Regular hover play/pause for non-animation videos
@@ -428,7 +453,8 @@ function loadProject() {
         if (projectId === 'brands') {
             renderDynamicGallery('1-brands', {
                 '1-testarossa': 'Testarossa Winery',
-                '2-passion-embrace': 'Passion Embrace'
+                '2-passion-embrace': 'Passion Embrace',
+                '3-pivotpoint': 'Pivot Point'
             });
         }
 
@@ -515,7 +541,7 @@ async function loadDynamicProject(projectId, sectionTitles) {
 }
 
 // Helper to render dynamic gallery sections
-async function renderDynamicGallery(projectId, sectionTitles = {}) {
+async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOptionsMap = {}) {
     const projectImagesDiv = document.querySelector('.project-images');
     const sections = await loadDynamicProject(projectId, sectionTitles);
 
@@ -574,7 +600,12 @@ async function renderDynamicGallery(projectId, sectionTitles = {}) {
         } else if (section.title === 'Work in Progress') {
             minImagesPerRow = 3;
         }
-        html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow, isAnimationProject);
+
+        // Get section-specific options from the map (keyed by section key like '3-pivotpoint')
+        const sectionKey = Object.keys(sectionTitles).find(key => sectionTitles[key] === section.title) || '';
+        const sectionOptions = sectionOptionsMap[sectionKey] || {};
+
+        html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow, isAnimationProject, sectionOptions);
     });
 
     projectImagesDiv.innerHTML = html;
