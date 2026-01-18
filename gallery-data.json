@@ -51,7 +51,7 @@
             "images/gallery/1-brands/3-pivotpoint/2-PP_posters5.jpg",
             "images/gallery/1-brands/3-pivotpoint/3-IMG_3597.jpg",
             "images/gallery/1-brands/3-pivotpoint/3-print_t-shirt_PP_3_image.jpg",
-            "images/gallery/1-brands/3-pivotpoint/4-IMG_019.jpg",
+            "images/gallery/1-brands/3-pivotpoint/4a-blue-t.jpg",
             "images/gallery/1-brands/3-pivotpoint/5-PP-sm_blue.mp4",
             "images/gallery/1-brands/3-pivotpoint/6-PP_posters3_new.jpg",
             "images/gallery/1-brands/3-pivotpoint/7-IMG_3595.jpg",
@@ -61,7 +61,7 @@
             "images/gallery/1-brands/3-pivotpoint/8-Screenshot 2026-01-15 at 2.48.29 PM.png",
             "images/gallery/1-brands/3-pivotpoint/8-yellow_PP.jpg",
             "images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2.mp4",
-            "images/gallery/1-brands/3-pivotpoint/8b-preview_t-shirt_PP_5.jpg",
+            "images/gallery/1-brands/3-pivotpoint/8b-pink_t.jpg",
             "images/gallery/1-brands/3-pivotpoint/8c-aprdview_t-shirt_PP_5.jpg",
             "images/gallery/1-brands/3-pivotpoint/9-print_t-shirt_PP_5_image.jpg",
             "images/gallery/1-brands/3-pivotpoint/9B-PP_posters4.jpg",
@@ -232,14 +232,70 @@
     },
     "5-logos": {
       "sections": {
-        "1-linguamill": {
+        "1-OST": {
           "images": [
-            "images/gallery/5-logos/1-linguamill/logo-cover.jpg"
+            "images/gallery/5-logos/1-OST/1-Logo_OST_2_big.jpg",
+            "images/gallery/5-logos/1-OST/1a-7-ost.jpg",
+            "images/gallery/5-logos/1-OST/1b-ost.jpg",
+            "images/gallery/5-logos/1-OST/1c-Untitled_Artwork 2.mp4",
+            "images/gallery/5-logos/1-OST/2-ost.jpg",
+            "images/gallery/5-logos/1-OST/3-ost.jpg",
+            "images/gallery/5-logos/1-OST/4-ost.jpg",
+            "images/gallery/5-logos/1-OST/5-ost.jpg",
+            "images/gallery/5-logos/1-OST/6-ost.jpg",
+            "images/gallery/5-logos/1-OST/7-Logo_OST_1_big.jpg"
           ]
         },
-        "2-ost": {
+        "2-L": {
           "images": [
-            "images/gallery/5-logos/2-ost/Logo_OST_2_big.jpg"
+            "images/gallery/5-logos/2-L/0-Untitled_Artwork-2 1.jpg",
+            "images/gallery/5-logos/2-L/1-Untitled-1.jpg",
+            "images/gallery/5-logos/2-L/1a-Untitled-1.jpg",
+            "images/gallery/5-logos/2-L/1ab-Logos-1.jpg",
+            "images/gallery/5-logos/2-L/1b-Logos-1.jpg",
+            "images/gallery/5-logos/2-L/1c-cUntitled_Artwork 1.jpg",
+            "images/gallery/5-logos/2-L/2-Untitled-1.jpg",
+            "images/gallery/5-logos/2-L/2a-Untitled-1.jpg",
+            "images/gallery/5-logos/2-L/2b--Logos-1.jpg",
+            "images/gallery/5-logos/2-L/2c--Logos-1.jpg"
+          ]
+        },
+        "3-Zoloti-maky": {
+          "images": [
+            "images/gallery/5-logos/3-Zoloti-maky/0aa21fb4-4214-48b7-a60a-4976127d4604.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/1-ZM_logo_black-bckg.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/1a-zm-web.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/2a-zm-web.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/4-b276906-121e-40ea-886c-186ebd0823e1.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/5-T-Shirt_ZM.JPG",
+            "images/gallery/5-logos/3-Zoloti-maky/5a-IMG_5600.JPG",
+            "images/gallery/5-logos/3-Zoloti-maky/5b-IMG_3745.PNG",
+            "images/gallery/5-logos/3-Zoloti-maky/5c--vinok2-ezgif.com-video-to-gif-converter copy.gif",
+            "images/gallery/5-logos/3-Zoloti-maky/6--IMG_3747.PNG",
+            "images/gallery/5-logos/3-Zoloti-maky/7-img_0136.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/7-img_6961.jpg"
+          ]
+        },
+        "4-NEN": {
+          "images": [
+            "images/gallery/5-logos/4-NEN/1-2cb3f646318573.584ffcfdca206.jpg",
+            "images/gallery/5-logos/4-NEN/1-nen_logo_new.jpg",
+            "images/gallery/5-logos/4-NEN/2-e9bffb46318573.58503ca61ae24.jpg",
+            "images/gallery/5-logos/4-NEN/2-nen.jpg",
+            "images/gallery/5-logos/4-NEN/2a-460a4f46318573.584ffcfdcae9b.jpg",
+            "images/gallery/5-logos/4-NEN/3-0f53f446318573.584ffcfdcb472.jpg",
+            "images/gallery/5-logos/4-NEN/4-84add846318573.584ffcfdcbb8c.jpg",
+            "images/gallery/5-logos/4-NEN/5-5696af46318573.584ffcfdca935.jpg"
+          ]
+        },
+        "5-Miele": {
+          "images": [
+            "images/gallery/5-logos/5-Miele/1-logo_miele.jpg",
+            "images/gallery/5-logos/5-Miele/2-apron_logo_miele.jpg",
+            "images/gallery/5-logos/5-Miele/3-miele_viveska.jpg",
+            "images/gallery/5-logos/5-Miele/4-cakes_miele.jpg",
+            "images/gallery/5-logos/5-Miele/5-miele_cups.jpg",
+            "images/gallery/5-logos/5-Miele/6-vizitki_miele.jpg"
           ]
         }
       }
