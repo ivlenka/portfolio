@@ -172,7 +172,9 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
 }
 
 function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3, isAnimationProject = false, sectionOptions = {}) {
-    const rows = createBinPackedLayout(images, containerWidth, 300, 10, minImagesPerRow);
+    // Use custom row height for specific sections
+    const targetRowHeight = sectionOptions.targetRowHeight || 300;
+    const rows = createBinPackedLayout(images, containerWidth, targetRowHeight, 10, minImagesPerRow);
     let html = `<div class="gallery-section">`;
     if (title) {
         html += `<h2 class="project-title">${title}</h2>`;
@@ -515,7 +517,11 @@ function loadProject() {
                 '1-character-design': 'Character Design',
                 '2-comic-general': 'General Comics',
                 '3-kids-books': 'Kids Books',
-                '4-comic_zina-lyucia': 'Zina & Lyucia Comic'
+                '4-human': 'Human',
+                '5-tryzub': 'Tryzub',
+                '6-comic_zina-lyucia': 'Zina & Lyucia Comic',
+                '7-food': 'Food',
+                '8-sketchbook': 'Sketchbook'
             });
         }
 
@@ -616,11 +622,18 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
             minImagesPerRow = 2;
         } else if (section.title === 'Work in Progress') {
             minImagesPerRow = 3;
+        } else if (section.title === 'Food') {
+            minImagesPerRow = 8;
         }
 
         // Get section-specific options from the map (keyed by section key like '3-pivotpoint')
         const sectionKey = Object.keys(sectionTitles).find(key => sectionTitles[key] === section.title) || '';
-        const sectionOptions = sectionOptionsMap[sectionKey] || {};
+        let sectionOptions = sectionOptionsMap[sectionKey] || {};
+
+        // Set smaller row height for food section to fit 7-8 images per row
+        if (section.title === 'Food') {
+            sectionOptions = { ...sectionOptions, targetRowHeight: 120 };
+        }
 
         html += renderGallerySection(section.title, description, section.images, containerWidth, section.sectionId, minImagesPerRow, isAnimationProject, sectionOptions);
     });
