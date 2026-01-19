@@ -519,8 +519,8 @@ function loadProject() {
                 '3-kids-books': 'Kids Books',
                 '4-human': 'Human',
                 '5-tryzub': 'Tryzub',
-                '6-comic_zina-lyucia': 'Zina & Lyucia Comic',
                 '7-food': 'Food',
+                '7a-comic_zina-lyucia': 'Zina & Lyucia Comic',
                 '8-sketchbook': 'Sketchbook'
             });
         }

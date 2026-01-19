@@ -181,7 +181,15 @@
         },
         "4-tech": {
           "images": [
-
+            "images/gallery/2-magazines/4-tech/1-9ef16446319947.5850068f9420e.jpg",
+            "images/gallery/2-magazines/4-tech/1a-6cb7a1e5-83ee-449f-b972-20bb6764b174_rw_1920.jpg",
+            "images/gallery/2-magazines/4-tech/1b-8b7a9350-572f-4f09-b389-9bfc25377426_rw_1920.jpg",
+            "images/gallery/2-magazines/4-tech/1c-4bbd554a-51b0-4479-99b0-5bee76279a4d_rw_1920.jpg",
+            "images/gallery/2-magazines/4-tech/2-061c5546319947.5850068f9488f.jpg",
+            "images/gallery/2-magazines/4-tech/2a-72b75e56-b15e-401e-8295-b28c1eecd1f5_rw_1920.jpg",
+            "images/gallery/2-magazines/4-tech/3-08629f46319947.5850068f94fa8.jpg",
+            "images/gallery/2-magazines/4-tech/5-dc0dd0dd-2a75-4308-975b-f483bb5e8666_rw_1920.jpg",
+            "images/gallery/2-magazines/4-tech/6-ffdf57e7-1308-42d0-a627-d3c29aee7642_rw_1920.jpg"
           ]
         }
       }
@@ -482,31 +490,6 @@
             "images/gallery/6-illustrations/5-tryzub/5a-IMG_3585.jpg"
           ]
         },
-        "6-comic_zina-lyucia": {
-          "images": [
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/12-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/13-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/14-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/17-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/17-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/18-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/19-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/21-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/32-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/40-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/41-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/42-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/50-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/60-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/61-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/62-gor.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/63-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/80-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/81-vert.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/90-comic_first1.jpg",
-            "images/gallery/6-illustrations/6-comic_zina-lyucia/90-comic_first2.jpg"
-          ]
-        },
         "7-food": {
           "images": [
             "images/gallery/6-illustrations/7-food/2-Untitled_Artwork-1.png",
@@ -568,6 +551,31 @@
             "images/gallery/6-illustrations/7-food/Untitled_Artwork-6.png",
             "images/gallery/6-illustrations/7-food/Untitled_Artwork-7.png",
             "images/gallery/6-illustrations/7-food/Untitled_Artwork-8.png"
+          ]
+        },
+        "7a-comic_zina-lyucia": {
+          "images": [
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/12-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/13-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/14-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/17-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/17-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/18-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/19-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/21-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/32-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/40-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/41-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/42-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/50-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/60-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/61-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/62-gor.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/63-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/80-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/81-vert.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/90-comic_first1.jpg",
+            "images/gallery/6-illustrations/7a-comic_zina-lyucia/90-comic_first2.jpg"
           ]
         },
         "8-sketchbook": {
