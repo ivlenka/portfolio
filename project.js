@@ -116,13 +116,19 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
             const animationClass = isAnimationProject || isPivotPointVideo || isOSTVideo ? ' animation-video' : '';
             const autoplayAttr = isPivotPointVideo || isOSTVideo ? ' autoplay' : '';
 
+            // Check if this is the specific Springer School image to scale down on webpage
+            const isSpringerWebScaled = img.src.includes('2-8Springer_merch_cool_L.jpg');
+            const webScaleFactor = isSpringerWebScaled ? 0.8 : 1;
+            const scaledWidth = img.width * webScaleFactor;
+            const scaledHeight = img.height * webScaleFactor;
+
             if (img.isVideo) {
                 // Generate thumbnail path (video_name_thumb.jpg)
                 const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const posterPath = `${videoPath}_thumb.jpg`;
-                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false"></video>`;
+                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${scaledWidth}px; height: ${scaledHeight}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false"></video>`;
             } else {
-                mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
+                mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${scaledWidth}px; height: ${scaledHeight}px; object-fit: cover; display: block;">`;
             }
 
             const overlayHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo) && img.isVideo
@@ -408,10 +414,21 @@ function openLightbox(index) {
         // Check if this is from the prints gallery (3-print in the path)
         const isPrintsGallery = currentMedia.src.includes('3-print');
 
+        // Check if this is one of the specific Springer School images to scale down in lightbox
+        const isSpringerScaledImage = currentMedia.src.includes('2-8Springer_merch_cool_L.jpg') ||
+                                      currentMedia.src.includes('6-BEE_tee_logo_PRINT4.jpg');
+
         if (isPrintsGallery) {
             // For prints gallery, don't upscale - show at original size or smaller
             img.style.maxWidth = '100%';
             img.style.maxHeight = '90vh';
+            img.style.width = 'auto';
+            img.style.height = 'auto';
+            img.style.objectFit = 'contain';
+        } else if (isSpringerScaledImage) {
+            // For specific Springer School images, show at 50% size in lightbox
+            img.style.maxWidth = '50%';
+            img.style.maxHeight = '45vh';
             img.style.width = 'auto';
             img.style.height = 'auto';
             img.style.objectFit = 'contain';
