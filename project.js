@@ -402,6 +402,19 @@ function openLightbox(index) {
         img.src = currentMedia.src;
         img.alt = currentMedia.alt;
         img.id = 'lightboxImage';
+
+        // Check if this is from the prints gallery (3-print in the path)
+        const isPrintsGallery = currentMedia.src.includes('3-print');
+
+        if (isPrintsGallery) {
+            // For prints gallery, don't upscale - show at original size or smaller
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '90vh';
+            img.style.width = 'auto';
+            img.style.height = 'auto';
+            img.style.objectFit = 'contain';
+        }
+
         lightboxImageWrapper.insertBefore(img, lightboxDescription);
     }
 

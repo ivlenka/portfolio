@@ -71,12 +71,13 @@
         },
         "4-happytowasteless": {
           "images": [
+            "images/gallery/1-brands/4-happytowasteless/1ba-add-IMG_3731-2.jpg",
             "images/gallery/1-brands/4-happytowasteless/1Bread_dr_1.jpg",
-            "images/gallery/1-brands/4-happytowasteless/2-IMG_3093.JPG",
-            "images/gallery/1-brands/4-happytowasteless/2a-IMG_3100.JPG",
+            "images/gallery/1-brands/4-happytowasteless/1c_add_IMG_3735-2.jpg",
             "images/gallery/1-brands/4-happytowasteless/3-8,5X11_Bread_v5-1_front.jpg",
             "images/gallery/1-brands/4-happytowasteless/4-8,5X11_Bread_v5-2_back.jpg",
-            "images/gallery/1-brands/4-happytowasteless/6-IMG_3102.JPG",
+            "images/gallery/1-brands/4-happytowasteless/6-IMG_3102.JPG.jpg",
+            "images/gallery/1-brands/4-happytowasteless/7-add_IMG_3733-2.jpg",
             "images/gallery/1-brands/4-happytowasteless/8-IMG_3094.JPG",
             "images/gallery/1-brands/4-happytowasteless/8a-IMG_1960.PNG",
             "images/gallery/1-brands/4-happytowasteless/8b-IMG_3097.JPG",
@@ -187,30 +188,123 @@
     },
     "3-print": {
       "sections": {
+        "0-labels": {
+          "images": [
+            "images/gallery/3-print/0-labels/0-hale.jpg",
+            "images/gallery/3-print/0-labels/1-hale.jpg",
+            "images/gallery/3-print/0-labels/1a-hale.jpg",
+            "images/gallery/3-print/0-labels/1c-hale.jpg",
+            "images/gallery/3-print/0-labels/2a-lepapilon.jpg",
+            "images/gallery/3-print/0-labels/2b-lepapilon.jpg",
+            "images/gallery/3-print/0-labels/2ba--lepapilon.jpg",
+            "images/gallery/3-print/0-labels/2c-lepapillon.jpg",
+            "images/gallery/3-print/0-labels/2d-20t.jpg",
+            "images/gallery/3-print/0-labels/3-20t.jpg",
+            "images/gallery/3-print/0-labels/3b-20t.jpg",
+            "images/gallery/3-print/0-labels/3d-20t.jpg"
+          ]
+        },
         "1-cards_cali": {
           "images": [
-            "images/gallery/3-print/1-cards_cali/0dfa69f7-ae15-483b-bf7c-ba32d8b8e0a2_rw_1920.jpg",
-            "images/gallery/3-print/1-cards_cali/3089aa35-bdc5-475b-901e-5143e49cbbf1_rw_1920.jpg"
+            "images/gallery/3-print/1-cards_cali/0-77ced741-e43f-469b-91e6-3c7f489f56e0_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/0a-card_sketches_r8.jpg",
+            "images/gallery/3-print/1-cards_cali/1-3089aa35-bdc5-475b-901e-5143e49cbbf1_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/1c587c96-da2d-4cbf-815e-991f599218a4_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/1d-card_sketches_r11.jpg",
+            "images/gallery/3-print/1-cards_cali/1f-card_sketches_r1_front.jpg",
+            "images/gallery/3-print/1-cards_cali/2ab-card_sketches_r9.jpg",
+            "images/gallery/3-print/1-cards_cali/2b-dfa69f7-ae15-483b-bf7c-ba32d8b8e0a2_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/2c-card_sketches_r3.jpg",
+            "images/gallery/3-print/1-cards_cali/3-e88b2725-1970-46c9-ae2f-0ea92ebd1286_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/4-card_sticker.png",
+            "images/gallery/3-print/1-cards_cali/6a-card_sketches_r6_new.jpg",
+            "images/gallery/3-print/1-cards_cali/7-5e7eee39-3619-42f4-9e3b-37cb80965e25_rw_1920.jpg",
+            "images/gallery/3-print/1-cards_cali/8-card_sketches_r4.jpg",
+            "images/gallery/3-print/1-cards_cali/9-card_sketches_r7.jpg"
+          ]
+        },
+        "2-cards-odesa": {
+          "images": [
+            "images/gallery/3-print/2-cards-odesa/0-IMG_3288 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/1-IMG_3293 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/1a-cards_odessa3.jpg",
+            "images/gallery/3-print/2-cards-odesa/2-cards_odessa_sticker.jpg",
+            "images/gallery/3-print/2-cards-odesa/3--cards_odessa5.jpg",
+            "images/gallery/3-print/2-cards-odesa/3a-IMG_3317 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/3b-cards_odessa.jpg",
+            "images/gallery/3-print/2-cards-odesa/4a-IMG_3316 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/5-cards_odessa4.jpg",
+            "images/gallery/3-print/2-cards-odesa/6-cards_odessa11.jpg",
+            "images/gallery/3-print/2-cards-odesa/6a-IMG_3306 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/7-cards_odessa9.jpg7-.jpg",
+            "images/gallery/3-print/2-cards-odesa/8-cards_odessa10.jpg",
+            "images/gallery/3-print/2-cards-odesa/9-IMG_3314 2.JPG",
+            "images/gallery/3-print/2-cards-odesa/9a-cards_odessa12.jpg"
+          ]
+        },
+        "3-cards-italy": {
+          "images": [
+            "images/gallery/3-print/3-cards-italy/0-IMG_3687-2.jpg",
+            "images/gallery/3-print/3-cards-italy/0a-Italy_cards_print_03.jpg",
+            "images/gallery/3-print/3-cards-italy/1-IMG_3693-2.jpg",
+            "images/gallery/3-print/3-cards-italy/2-IMG_3713-2.jpg",
+            "images/gallery/3-print/3-cards-italy/3-IMG_3708-2.jpg",
+            "images/gallery/3-print/3-cards-italy/3a-Italy_cards_print_01.jpg",
+            "images/gallery/3-print/3-cards-italy/4-Italy_cards_print_08.jpg",
+            "images/gallery/3-print/3-cards-italy/5-IMG_3683-2.jpg",
+            "images/gallery/3-print/3-cards-italy/5a-IMG_3702-2.jpg",
+            "images/gallery/3-print/3-cards-italy/6-IMG_3697-2.jpg",
+            "images/gallery/3-print/3-cards-italy/7-IMG_3718-2.jpg",
+            "images/gallery/3-print/3-cards-italy/8-IMG_3707-2.jpg",
+            "images/gallery/3-print/3-cards-italy/9-Italy_cards_print_07.jpg",
+            "images/gallery/3-print/3-cards-italy/9a-IMG_3679-2.jpg",
+            "images/gallery/3-print/3-cards-italy/9b-IMG_3729-2.jpg",
+            "images/gallery/3-print/3-cards-italy/9c-Italy_cards_print_09.jpg",
+            "images/gallery/3-print/3-cards-italy/9d-IMG_3688-2.jpg",
+            "images/gallery/3-print/3-cards-italy/9f-Italy_cards_print_12_13.jpg",
+            "images/gallery/3-print/3-cards-italy/9g-IMG_3691-2.jpg",
+            "images/gallery/3-print/3-cards-italy/9t-Italy_cards_print_12_14.jpg"
           ]
         },
         "4-zoomer": {
           "images": [
-            "images/gallery/3-print/4-zoomer/tatoo.png",
-            "images/gallery/3-print/4-zoomer/uor.jpg",
+            "images/gallery/3-print/4-zoomer/1-zoomer26.jpg",
+            "images/gallery/3-print/4-zoomer/1-zoomer27.jpg",
+            "images/gallery/3-print/4-zoomer/2-zoomer24.jpg",
+            "images/gallery/3-print/4-zoomer/2-zoomer25.jpg",
+            "images/gallery/3-print/4-zoomer/3-zoomer28.jpg",
+            "images/gallery/3-print/4-zoomer/4-zoomer29.jpg",
+            "images/gallery/3-print/4-zoomer/4a-zoomer210.jpg",
+            "images/gallery/3-print/4-zoomer/4b-zoomer212.jpg",
+            "images/gallery/3-print/4-zoomer/5-zoomer211.jpg",
+            "images/gallery/3-print/4-zoomer/7-tatoo.png",
+            "images/gallery/3-print/4-zoomer/7-zoomer213.jpg",
             "images/gallery/3-print/4-zoomer/zoomer2.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer210.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer211.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer212.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer213.jpg",
             "images/gallery/3-print/4-zoomer/zoomer214.jpg",
             "images/gallery/3-print/4-zoomer/zoomer22.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer23.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer24.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer25.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer26.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer27.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer28.jpg",
-            "images/gallery/3-print/4-zoomer/zoomer29.jpg"
+            "images/gallery/3-print/4-zoomer/zoomer23.jpg"
+          ]
+        },
+        "5-vizitki": {
+          "images": [
+            "images/gallery/3-print/5-vizitki/1-card.jpg",
+            "images/gallery/3-print/5-vizitki/2-1-vizitki_85_back.jpg",
+            "images/gallery/3-print/5-vizitki/2b-pix-IMG_1365.jpg",
+            "images/gallery/3-print/5-vizitki/3-pix-frames_plus-2.jpg",
+            "images/gallery/3-print/5-vizitki/3a-IMG_3676-2.jpg",
+            "images/gallery/3-print/5-vizitki/3b-7-viz.jpg",
+            "images/gallery/3-print/5-vizitki/3bc-5-viz.jpg",
+            "images/gallery/3-print/5-vizitki/3bc-pix.jpg",
+            "images/gallery/3-print/5-vizitki/3c-vizitki_85_back.jpg",
+            "images/gallery/3-print/5-vizitki/3pix.jpg",
+            "images/gallery/3-print/5-vizitki/3r--viz.jpg",
+            "images/gallery/3-print/5-vizitki/4a-6-viz.jpg",
+            "images/gallery/3-print/5-vizitki/5-vizitki_85_back.jpg",
+            "images/gallery/3-print/5-vizitki/5a-pix.jpg",
+            "images/gallery/3-print/5-vizitki/5a-viz.jpg",
+            "images/gallery/3-print/5-vizitki/6pix.jpg",
+            "images/gallery/3-print/5-vizitki/9a-viz.jpg",
+            "images/gallery/3-print/5-vizitki/9b-IMG_1363.jpg"
           ]
         }
       }
