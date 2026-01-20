@@ -358,6 +358,18 @@ function initLightbox(images) {
             this.parentElement.style.display = 'none';
         });
     });
+
+    // Start all autoplay videos immediately
+    document.querySelectorAll('video[autoplay]').forEach(video => {
+        // Use play() with promise handling for browser compatibility
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Auto-play was prevented, video will play on user interaction
+                console.log('Autoplay prevented for:', video.src, error);
+            });
+        }
+    });
 }
 
 function openLightbox(index) {
