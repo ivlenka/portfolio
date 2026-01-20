@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLENA KOVTASH - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo5.png" alt="Logo" class="logo">
+                </a>
+                <h1 class="name">OLENA KOVTASH</h1>
+                <nav class="top-nav">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="projects-menu">
+                <h2>PROJECTS</h2>
+                <nav class="project-links">
+                    <a href="project.html?id=brands">Brands</a>
+                    <a href="project.html?id=magazines">Magazines</a>
+                    <a href="project.html?id=prints">Prints</a>
+                    <a href="project.html?id=digital">Digital</a>
+                    <a href="project.html?id=logos">Logos</a>
+                    <a href="project.html?id=illustration">Illustration</a>
+                    <a href="project.html?id=animation">Animation</a>
+                    <a href="project.html?id=unsorted">Display</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="project-grid">
+                <div class="project-item">
+                    <a href="project.html?id=brands">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/1-brands/1-testarossa/WineProfiles_2021_18PDO.jpg" alt="Brands">
+                        </div>
+                        <p class="project-label">BRANDS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=magazines">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/2-magazines/1-elle/elle1.jpg" alt="Magazines">
+                        </div>
+                        <p class="project-label">MAGAZINES</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=prints">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/3-print/1-cards_cali/0-77ced741-e43f-469b-91e6-3c7f489f56e0_rw_1920.jpg" alt="Prints">
+                        </div>
+                        <p class="project-label">PRINTS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=digital">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/4-digital/2-email/0-k1.jpg" alt="Digital">
+                        </div>
+                        <p class="project-label">DIGITAL</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=logos">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/5-logos/1-OST/1-Logo_OST_2_big.jpg" alt="Logos">
+                        </div>
+                        <p class="project-label">LOGOS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=illustration">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/6-illustrations/6-comic-general/1-comic1.jpg" alt="Illustration">
+                        </div>
+                        <p class="project-label">ILLUSTRATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=animation">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/7-animation/1-three stories/0-effect_match_olenakovtash_thumb.jpg" alt="Animation">
+                        </div>
+                        <p class="project-label">ANIMATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=unsorted">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/8-display/0-IMG_3490-2.jpg" alt="Display">
+                        </div>
+                        <p class="project-label">DISPLAY</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=illustration">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/6-illustrations/7a-comic_zina-lyucia/12-vert.jpg" alt="Illustration">
+                        </div>
+                        <p class="project-label">ILLUSTRATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=magazines">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/2-magazines/2-ellegirl/01cover-e7.jpg" alt="Magazines">
+                        </div>
+                        <p class="project-label">MAGAZINES</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=animation">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/7-animation/2-dances/1-olenakovtash_personalitywalk1_thumb.jpg" alt="Animation">
+                        </div>
+                        <p class="project-label">ANIMATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=prints">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/3-print/4-zoomer/1-zoomer26.jpg" alt="Prints">
+                        </div>
+                        <p class="project-label">PRINTS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=logos">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/5-logos/3-Zoloti-maky/1-ZM_logo_black-bckg.jpg" alt="Logos">
+                        </div>
+                        <p class="project-label">LOGOS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=illustration">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/6-illustrations/1-kids-books/1IMG_7709.JPG" alt="Illustration">
+                        </div>
+                        <p class="project-label">ILLUSTRATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=brands">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/1-brands/2-passion-embrace/PE_behance_tango2-2-cover.jpg" alt="Brands">
+                        </div>
+                        <p class="project-label">BRANDS</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=magazines">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/2-magazines/3-cosmo/cosmo0.jpg" alt="Magazines">
+                        </div>
+                        <p class="project-label">MAGAZINES</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=digital">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/4-digital/1-elle-icon/0-f0478846311553.584fc37478ad7.jpg" alt="Digital">
+                        </div>
+                        <p class="project-label">DIGITAL</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=illustration">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/6-illustrations/2-character-design/0okovtash_style-variations.jpg" alt="Illustration">
+                        </div>
+                        <p class="project-label">ILLUSTRATION</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=unsorted">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/8-display/3-IMAGE-2019-07-01-09-46-16.jpg" alt="Display">
+                        </div>
+                        <p class="project-label">DISPLAY</p>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project.html?id=animation">
+                        <div class="project-thumbnail">
+                            <img src="images/gallery/7-animation/3-testarossa-winery/1Easter-2.gif" alt="Animation">
+                        </div>
+                        <p class="project-label">ANIMATION</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="homepage-covers.js"></script>
+    <script src="smooth-hover.js"></script>
+    <script src="image-protection.js"></script>
+</body>
+</html>
