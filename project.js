@@ -140,9 +140,13 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
                 // Generate thumbnail path (video_name_thumb.jpg)
                 const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const posterPath = `${videoPath}_thumb.jpg`;
-                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false"></video>`;
+                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false" loading="lazy"></video>`;
             } else {
-                mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
+                // Use thumbnail in grid, store full path for lightbox
+                const imagePath = img.src.substring(0, img.src.lastIndexOf('.'));
+                const imageExt = img.src.substring(img.src.lastIndexOf('.'));
+                const thumbnailPath = `${imagePath}_thumb.jpg`;
+                mediaElement = `<img src="${thumbnailPath}" data-full-src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" loading="lazy">`;
             }
 
             const overlayHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo || isMonsterBowVideo) && img.isVideo

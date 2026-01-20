@@ -15,16 +15,17 @@
     // Store all images for each project
     const projectImages = {};
 
-    // Get random image from array, including video thumbnails for animation
+    // Get random image from array, using thumbnails for better performance
     function getRandomImage(images, projectId) {
         const imageFiles = [];
 
         images.forEach(img => {
             const ext = img.toLowerCase().split('.').pop();
 
-            // Include regular image files
+            // Convert regular images to thumbnail paths
             if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
-                imageFiles.push(img);
+                const thumbnailPath = img.replace(/\.(jpg|jpeg|png|gif)$/i, '_thumb.jpg');
+                imageFiles.push(thumbnailPath);
             }
             // For animation project, convert video files to thumbnail paths
             else if (projectId === 'animation' && ext === 'mp4') {
