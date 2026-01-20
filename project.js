@@ -574,9 +574,8 @@ function loadProject() {
 
         // Custom content for unsorted project - using dynamic loading
         if (projectId === 'unsorted') {
-            renderDynamicGallery('8-unsorted', {
-                '1-hands': 'Hand Studies',
-                '2-comparsita': 'Comparsita'
+            renderDynamicGallery('8-display', {
+                'main': 'Display'
             });
         }
     }
