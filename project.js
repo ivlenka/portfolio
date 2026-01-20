@@ -49,12 +49,31 @@ function getProjectId() {
 }
 
 // Bin packing algorithm for optimal image layout
-function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, gap = 10, minImagesPerRow = 3) {
+function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, gap = 10, minImagesPerRow = 3, sectionOptions = {}) {
     const rows = [];
     let currentRow = [];
     let currentRowWidth = 0;
+    let imageIndex = 0;
 
-    images.forEach((img) => {
+    // Handle first row with custom image count if specified
+    if (sectionOptions.firstRowImageCount && images.length >= sectionOptions.firstRowImageCount) {
+        const firstRowCount = sectionOptions.firstRowImageCount;
+        for (let i = 0; i < firstRowCount && i < images.length; i++) {
+            const img = images[i];
+            const aspectRatio = img.width / img.height;
+            const scaledWidth = targetRowHeight * aspectRatio;
+            currentRow.push({ ...img, scaledWidth });
+            currentRowWidth += scaledWidth;
+        }
+        rows.push(normalizeRow(currentRow, containerWidth, targetRowHeight, gap));
+        currentRow = [];
+        currentRowWidth = 0;
+        imageIndex = firstRowCount;
+    }
+
+    // Process remaining images
+    for (; imageIndex < images.length; imageIndex++) {
+        const img = images[imageIndex];
         const aspectRatio = img.width / img.height;
         const scaledWidth = targetRowHeight * aspectRatio;
 
@@ -74,7 +93,7 @@ function createBinPackedLayout(images, containerWidth, targetRowHeight = 300, ga
             currentRow = [{ ...img, scaledWidth }];
             currentRowWidth = scaledWidth;
         }
-    });
+    }
 
     if (currentRow.length > 0) {
         rows.push(normalizeRow(currentRow, containerWidth, targetRowHeight, gap));
@@ -97,7 +116,7 @@ function normalizeRow(row, containerWidth, targetRowHeight, gap) {
 }
 
 function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProject = false, sectionOptions = {}) {
-    const visibleRows = 3;
+    const visibleRows = sectionOptions.showAllRows ? rows.length : 3;
     let html = '<div class="bin-packed-layout">';
 
     rows.forEach((row, rowIndex) => {
@@ -175,7 +194,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
 function renderGallerySection(title, description, images, containerWidth, sectionId, minImagesPerRow = 3, isAnimationProject = false, sectionOptions = {}) {
     // Use custom row height for specific sections
     const targetRowHeight = sectionOptions.targetRowHeight || 300;
-    const rows = createBinPackedLayout(images, containerWidth, targetRowHeight, 10, minImagesPerRow);
+    const rows = createBinPackedLayout(images, containerWidth, targetRowHeight, 10, minImagesPerRow, sectionOptions);
     let html = `<div class="gallery-section">`;
     if (title) {
         html += `<h2 class="project-title">${title}</h2>`;
@@ -576,6 +595,11 @@ function loadProject() {
         if (projectId === 'unsorted') {
             renderDynamicGallery('8-display', {
                 'main': 'Display'
+            }, {
+                'main': {
+                    showAllRows: true,
+                    firstRowImageCount: 2
+                }
             });
         }
     }
