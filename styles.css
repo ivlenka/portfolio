@@ -93,6 +93,13 @@ html {
     color: #000000;
 }
 
+.top-nav a.active {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
 .projects-menu {
     margin: 0;
     padding: 0;
@@ -128,6 +135,13 @@ html {
 
 .project-links a:hover {
     color: #000000;
+}
+
+.project-links a.active {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 /* Main Content Styles */

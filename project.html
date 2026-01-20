@@ -71,5 +71,18 @@
     <script src="gallery-loader.js"></script>
     <script src="project.js"></script>
     <script src="image-protection.js"></script>
+    <script>
+        // Mark active project link based on URL parameter
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            if (projectId) {
+                const activeLink = document.querySelector(`.project-links a[href="project.html?id=${projectId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
