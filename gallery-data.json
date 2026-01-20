@@ -319,15 +319,47 @@
     },
     "4-digital": {
       "sections": {
-        "1-swin-email": {
+        "1-elle-icon": {
           "images": [
-            "images/gallery/4-digital/1-swin-email/8391b4fc-38b8-4e3f-8839-1475367b4691_rw_1200.jpg",
-            "images/gallery/4-digital/1-swin-email/caa10bf8-395a-4502-93b1-49b78cab17b4_rw_1920.png"
+            "images/gallery/4-digital/1-elle-icon/0-f0478846311553.584fc37478ad7.jpg",
+            "images/gallery/4-digital/1-elle-icon/1-4ac6f50e-0521-4e12-b1c2-74f2c37eff0e_rw_1920.jpg",
+            "images/gallery/4-digital/1-elle-icon/2-64dc3d33-8dce-487a-8ba3-ddafe7c9ad07_rw_1920.jpg"
           ]
         },
-        "3-elleicon": {
+        "2-email": {
           "images": [
-            "images/gallery/4-digital/3-elleicon/f0478846311553.584fc37478ad7.jpg"
+            "images/gallery/4-digital/2-email/0-k1.jpg",
+            "images/gallery/4-digital/2-email/0a-f30065b6-913d-4b6f-8551-fc3247d3e809_rw_1920.png",
+            "images/gallery/4-digital/2-email/0b-ddd407ae-76d2-45df-b5da-5b7d64e23c1f_rw_1920.png",
+            "images/gallery/4-digital/2-email/0c-f5692d2b-f63d-440c-bf37-42f51572c8b1_rw_1920.png",
+            "images/gallery/4-digital/2-email/0d-241af2d5-6202-4785-a3e8-9f4120ecc200_rw_1920.png",
+            "images/gallery/4-digital/2-email/1-k2.jpg",
+            "images/gallery/4-digital/2-email/3-k3.jpg",
+            "images/gallery/4-digital/2-email/4-k4.jpg",
+            "images/gallery/4-digital/2-email/5-k6.jpg",
+            "images/gallery/4-digital/2-email/6-k35.jpg",
+            "images/gallery/4-digital/2-email/7-caa10bf8-395a-4502-93b1-49b78cab17b4_rw_1920.png"
+          ]
+        },
+        "3-monster-bow": {
+          "images": [
+            "images/gallery/4-digital/3-monster-bow/0-IMG_0745.JPG",
+            "images/gallery/4-digital/3-monster-bow/0-monster-start.mp4",
+            "images/gallery/4-digital/3-monster-bow/0-tgrey-two.jpg",
+            "images/gallery/4-digital/3-monster-bow/0a-IMG_0747.JPG",
+            "images/gallery/4-digital/3-monster-bow/0b-IMG_0748.JPG",
+            "images/gallery/4-digital/3-monster-bow/1-monster_game.mp4",
+            "images/gallery/4-digital/3-monster-bow/1a-IMG_0751.JPG",
+            "images/gallery/4-digital/3-monster-bow/1b-54-color.jpg",
+            "images/gallery/4-digital/3-monster-bow/1c-IMG_0755.JPG",
+            "images/gallery/4-digital/3-monster-bow/2-color.jpg",
+            "images/gallery/4-digital/3-monster-bow/2a-IMG_0752.JPG",
+            "images/gallery/4-digital/3-monster-bow/6-color.jpg",
+            "images/gallery/4-digital/3-monster-bow/7-IMG_0757.JPG",
+            "images/gallery/4-digital/3-monster-bow/8-IMG_0765.JPG",
+            "images/gallery/4-digital/3-monster-bow/8a-monster-gallery.mp4",
+            "images/gallery/4-digital/3-monster-bow/9-IMG_0766.JPG",
+            "images/gallery/4-digital/3-monster-bow/9a-IMG_0767.JPG"
           ]
         }
       }
@@ -580,6 +612,8 @@
         },
         "8-sketchbook": {
           "images": [
+            "images/gallery/6-illustrations/8-sketchbook/0-1270C4D9-8C67-4163-8F77-1C0569E4D414.jpg",
+            "images/gallery/6-illustrations/8-sketchbook/0-884027A2-72CC-4F4F-B7CF-BC059866807C.jpg",
             "images/gallery/6-illustrations/8-sketchbook/10aefafb-c4c4-47b1-a39f-e86d16e13088_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/12c4ee69-03cc-4728-927d-d0f31e1c88e7_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/2-5b881887824735.5faef96b2cb9c.jpg",

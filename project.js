@@ -107,14 +107,15 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
         row.forEach((img, imgIndex) => {
             let mediaElement;
 
-            // Check if this is a Pivot Point video (blue or pink) or OST video
+            // Check if this is a Pivot Point video (blue or pink) or OST video or Monster Bow videos
             const isPivotPointVideo = img.src.includes('3-pivotpoint') &&
                                      (img.src.includes('5-PP-sm_blue.mp4') ||
                                       img.src.includes('8a-PP-sm_pink2.mp4'));
             const isOSTVideo = img.src.includes('1-OST') && img.src.includes('1c-Untitled_Artwork 2.mp4');
+            const isMonsterBowVideo = img.src.includes('3-monster-bow') && img.isVideo;
 
-            const animationClass = isAnimationProject || isPivotPointVideo || isOSTVideo ? ' animation-video' : '';
-            const autoplayAttr = isPivotPointVideo || isOSTVideo ? ' autoplay' : '';
+            const animationClass = isAnimationProject || isPivotPointVideo || isOSTVideo || isMonsterBowVideo ? ' animation-video' : '';
+            const autoplayAttr = isPivotPointVideo || isOSTVideo || isMonsterBowVideo ? ' autoplay' : '';
 
             if (img.isVideo) {
                 // Generate thumbnail path (video_name_thumb.jpg)
@@ -125,7 +126,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
                 mediaElement = `<img src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;">`;
             }
 
-            const overlayHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo) && img.isVideo
+            const overlayHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo || isMonsterBowVideo) && img.isVideo
                 ? '' // No overlay for animation-style videos
                 : `<div class="gallery-image-overlay">
                     <div class="gallery-image-description">${img.description || img.alt}</div>
@@ -140,7 +141,7 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
             // Exclude Testarossa section from sound buttons
             const isTestarossaVideo = img.src.includes('testarossa-winery');
 
-            const soundButtonHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo) && img.isVideo && !isTestarossaVideo
+            const soundButtonHtml = (isAnimationProject || isPivotPointVideo || isOSTVideo || isMonsterBowVideo) && img.isVideo && !isTestarossaVideo
                 ? `<button class="sound-toggle-btn${invertedClass}" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M11 5L6 9H2v6h4l5 4V5z"/>
@@ -495,8 +496,9 @@ function loadProject() {
         // Custom content for digital project - using dynamic loading
         if (projectId === 'digital') {
             renderDynamicGallery('4-digital', {
-                '1-swin-email': 'Swinburne Email Campaign',
-                '3-elleicon': 'Elle Icon'
+                '1-elle-icon': 'Elle Icon',
+                '2-email': 'Email Campaign',
+                '3-monster-bow': 'Monster Bow'
             });
         }
 
