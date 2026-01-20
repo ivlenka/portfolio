@@ -359,17 +359,39 @@ function initLightbox(images) {
         });
     });
 
-    // Start all autoplay videos immediately
-    document.querySelectorAll('video[autoplay]').forEach(video => {
-        // Use play() with promise handling for browser compatibility
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                // Auto-play was prevented, video will play on user interaction
-                console.log('Autoplay prevented for:', video.src, error);
-            });
-        }
-    });
+    // Start all autoplay videos immediately when they're ready
+    // Use setTimeout to ensure DOM is fully rendered
+    setTimeout(() => {
+        document.querySelectorAll('video[autoplay]').forEach(video => {
+            // Ensure video is muted for autoplay to work
+            video.muted = true;
+
+            // Force load the video
+            video.load();
+
+            // Function to attempt playback
+            const attemptPlay = () => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('Video playing:', video.src);
+                    }).catch(error => {
+                        console.log('Autoplay prevented for:', video.src, error);
+                        // Retry after a short delay
+                        setTimeout(attemptPlay, 100);
+                    });
+                }
+            };
+
+            // Try to play immediately if already loaded
+            if (video.readyState >= 2) { // HAVE_CURRENT_DATA or greater
+                attemptPlay();
+            } else {
+                // Wait for video to be ready, then play
+                video.addEventListener('loadeddata', attemptPlay, { once: true });
+            }
+        });
+    }, 100);
 }
 
 function openLightbox(index) {
