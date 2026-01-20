@@ -550,12 +550,12 @@ function loadProject() {
         // Custom content for illustration project - using dynamic loading
         if (projectId === 'illustration') {
             renderDynamicGallery('6-illustrations', {
-                '1-character-design': 'Character Design',
-                '2-comic-general': 'General Comics',
-                '3-kids-books': 'Kids Books',
+                '1-kids-books': 'Kids Books',
+                '2-character-design': 'Character Design',
+                '3-tryzub': 'Tryzub',
                 '4-human': 'Human',
-                '5-tryzub': 'Tryzub',
-                '7-food': 'Food',
+                '5-food': 'Food',
+                '6-comic-general': 'General Comics',
                 '7a-comic_zina-lyucia': 'Zina & Lyucia Comic',
                 '8-sketchbook': 'Sketchbook'
             });
