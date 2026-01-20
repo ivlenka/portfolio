@@ -407,7 +407,8 @@
             "images/gallery/5-logos/3-Zoloti-maky/5c--vinok2-ezgif.com-video-to-gif-converter copy.gif",
             "images/gallery/5-logos/3-Zoloti-maky/6--IMG_3747.jpg",
             "images/gallery/5-logos/3-Zoloti-maky/7-img_0136.jpg",
-            "images/gallery/5-logos/3-Zoloti-maky/7-img_6961.jpg"
+            "images/gallery/5-logos/3-Zoloti-maky/7a-ZM_cards_ver_v4_white-2.jpg",
+            "images/gallery/5-logos/3-Zoloti-maky/7b-img_6961.jpg"
           ]
         },
         "4-NEN": {
@@ -684,18 +685,26 @@
         }
       }
     },
-    "8-unsorted": {
+    "8-display": {
       "sections": {
-        "1-hands": {
+        "main": {
           "images": [
-            "images/gallery/8-unsorted/1-hands/okovtash_handPoses1.jpg",
-            "images/gallery/8-unsorted/1-hands/okovtash_handPoses2.jpg"
-          ]
-        },
-        "2-comparsita": {
-          "images": [
-            "images/gallery/8-unsorted/2-comparsita/IMG_9664.jpg",
-            "images/gallery/8-unsorted/2-comparsita/IMG_9674.jpg"
+            "images/gallery/8-display/0-IMG_3490-2.jpg",
+            "images/gallery/8-display/1a-IMG_3502-2.jpg",
+            "images/gallery/8-display/1b-IMG_3472-2.jpg",
+            "images/gallery/8-display/2-IMG_3526-2.jpg",
+            "images/gallery/8-display/2-IMG_3535-2.jpg",
+            "images/gallery/8-display/2a-IMG_3540-2.jpg",
+            "images/gallery/8-display/2c-IMG_3524-2.jpg",
+            "images/gallery/8-display/3-IMAGE-2019-07-01-09-46-16.jpg",
+            "images/gallery/8-display/3a-1-pastel.jpg",
+            "images/gallery/8-display/3b-Untitled-1.jpg",
+            "images/gallery/8-display/3g-IMG_3808.jpg",
+            "images/gallery/8-display/4-2-2-pastel.jpg",
+            "images/gallery/8-display/4-IMG_3803.jpg",
+            "images/gallery/8-display/4-vetka.jpg",
+            "images/gallery/8-display/4a-IMG_3806.jpg",
+            "images/gallery/8-display/5-IMG_0976.jpg"
           ]
         }
       }
