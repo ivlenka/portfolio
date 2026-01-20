@@ -145,7 +145,9 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
                 // Use thumbnail in grid, store full path for lightbox
                 const imagePath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const imageExt = img.src.substring(img.src.lastIndexOf('.'));
-                const thumbnailPath = `${imagePath}_thumb.jpg`;
+                // Use higher quality thumbnail (1000px) for last image in section
+                const thumbnailSuffix = img.isLastInSection ? '_thumb1000.jpg' : '_thumb.jpg';
+                const thumbnailPath = `${imagePath}${thumbnailSuffix}`;
                 mediaElement = `<img src="${thumbnailPath}" data-full-src="${img.src}" alt="${img.alt}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" loading="lazy">`;
             }
 
@@ -671,6 +673,12 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
             section.images.map(img => loadImageDimensions(img))
         );
         section.images = loadedImages;
+
+        // Mark the last image in this section for higher quality thumbnail
+        if (loadedImages.length > 0) {
+            loadedImages[loadedImages.length - 1].isLastInSection = true;
+        }
+
         allImages = allImages.concat(loadedImages);
     }
 
