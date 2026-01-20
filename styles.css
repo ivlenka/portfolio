@@ -94,8 +94,8 @@ html {
 }
 
 .top-nav a.active {
-    color: #000000;
     text-decoration: underline;
+    text-decoration-color: #000000;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
 }
@@ -138,8 +138,8 @@ html {
 }
 
 .project-links a.active {
-    color: #000000;
     text-decoration: underline;
+    text-decoration-color: #000000;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
 }
