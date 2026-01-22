@@ -642,19 +642,13 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
     let html = '';
     let allImages = [];
 
-    // Load actual image/video dimensions
+    // Load actual image/video dimensions from thumbnails (not full images)
     const loadImageDimensions = (imageObj) => {
         return new Promise((resolve) => {
             if (imageObj.isVideo) {
-                const video = document.createElement('video');
-                video.onloadedmetadata = () => {
-                    imageObj.width = video.videoWidth;
-                    imageObj.height = video.videoHeight;
-                    resolve(imageObj);
-                };
-                video.onerror = () => resolve(imageObj); // Keep placeholder dimensions
-                video.src = imageObj.src;
-            } else {
+                // For videos, load the thumbnail poster image for dimensions
+                const videoPath = imageObj.src.substring(0, imageObj.src.lastIndexOf('.'));
+                const posterPath = `${videoPath}_thumb.jpg`;
                 const img = new Image();
                 img.onload = () => {
                     imageObj.width = img.naturalWidth;
@@ -662,7 +656,19 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
                     resolve(imageObj);
                 };
                 img.onerror = () => resolve(imageObj); // Keep placeholder dimensions
-                img.src = imageObj.src;
+                img.src = posterPath;
+            } else {
+                // Load thumbnail image for dimensions (not full image)
+                const imagePath = imageObj.src.substring(0, imageObj.src.lastIndexOf('.'));
+                const thumbnailPath = `${imagePath}_thumb.jpg`;
+                const img = new Image();
+                img.onload = () => {
+                    imageObj.width = img.naturalWidth;
+                    imageObj.height = img.naturalHeight;
+                    resolve(imageObj);
+                };
+                img.onerror = () => resolve(imageObj); // Keep placeholder dimensions
+                img.src = thumbnailPath;
             }
         });
     };
