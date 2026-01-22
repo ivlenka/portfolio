@@ -62,6 +62,7 @@ This will:
 
 ### Data
 - `gallery-data.json` - Source of truth for all images
+- `text-content.json` - All text content (titles, descriptions, image captions)
 
 ### Static Pages (Generated)
 - All `project-*.html` files
@@ -79,7 +80,10 @@ This will:
 Run `python3 generate-static-site.py` whenever you:
 - Add new images to any project
 - Update `gallery-data.json`
+- Update `text-content.json` (titles, descriptions, image captions)
 - Change project organization
 - Modify section configurations
 
 The script will regenerate all 8 project pages in a few seconds.
+
+**Note:** If you add new images, also run `python3 populate-image-descriptions.py` first to add them to `text-content.json`.

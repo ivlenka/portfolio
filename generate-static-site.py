@@ -2,60 +2,52 @@
 """
 Static Site Generator for Portfolio
 Generates static HTML files for each project page with pre-calculated layouts
+Uses text-content.json for all text descriptions
 """
 
 import json
 import os
 from pathlib import Path
 
-# Project metadata
+# Load text content from external file
+def load_text_content():
+    with open('text-content.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+TEXT_CONTENT = load_text_content()
+
+# Project metadata (gallery keys and category names)
 PROJECTS = {
     'brands': {
         'category': 'BRANDS',
-        'title': 'Brand Design',
-        'description': 'Brand identity and design work featuring Testarossa Winery and Passion Embrace collections.',
         'gallery_key': '1-brands'
     },
     'magazines': {
         'category': 'MAGAZINES',
-        'title': 'Magazine Design',
-        'description': 'Editorial design work featuring magazine layouts, cover designs, and fashion photography for Elle, Elle Girl, and Cosmopolitan publications.',
         'gallery_key': '2-magazines'
     },
     'prints': {
         'category': 'PRINTS',
-        'title': 'Print Design',
-        'description': 'Print design projects including greeting cards, editorial layouts, and publication designs.',
         'gallery_key': '3-print'
     },
     'digital': {
         'category': 'DIGITAL',
-        'title': 'Digital Design',
-        'description': 'Digital design work including email campaigns, web graphics, and digital marketing materials.',
         'gallery_key': '4-digital'
     },
     'logos': {
         'category': 'LOGOS',
-        'title': 'Logo Design',
-        'description': 'Logo design and brand identity work for various clients including Linguamill and OST.',
         'gallery_key': '5-logos'
     },
     'illustration': {
         'category': 'ILLUSTRATION',
-        'title': 'Comic Illustration',
-        'description': 'Original comic and illustration work featuring character designs, sequential storytelling, and narrative art exploring themes of friendship and adventure.',
         'gallery_key': '6-illustrations'
     },
     'animation': {
         'category': 'ANIMATION',
-        'title': 'Animation & Motion Graphics',
-        'description': 'Collection of animated works including character animation, motion graphics, and experimental video projects exploring movement and storytelling.',
         'gallery_key': '7-animation'
     },
     'unsorted': {
         'category': 'DISPLAY',
-        'title': 'Mixed Work',
-        'description': 'Collection of various studies and experimental work including hand poses and character development.',
         'gallery_key': '8-display'
     }
 }
@@ -241,6 +233,11 @@ def generate_project_page(project_id, project_info, gallery_data):
     """Generate a static HTML page for a project"""
     print(f"Generating page for {project_id}...")
 
+    # Get text content for this project
+    project_text = TEXT_CONTENT['projects'].get(project_id, {})
+    project_title = project_text.get('title', project_id.title())
+    project_description = project_text.get('description', '')
+
     gallery_key = project_info['gallery_key']
     project_data = gallery_data['projects'].get(gallery_key)
 
@@ -258,9 +255,21 @@ def generate_project_page(project_id, project_info, gallery_data):
     for section_key, section_data in project_data['sections'].items():
         images = []
 
+        # Get section text content for image descriptions
+        section_text = project_text.get('sections', {}).get(section_key, {})
+
+        # Build image description lookup by filename
+        image_descriptions = {}
+        for img_entry in section_text.get('images', []):
+            image_descriptions[img_entry['file']] = img_entry.get('description', '')
+
         for img_src in section_data['images']:
             width, height = get_image_size(img_src)
             is_video = img_src.lower().endswith('.mp4')
+
+            # Get description for this image by filename
+            filename = os.path.basename(img_src)
+            description = image_descriptions.get(filename, '')
 
             img_obj = {
                 'src': img_src,
@@ -268,7 +277,7 @@ def generate_project_page(project_id, project_info, gallery_data):
                 'height': height,
                 'isVideo': is_video,
                 'alt': '',
-                'description': '',
+                'description': description,
                 'index': image_index
             }
             images.append(img_obj)
@@ -282,8 +291,12 @@ def generate_project_page(project_id, project_info, gallery_data):
         # Get section options
         section_options = SECTION_CONFIGS.get(project_id, {}).get(section_key, {})
 
-        # Determine section title
-        section_name = section_key.split('-', 1)[-1].replace('-', ' ').title()
+        # Get section title and description (section_text already retrieved above)
+        section_title = section_text.get('title', section_key.split('-', 1)[-1].replace('-', ' ').title())
+        section_description = section_text.get('description', '')
+
+        # For backward compatibility, use section_title as section_name
+        section_name = section_title
 
         # Layout configuration
         min_images_per_row = 3
@@ -306,9 +319,12 @@ def generate_project_page(project_id, project_info, gallery_data):
         gallery_html = render_gallery_html(rows, gap=10, section_id=section_key,
                                           is_animation_project=is_animation_project, section_options=section_options)
 
+        # Only show description if it exists
+        description_html = f'<p class="project-description">{section_description}</p>' if section_description else ''
+
         section_html = f'''<div class="gallery-section">
-    <h2 class="project-title">{section_name}</h2>
-    <p class="project-description">Collection of {section_name.lower()} designs and layouts showcasing creative work.</p>
+    <h2 class="project-title">{section_title}</h2>
+    {description_html}
     {gallery_html}
 </div>
 '''
@@ -323,7 +339,7 @@ def generate_project_page(project_id, project_info, gallery_data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{project_info['title']} - OLENA KOVTASH</title>
+    <title>{project_title} - OLENA KOVTASH</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-styles.css">
 </head>

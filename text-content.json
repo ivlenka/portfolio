@@ -1,0 +1,2449 @@
+{
+  "contact": {
+    "description": "Add your contact information here (email, phone, social media links, etc.)"
+  },
+  "projects": {
+    "brands": {
+      "title": "Brands",
+      "description": "",
+      "sections": {
+        "1-testarossa": {
+          "title": "Testarossa Winery",
+          "description": "test test test test",
+          "images": [
+            {
+              "file": "0_TR.jpg",
+              "description": "test 2 test 2 test 2"
+            },
+            {
+              "file": "1_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1aa_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1aab_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1ab_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1aba_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1bb_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3aa_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3ab_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3b_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "3ba_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "4_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "4c_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "5a_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "5c_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "6_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "6ab_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "7_TR.jpg",
+              "description": ""
+            },
+            {
+              "file": "WineProfiles_2021_18PDO.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-passion-embrace": {
+          "title": "Passion Embrace",
+          "description": "",
+          "images": [
+            {
+              "file": "0_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b_PE_sticker1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "4_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "5_PE.jpg",
+              "description": ""
+            },
+            {
+              "file": "PE_behance_tango2-2-cover.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "3-mezzaluna": {
+          "title": "Mezzaluna",
+          "description": ""
+        },
+        "4-montecucco": {
+          "title": "Montecucco Winery",
+          "description": ""
+        },
+        "5-iCoffee": {
+          "title": "iCoffee",
+          "description": ""
+        },
+        "3-pivotpoint": {
+          "title": "Pivotpoint",
+          "description": "",
+          "images": [
+            {
+              "file": "1-green_PP.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-PP_posters5.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-IMG_3597.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-print_t-shirt_PP_3_image.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a-blue-t.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-PP-sm_blue.mp4",
+              "description": ""
+            },
+            {
+              "file": "6-PP_posters3_new.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-IMG_3595.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-print_t-shirt_PP_1_image.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-Screenshot 2026-01-15 at 2.48.10 PM.png",
+              "description": ""
+            },
+            {
+              "file": "8-pink_PP.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-Screenshot 2026-01-15 at 2.48.29 PM.png",
+              "description": ""
+            },
+            {
+              "file": "8-yellow_PP.jpg",
+              "description": ""
+            },
+            {
+              "file": "8a-PP-sm_pink2.mp4",
+              "description": ""
+            },
+            {
+              "file": "8b-pink_t.jpg",
+              "description": ""
+            },
+            {
+              "file": "8c-aprdview_t-shirt_PP_5.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-print_t-shirt_PP_5_image.jpg",
+              "description": ""
+            },
+            {
+              "file": "9B-PP_posters4.jpg",
+              "description": ""
+            },
+            {
+              "file": "9c-print_t-shirt_PP_2_image.jpg",
+              "description": ""
+            },
+            {
+              "file": "9d-Screenshot 2026-01-15 at 2.48.58 PM.png",
+              "description": ""
+            }
+          ]
+        },
+        "4-happytowasteless": {
+          "title": "Happytowasteless",
+          "description": "",
+          "images": [
+            {
+              "file": "1ba-add-IMG_3731-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "1Bread_dr_1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c_add_IMG_3735-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-8,5X11_Bread_v5-1_front.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-8,5X11_Bread_v5-2_back.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-IMG_3102.JPG.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-add_IMG_3733-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-IMG_3094.JPG",
+              "description": ""
+            },
+            {
+              "file": "8a-IMG_1960.PNG",
+              "description": ""
+            },
+            {
+              "file": "8b-IMG_3097.JPG",
+              "description": ""
+            },
+            {
+              "file": "9-8,5X11_Kombucha_print1-1_front.jpg",
+              "description": ""
+            },
+            {
+              "file": "9a-IMG_3095.JPG",
+              "description": ""
+            },
+            {
+              "file": "9ab-8,5X11_Kombucha_print1-2_back.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-IMG_1961.PNG",
+              "description": ""
+            },
+            {
+              "file": "9c-IMG_3096.JPG",
+              "description": ""
+            }
+          ]
+        },
+        "5-springerschool": {
+          "title": "Springerschool",
+          "description": "",
+          "images": [
+            {
+              "file": "1-Screenshot 2026-01-15 at 3.34.09 PM.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-8Springer_merch_cool_L.jpg",
+              "description": ""
+            },
+            {
+              "file": "2ab--9bat-shirts3.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-haSpringer_walkathon_logo-green.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-1759596068670487.JPG",
+              "description": ""
+            },
+            {
+              "file": "3a-10Springer_merch_who_D.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-9ct-shirts2.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-IMG_0658.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-Springer_merch_detected_L.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-BEE_tee_logo_PRINT4.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-IMG_6662.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-Screenshot 2026-01-15 at 3.34.27 PM.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-Screenshot 2026-01-15 at 3.37.02 PM.jpg",
+              "description": ""
+            },
+            {
+              "file": "9at-shirts.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-02.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-t-shirts4.jpg",
+              "description": ""
+            },
+            {
+              "file": "9dt-shirts6.jpg",
+              "description": ""
+            },
+            {
+              "file": "9e-t-shirts5.jpg",
+              "description": ""
+            },
+            {
+              "file": "9hb-10Springer_merch_who_G.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "magazines": {
+      "title": "Magazines",
+      "description": "",
+      "sections": {
+        "1-elle": {
+          "title": "ELLE",
+          "description": "",
+          "images": [
+            {
+              "file": "elle1.jpg",
+              "description": ""
+            },
+            {
+              "file": "elle2.jpg",
+              "description": ""
+            },
+            {
+              "file": "elle3.jpg",
+              "description": ""
+            },
+            {
+              "file": "elle4.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-ellegirl": {
+          "title": "ELLE Girl",
+          "description": "",
+          "images": [
+            {
+              "file": "01cover-e7.jpg",
+              "description": ""
+            },
+            {
+              "file": "0220644d-dbf2-4f5c-ab35-05f72f9b4c5e_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "10663c7c49e3e-2343-4fc0-a0fe-85d3a8f89086_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "106cover-eg1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1203cover-eg8.jpg",
+              "description": ""
+            },
+            {
+              "file": "12050884145_1e2ea017f8_b.jpg",
+              "description": ""
+            },
+            {
+              "file": "12colage_eg.jpg",
+              "description": ""
+            },
+            {
+              "file": "20f73b9e-f29d-4e04-9527-f00236cd5194_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "304cover-eg5.jpg",
+              "description": ""
+            },
+            {
+              "file": "35405cover-eg2.jpg",
+              "description": ""
+            },
+            {
+              "file": "394d0a47-eb32-4657-a16b-3ebe94afa665_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "505cover-eg4.jpg",
+              "description": ""
+            },
+            {
+              "file": "63c3a63d0-6509-417d-ba6a-4993ae8b9666_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "67011b3d7-1fb4-4746-ae49-d62abe767887_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "670G51_032_BeautyTrends1.jpg",
+              "description": ""
+            },
+            {
+              "file": "7276e34b-b9d0-40f2-a778-792ac15b7371_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "8861d0ef13-2081-49df-9a97-4637e469c8d0_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "88c6a9e88f_b.jpg",
+              "description": ""
+            },
+            {
+              "file": "891298dd-12a1-4328-bda9-4f79bbfe0d0d_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "8b1a1038-4c27-420f-86c0-14a84c974e6d_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "8f67f8bf-e822-4e5a-9bae-4b496d2fd6ab_rw_1200.jpg",
+              "description": ""
+            },
+            {
+              "file": "97cc4e7d-b4d7-44ea-84ac-418d9de19072_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "991063d72f-0c96-42a6-9acc-1680f9881208_rw_1200.jpg",
+              "description": ""
+            },
+            {
+              "file": "c2c79b-88e4-4dff-887e-5b2c50d4f07b_rw_1200.jpg",
+              "description": ""
+            },
+            {
+              "file": "cover-eg6.jpg",
+              "description": ""
+            },
+            {
+              "file": "d126e0df-45ae-441d-bb0d-262cff2af466_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "d9d3e1a4-80db-4f71-ad0a-10abe4baf0f1_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "e0f3ae85-6f88-41ad-8dbe-e8246005871f_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "e859315e-0bab-4003-8760-be1eecf0b611_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "f7138b42-e295-408c-ad66-0d5f9b9c3855_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "G51_022_FashionTrends2.jpg",
+              "description": ""
+            },
+            {
+              "file": "ycover-eg3.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "3-cosmo": {
+          "title": "Cosmopolitan",
+          "description": "",
+          "images": [
+            {
+              "file": "cosmo0.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo1.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo10.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo11.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo12.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo13.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo14.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo15.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo2.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo3.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo4.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo5.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo6.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo7.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo8.jpg",
+              "description": ""
+            },
+            {
+              "file": "cosmo9.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "4-tech": {
+          "title": "Tech Magazines",
+          "description": "",
+          "images": [
+            {
+              "file": "1-9ef16446319947.5850068f9420e.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-6cb7a1e5-83ee-449f-b972-20bb6764b174_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b-8b7a9350-572f-4f09-b389-9bfc25377426_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c-4bbd554a-51b0-4479-99b0-5bee76279a4d_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-061c5546319947.5850068f9488f.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-72b75e56-b15e-401e-8295-b28c1eecd1f5_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-08629f46319947.5850068f94fa8.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-dc0dd0dd-2a75-4308-975b-f483bb5e8666_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-ffdf57e7-1308-42d0-a627-d3c29aee7642_rw_1920.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "prints": {
+      "title": "Prints",
+      "description": "",
+      "sections": {
+        "1-cards_cali": {
+          "title": "California Cards",
+          "description": "",
+          "images": [
+            {
+              "file": "0-77ced741-e43f-469b-91e6-3c7f489f56e0_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "0a-card_sketches_r8.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-3089aa35-bdc5-475b-901e-5143e49cbbf1_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c587c96-da2d-4cbf-815e-991f599218a4_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "1d-card_sketches_r11.jpg",
+              "description": ""
+            },
+            {
+              "file": "1f-card_sketches_r1_front.jpg",
+              "description": ""
+            },
+            {
+              "file": "2ab-card_sketches_r9.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-dfa69f7-ae15-483b-bf7c-ba32d8b8e0a2_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c-card_sketches_r3.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-e88b2725-1970-46c9-ae2f-0ea92ebd1286_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-card_sticker.png",
+              "description": ""
+            },
+            {
+              "file": "6a-card_sketches_r6_new.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-5e7eee39-3619-42f4-9e3b-37cb80965e25_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-card_sketches_r4.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-card_sketches_r7.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-souvenir_canada": {
+          "title": "Canada Souvenir",
+          "description": ""
+        },
+        "3-cards_somaek": {
+          "title": "Somaek Cards",
+          "description": ""
+        },
+        "4-zoomer": {
+          "title": "Zoomer Magazine",
+          "description": "",
+          "images": [
+            {
+              "file": "1-zoomer26.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-zoomer27.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-zoomer24.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-zoomer25.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-zoomer28.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-zoomer29.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a-zoomer210.jpg",
+              "description": ""
+            },
+            {
+              "file": "4b-zoomer212.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-zoomer211.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-tatoo.png",
+              "description": ""
+            },
+            {
+              "file": "7-zoomer213.jpg",
+              "description": ""
+            },
+            {
+              "file": "zoomer2.jpg",
+              "description": ""
+            },
+            {
+              "file": "zoomer214.jpg",
+              "description": ""
+            },
+            {
+              "file": "zoomer22.jpg",
+              "description": ""
+            },
+            {
+              "file": "zoomer23.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "5-toronto-calendar": {
+          "title": "Toronto Calendar",
+          "description": ""
+        },
+        "6-cards_inktober": {
+          "title": "Inktober Cards",
+          "description": ""
+        },
+        "7-books_for_ukr": {
+          "title": "Books for Ukraine",
+          "description": ""
+        },
+        "0-labels": {
+          "title": "Labels",
+          "description": "",
+          "images": [
+            {
+              "file": "0-hale.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-hale.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-hale.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c-hale.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-lepapilon.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-lepapilon.jpg",
+              "description": ""
+            },
+            {
+              "file": "2ba--lepapilon.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c-lepapillon.jpg",
+              "description": ""
+            },
+            {
+              "file": "2d-20t.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-20t.jpg",
+              "description": ""
+            },
+            {
+              "file": "3b-20t.jpg",
+              "description": ""
+            },
+            {
+              "file": "3d-20t.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-cards-odesa": {
+          "title": "Cards Odesa",
+          "description": "",
+          "images": [
+            {
+              "file": "0-IMG_3288 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "1-IMG_3293 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "1a-cards_odessa3.png",
+              "description": ""
+            },
+            {
+              "file": "2-cards_odessa_sticker.jpg",
+              "description": ""
+            },
+            {
+              "file": "3--cards_odessa5.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-IMG_3317 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "3b-cards_odessa.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a-IMG_3316 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "5-cards_odessa4.png",
+              "description": ""
+            },
+            {
+              "file": "6-cards_odessa11.jpg",
+              "description": ""
+            },
+            {
+              "file": "6a-IMG_3306 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "7-cards_odessa9.jpg7-.png",
+              "description": ""
+            },
+            {
+              "file": "8-cards_odessa10.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-IMG_3314 2.JPG",
+              "description": ""
+            },
+            {
+              "file": "9a-cards_odessa12.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "3-cards-italy": {
+          "title": "Cards Italy",
+          "description": "",
+          "images": [
+            {
+              "file": "0-IMG_3687-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "0a-Italy_cards_print_03.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-IMG_3693-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-IMG_3713-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-IMG_3708-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-Italy_cards_print_01.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-Italy_cards_print_08.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-IMG_3683-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "5a-IMG_3702-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-IMG_3697-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-IMG_3718-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-IMG_3707-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-Italy_cards_print_07.jpg",
+              "description": ""
+            },
+            {
+              "file": "9a-IMG_3679-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-IMG_3729-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9c-Italy_cards_print_09.jpg",
+              "description": ""
+            },
+            {
+              "file": "9d-IMG_3688-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9f-Italy_cards_print_12_13.jpg",
+              "description": ""
+            },
+            {
+              "file": "9g-IMG_3691-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9t-Italy_cards_print_12_14.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "5-vizitki": {
+          "title": "Vizitki",
+          "description": "",
+          "images": [
+            {
+              "file": "1-card.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-1-vizitki_85_back.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-pix-IMG_1365.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-pix-frames_plus-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-IMG_3676-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3b-7-viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "3bc-5-viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "3bc-pix.jpg",
+              "description": ""
+            },
+            {
+              "file": "3c-vizitki_85_back.jpg",
+              "description": ""
+            },
+            {
+              "file": "3pix.jpg",
+              "description": ""
+            },
+            {
+              "file": "3r--viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a-6-viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-vizitki_85_back.jpg",
+              "description": ""
+            },
+            {
+              "file": "5a-pix.jpg",
+              "description": ""
+            },
+            {
+              "file": "5a-viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "6pix.jpg",
+              "description": ""
+            },
+            {
+              "file": "9a-viz.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-IMG_1363.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "digital": {
+      "title": "Digital",
+      "description": "",
+      "sections": {
+        "1-elle-icon": {
+          "title": "ELLE Icon",
+          "description": "",
+          "images": [
+            {
+              "file": "0-f0478846311553.584fc37478ad7.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-4ac6f50e-0521-4e12-b1c2-74f2c37eff0e_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-64dc3d33-8dce-487a-8ba3-ddafe7c9ad07_rw_1920.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-email": {
+          "title": "Email Campaigns",
+          "description": "",
+          "images": [
+            {
+              "file": "0-k1.jpg",
+              "description": ""
+            },
+            {
+              "file": "0a-f30065b6-913d-4b6f-8551-fc3247d3e809_rw_1920.png",
+              "description": ""
+            },
+            {
+              "file": "0b-ddd407ae-76d2-45df-b5da-5b7d64e23c1f_rw_1920.png",
+              "description": ""
+            },
+            {
+              "file": "0c-f5692d2b-f63d-440c-bf37-42f51572c8b1_rw_1920.png",
+              "description": ""
+            },
+            {
+              "file": "0d-241af2d5-6202-4785-a3e8-9f4120ecc200_rw_1920.png",
+              "description": ""
+            },
+            {
+              "file": "1-k2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-k3.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-k4.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-k6.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-k35.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-caa10bf8-395a-4502-93b1-49b78cab17b4_rw_1920.png",
+              "description": ""
+            }
+          ]
+        },
+        "3-monster-bow": {
+          "title": "Monster Bow Game",
+          "description": "",
+          "images": [
+            {
+              "file": "0-IMG_0745.JPG",
+              "description": ""
+            },
+            {
+              "file": "0-monster-start.mp4",
+              "description": ""
+            },
+            {
+              "file": "0-tgrey-two.jpg",
+              "description": ""
+            },
+            {
+              "file": "0-wmonster-gallery.mp4",
+              "description": ""
+            },
+            {
+              "file": "0a-IMG_0747.JPG",
+              "description": ""
+            },
+            {
+              "file": "0b-IMG_0748.JPG",
+              "description": ""
+            },
+            {
+              "file": "1a-IMG_0751.JPG",
+              "description": ""
+            },
+            {
+              "file": "1b-54-color.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b-64monster_game.mp4",
+              "description": ""
+            },
+            {
+              "file": "1c-IMG_0755.JPG",
+              "description": ""
+            },
+            {
+              "file": "2-color.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-IMG_0752.JPG",
+              "description": ""
+            },
+            {
+              "file": "6-color.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-IMG_0757.JPG",
+              "description": ""
+            },
+            {
+              "file": "8-IMG_0765.JPG",
+              "description": ""
+            },
+            {
+              "file": "9-IMG_0766.JPG",
+              "description": ""
+            },
+            {
+              "file": "9a-IMG_0767.JPG",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "logos": {
+      "title": "Logos",
+      "description": "",
+      "sections": {
+        "1-OST": {
+          "title": "OST",
+          "description": "",
+          "images": [
+            {
+              "file": "1-Logo_OST_2_big.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-7-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c-Untitled_Artwork 2.mp4",
+              "description": ""
+            },
+            {
+              "file": "2-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-ost.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-Logo_OST_1_big.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "2-Testarossa": {
+          "title": "Testarossa Winery",
+          "description": ""
+        },
+        "3-Zoloti-maky": {
+          "title": "Zoloti Maky",
+          "description": "",
+          "images": [
+            {
+              "file": "0aa21fb4-4214-48b7-a60a-4976127d4604.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-ZM_logo_black-bckg.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-zm-web.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-zm-web.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-b276906-121e-40ea-886c-186ebd0823e1.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-T-Shirt_ZM.JPG",
+              "description": ""
+            },
+            {
+              "file": "5a-IMG_5600.JPG",
+              "description": ""
+            },
+            {
+              "file": "5b-IMG_3745.jpg",
+              "description": ""
+            },
+            {
+              "file": "5c--vinok2-ezgif.com-video-to-gif-converter copy.gif",
+              "description": ""
+            },
+            {
+              "file": "6--IMG_3747.jpg",
+              "description": ""
+            },
+            {
+              "file": "7-img_0136.jpg",
+              "description": ""
+            },
+            {
+              "file": "7a-ZM_cards_ver_v4_white-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "7b-img_6961.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "4-marusya": {
+          "title": "Marusya",
+          "description": ""
+        },
+        "5-rusalka": {
+          "title": "Rusalka",
+          "description": ""
+        },
+        "6-horilka": {
+          "title": "Horilka",
+          "description": ""
+        },
+        "2-L": {
+          "title": "L",
+          "description": "",
+          "images": [
+            {
+              "file": "0-Untitled_Artwork-2 1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-Untitled-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-Untitled-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1ab-Logos-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1b-Logos-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "1c-cUntitled_Artwork 1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-Untitled-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b--Logos-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c--Logos-1.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "4-NEN": {
+          "title": "Nen",
+          "description": "",
+          "images": [
+            {
+              "file": "1-2cb3f646318573.584ffcfdca206.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-nen_logo_new.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-e9bffb46318573.58503ca61ae24.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-nen.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-460a4f46318573.584ffcfdcae9b.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-0f53f446318573.584ffcfdcb472.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-84add846318573.584ffcfdcbb8c.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-5696af46318573.584ffcfdca935.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "5-Miele": {
+          "title": "Miele",
+          "description": "",
+          "images": [
+            {
+              "file": "1-logo_miele.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-apron_logo_miele.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-miele_viveska.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-cakes_miele.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-miele_cups.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-vizitki_miele.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "illustration": {
+      "title": "Illustration",
+      "description": "",
+      "sections": {
+        "1-kids-books": {
+          "title": "Kids Books",
+          "description": "",
+          "images": [
+            {
+              "file": "1IMG_7709.JPG",
+              "description": ""
+            },
+            {
+              "file": "2fox_cover14.jpg",
+              "description": ""
+            },
+            {
+              "file": "2fox_cover2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3fox_cover13.jpg",
+              "description": ""
+            },
+            {
+              "file": "4IMG_7711.JPG",
+              "description": ""
+            },
+            {
+              "file": "5-petya.jpg",
+              "description": ""
+            },
+            {
+              "file": "6fox_cover12.jpg",
+              "description": ""
+            },
+            {
+              "file": "7IMG_7710.JPG",
+              "description": ""
+            }
+          ]
+        },
+        "2-character-design": {
+          "title": "Character Design",
+          "description": "",
+          "images": [
+            {
+              "file": "0okovtash_style-variations.jpg",
+              "description": ""
+            },
+            {
+              "file": "0oMG_1411.JPG",
+              "description": ""
+            },
+            {
+              "file": "0pall-2IMG_1412.jpg",
+              "description": ""
+            },
+            {
+              "file": "2okovtash_silhouettes_details.jpg",
+              "description": ""
+            },
+            {
+              "file": "3aokovtash_ActionPoses2.jpg",
+              "description": ""
+            },
+            {
+              "file": "3character_girl1.jpg",
+              "description": ""
+            },
+            {
+              "file": "7friends.jpg",
+              "description": ""
+            },
+            {
+              "file": "8character-3.jpg",
+              "description": ""
+            },
+            {
+              "file": "9okovtash_character-designs1.jpg",
+              "description": ""
+            },
+            {
+              "file": "9pcharacter_girl2.jpg",
+              "description": ""
+            },
+            {
+              "file": "9qokovtash_facialExpressions.JPG",
+              "description": ""
+            },
+            {
+              "file": "9rokovtash_ActionPoses1.jpg",
+              "description": ""
+            },
+            {
+              "file": "9sokovtash_characterTurnaround.JPG",
+              "description": ""
+            }
+          ]
+        },
+        "3-pets": {
+          "title": "Pets",
+          "description": ""
+        },
+        "4-plants": {
+          "title": "Plants",
+          "description": ""
+        },
+        "5-inktober": {
+          "title": "Inktober",
+          "description": ""
+        },
+        "6-comic-general": {
+          "title": "General Comics",
+          "description": "",
+          "images": [
+            {
+              "file": "1-comic1.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-comic4.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-comic2.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-comic3.jpg",
+              "description": ""
+            },
+            {
+              "file": "6-comic5.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "7a-comic_zina-lyucia": {
+          "title": "Zina & Lyucia Comic",
+          "description": "",
+          "images": [
+            {
+              "file": "12-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "13-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "14-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "17-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "17-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "18-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "19-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "21-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "32-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "40-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "41-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "42-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "50-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "60-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "61-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "62-gor.jpg",
+              "description": ""
+            },
+            {
+              "file": "63-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "80-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "81-vert.jpg",
+              "description": ""
+            },
+            {
+              "file": "90-comic_first1.jpg",
+              "description": ""
+            },
+            {
+              "file": "90-comic_first2.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "7-sketchbook": {
+          "title": "Sketches",
+          "description": ""
+        },
+        "3-tryzub": {
+          "title": "Tryzub",
+          "description": "",
+          "images": [
+            {
+              "file": "0-d8f5c343-f68b-434a-8efa-306dcbe7a8bf_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "0a-IMG_3541.jpg",
+              "description": ""
+            },
+            {
+              "file": "0b-IMG_3674.jpg",
+              "description": ""
+            },
+            {
+              "file": "0f-tryzub2-w_black.png",
+              "description": ""
+            },
+            {
+              "file": "1-all.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a5b0914-8157-4bc1-a168-1dfb5429bdce_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-IMG_8914.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-IMG_3670.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-IMG_3647.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c-IMG_3728.jpg",
+              "description": ""
+            },
+            {
+              "file": "2k-tryzub3-w_black.png",
+              "description": ""
+            },
+            {
+              "file": "3-bfae9e7b-c6d0-4cd7-a52e-8d6d4450da5e_rw_1920.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-IMG_3742.jpg",
+              "description": ""
+            },
+            {
+              "file": "3ba-IMG_8915.jpg",
+              "description": ""
+            },
+            {
+              "file": "3c-IMG_3605.jpg",
+              "description": ""
+            },
+            {
+              "file": "3f-tryzub_w_black.png",
+              "description": ""
+            },
+            {
+              "file": "3k-IMG_3643.jpg",
+              "description": ""
+            },
+            {
+              "file": "5a-IMG_3585.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "4-human": {
+          "title": "Human",
+          "description": "",
+          "images": [
+            {
+              "file": "1-a5-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "1-body.jpg",
+              "description": ""
+            },
+            {
+              "file": "1a-okovtash_footwear2.JPG",
+              "description": ""
+            },
+            {
+              "file": "1b--okovtash_footwear3.JPG",
+              "description": ""
+            },
+            {
+              "file": "1ba--hands_olena-kovtash.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork copy.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a--body.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a--HAND.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-Untitled_Artwork-4.png",
+              "description": ""
+            },
+            {
+              "file": "4-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a--body.jpg",
+              "description": ""
+            },
+            {
+              "file": "5-okovtash_footwear5.JPG",
+              "description": ""
+            },
+            {
+              "file": "6-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "6a-Untitled_Artwork.jpg",
+              "description": ""
+            },
+            {
+              "file": "8-hands.jpg",
+              "description": ""
+            },
+            {
+              "file": "9-hand.jpg",
+              "description": ""
+            },
+            {
+              "file": "9a-okovtash_footwear1.JPG",
+              "description": ""
+            },
+            {
+              "file": "9b-okovtash_footwear4.JPG",
+              "description": ""
+            },
+            {
+              "file": "9da-Untitled_Artwork 3.jpg",
+              "description": ""
+            },
+            {
+              "file": "9j-okovtash_handPoses1.jpg",
+              "description": ""
+            }
+          ]
+        },
+        "5-food": {
+          "title": "Food",
+          "description": "",
+          "images": [
+            {
+              "file": "2-Untitled_Artwork-1.png",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork-2.png",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork-3.png",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork-4.png",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork-5.png",
+              "description": ""
+            },
+            {
+              "file": "2-Untitled_Artwork-6.png",
+              "description": ""
+            },
+            {
+              "file": "22-Untitled_Artwork-1.png",
+              "description": ""
+            },
+            {
+              "file": "22-Untitled_Artwork-2.png",
+              "description": ""
+            },
+            {
+              "file": "222Untitled_Artwork-1.png",
+              "description": ""
+            },
+            {
+              "file": "222Untitled_Artwork-2.png",
+              "description": ""
+            },
+            {
+              "file": "222Untitled_Artwork-3.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-1.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-2.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-3.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-4.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-5.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-6.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-7.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-8.png",
+              "description": ""
+            },
+            {
+              "file": "22Untitled_Artwork-9.png",
+              "description": ""
+            },
+            {
+              "file": "apricot.png",
+              "description": ""
+            },
+            {
+              "file": "Food-3.png",
+              "description": ""
+            },
+            {
+              "file": "Food-4.png",
+              "description": ""
+            },
+            {
+              "file": "grapefruit2.png",
+              "description": ""
+            },
+            {
+              "file": "kiwi.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-1.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-2.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-3.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-4.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-5.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-6.png",
+              "description": ""
+            },
+            {
+              "file": "oct_Untitled_Artwork-7.png",
+              "description": ""
+            },
+            {
+              "file": "oct-Untitled_Artwork8.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-1 copy 2.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-1 copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-10.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-11.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-12.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-13.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-131.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-14 copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-14.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-15.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-16.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-17.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-18.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-2 copy 2.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-2 copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-231.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-3 copy 2.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-3 copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-331-white copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-4 copy 2.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-4 copy.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-4.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-5.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-6.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-7.png",
+              "description": ""
+            },
+            {
+              "file": "Untitled_Artwork-8.png",
+              "description": ""
+            }
+          ]
+        },
+        "8-sketchbook": {
+          "title": "Sketchbook",
+          "description": "",
+          "images": [
+            {
+              "file": "10aefafb-c4c4-47b1-a39f-e86d16e13088_rw_3840.jpg",
+              "description": ""
+            },
+            {
+              "file": "12c4ee69-03cc-4728-927d-d0f31e1c88e7_rw_3840.jpg",
+              "description": ""
+            },
+            {
+              "file": "2-5b881887824735.5faef96b2cb9c.jpg",
+              "description": ""
+            },
+            {
+              "file": "250da87a-7fc3-4b5b-9134-210627ac7b66_rw_3840.jpg",
+              "description": ""
+            },
+            {
+              "file": "42bcb902-7178-4bad-a343-9f98b1534f1b_rw_3840.jpg",
+              "description": ""
+            },
+            {
+              "file": "52bd86107798431.5faf004ecda65.jpg",
+              "description": ""
+            },
+            {
+              "file": "66d7e687-d879-461b-9122-9bd063ec9659_rw_1920.JPG",
+              "description": ""
+            },
+            {
+              "file": "79fd728d-d538-4420-887d-3c43b835fb28_rw_1920.JPG",
+              "description": ""
+            },
+            {
+              "file": "7d6bcd3a-652b-4d5e-8ed6-9b225b282303_rw_3840.JPG",
+              "description": ""
+            },
+            {
+              "file": "8a3ac90e-370e-498e-af1f-9ecb5a177743_rw_1920.JPG",
+              "description": ""
+            },
+            {
+              "file": "8b6d31107797223.5faef852ab1fa.jpg",
+              "description": ""
+            },
+            {
+              "file": "9a-1270C4D9-8C67-4163-8F77-1C0569E4D414.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b-884027A2-72CC-4F4F-B7CF-BC059866807C.jpg",
+              "description": ""
+            },
+            {
+              "file": "9b72578f-81bf-445d-b413-8cb4a2ce3452_rw_3840.jpg",
+              "description": ""
+            },
+            {
+              "file": "a145e13e-5741-4d7d-8b2a-919dc30ecf12_rw_1920.JPG",
+              "description": ""
+            },
+            {
+              "file": "aad6e0107797223.5faef852ac923.jpg",
+              "description": ""
+            },
+            {
+              "file": "animal_olena-kovtash.jpg",
+              "description": ""
+            },
+            {
+              "file": "bdefcf4d-f2bd-4292-814b-5fa18fbb6dda_rw_1200.JPG",
+              "description": ""
+            },
+            {
+              "file": "ec371387824735.5faef96b2c596.jpg",
+              "description": ""
+            },
+            {
+              "file": "Screenshot-2021-08-19-at-16.56.12.jpg",
+              "description": ""
+            },
+            {
+              "file": "sketch.jpg",
+              "description": ""
+            },
+            {
+              "file": "wbf252bf9-e678-457f-b345-2caa31fd9875_rw_3840.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "animation": {
+      "title": "Animation",
+      "description": "",
+      "sections": {
+        "1-three stories": {
+          "title": "Three Stories",
+          "description": "",
+          "images": [
+            {
+              "file": "0-effect_match_olenakovtash.mp4",
+              "description": ""
+            },
+            {
+              "file": "1-impact_olenakovtash.mp4",
+              "description": ""
+            },
+            {
+              "file": "2-shapes_nocopyright.mp4",
+              "description": ""
+            },
+            {
+              "file": "3-neveralone_nocopyright.mp4",
+              "description": ""
+            }
+          ]
+        },
+        "2-dances": {
+          "title": "Dances",
+          "description": "",
+          "images": [
+            {
+              "file": "1-olenakovtash_personalitywalk1.mp4",
+              "description": ""
+            },
+            {
+              "file": "2-OlenaKovtash_dance-pink.mp4",
+              "description": ""
+            },
+            {
+              "file": "3BW_2.MP4",
+              "description": ""
+            },
+            {
+              "file": "4clip3.mp4",
+              "description": ""
+            },
+            {
+              "file": "5bcb61b6f912447f299bab593de9e3341.MP4",
+              "description": ""
+            }
+          ]
+        },
+        "3-testarossa-winery": {
+          "title": "Testarossa Winery",
+          "description": "",
+          "images": [
+            {
+              "file": "0CHARD_1_low.mp4",
+              "description": ""
+            },
+            {
+              "file": "0PINOT_1_low.mp4",
+              "description": ""
+            },
+            {
+              "file": "1Easter-2.gif",
+              "description": ""
+            },
+            {
+              "file": "1Easter-4.gif",
+              "description": ""
+            },
+            {
+              "file": "2T-logo.gif",
+              "description": ""
+            },
+            {
+              "file": "3galen-day.gif",
+              "description": ""
+            }
+          ]
+        },
+        "4-leaky people": {
+          "title": "Leaky People",
+          "description": "",
+          "images": [
+            {
+              "file": "LeakyPeople_final_low.mp4",
+              "description": ""
+            }
+          ]
+        },
+        "5-work-in-progress": {
+          "title": "Work In Progress",
+          "description": "",
+          "images": [
+            {
+              "file": "0My Movie.mp4",
+              "description": ""
+            },
+            {
+              "file": "1comics_heroes_video_3.mp4",
+              "description": ""
+            },
+            {
+              "file": "1LakeHouse_low copy.mp4",
+              "description": ""
+            },
+            {
+              "file": "1p_Match_Framerate-low.mp4",
+              "description": ""
+            },
+            {
+              "file": "1Untitled_Artwork 2.mp4",
+              "description": ""
+            },
+            {
+              "file": "3Untitled_Artwork copy.MP4",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    "unsorted": {
+      "title": "Display",
+      "description": "",
+      "sections": {
+        "main": {
+          "title": "Main",
+          "description": "",
+          "images": [
+            {
+              "file": "0-IMG_3490-2.jpg",
+              "description": ""
+            },
+            {
+              "file": "00a-vetka.jpg",
+              "description": ""
+            },
+            {
+              "file": "2a-red.jpg",
+              "description": ""
+            },
+            {
+              "file": "2b-green.jpg",
+              "description": ""
+            },
+            {
+              "file": "2c-yellow.jpg",
+              "description": ""
+            },
+            {
+              "file": "2d-blue.jpg",
+              "description": ""
+            },
+            {
+              "file": "2f-Untitled-1.jpg",
+              "description": ""
+            },
+            {
+              "file": "3-IMAGE-2019-07-01-09-46-16.jpg",
+              "description": ""
+            },
+            {
+              "file": "3a-1-pastel.jpg",
+              "description": ""
+            },
+            {
+              "file": "3g-IMG_3808.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-2-2-pastel.jpg",
+              "description": ""
+            },
+            {
+              "file": "4-IMG_3803.jpg",
+              "description": ""
+            },
+            {
+              "file": "4a-IMG_0976.jpg",
+              "description": ""
+            },
+            {
+              "file": "4b-IMG_3806.jpg",
+              "description": ""
+            }
+          ]
+        }
+      }
+    }
+  }
+}
