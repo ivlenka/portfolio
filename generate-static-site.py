@@ -60,7 +60,16 @@ SECTION_CONFIGS = {
     'digital': {},
     'logos': {},
     'illustration': {},
-    'animation': {},
+    'animation': {
+        '4-leaky people': {
+            'customLayout': True,
+            'rows': [
+                {'count': 1, 'fullWidth': True},  # Row 1: video full width
+                {'count': 4},  # Row 2: 4 images
+                {'count': 5}   # Row 3: 5 images
+            ]
+        }
+    },
     'unsorted': {
         'main': {'showAllRows': True, 'firstRowImageCount': 2}
     }
@@ -103,19 +112,97 @@ def create_bin_packed_layout(images, container_width=1000, target_row_height=300
     current_row = []
     image_index = 0
 
-    # Handle first row with custom image count
-    if section_options.get('firstRowImageCount') and len(images) >= section_options['firstRowImageCount']:
-        first_row_count = section_options['firstRowImageCount']
-        for i in range(min(first_row_count, len(images))):
+    # Handle custom layout (e.g., leaky people section)
+    if section_options.get('customLayout') and section_options.get('rows'):
+        custom_rows = section_options['rows']
+
+        for row_config in custom_rows:
+            if image_index >= len(images):
+                break
+
+            row_count = row_config.get('count', 1)
+            is_full_width = row_config.get('fullWidth', False)
+            current_row = []
+
+            for i in range(row_count):
+                if image_index < len(images):
+                    img = images[image_index]
+                    aspect_ratio = img['width'] / img['height']
+                    scaled_width = target_row_height * aspect_ratio
+                    img['scaledWidth'] = scaled_width
+                    current_row.append(img)
+                    image_index += 1
+
+            if current_row:
+                rows.append(normalize_row(current_row, container_width, target_row_height, gap))
+
+        # Process any remaining images with normal bin packing
+        current_row = []
+        current_row_width = 0
+        for i in range(image_index, len(images)):
             img = images[i]
             aspect_ratio = img['width'] / img['height']
             scaled_width = target_row_height * aspect_ratio
             img['scaledWidth'] = scaled_width
-            current_row.append(img)
 
-        rows.append(normalize_row(current_row, container_width, target_row_height, gap))
-        current_row = []
-        image_index = first_row_count
+            if len(current_row) < min_images_per_row:
+                current_row.append(img)
+                current_row_width += scaled_width
+            elif current_row_width + scaled_width + (len(current_row) * gap) <= container_width:
+                current_row.append(img)
+                current_row_width += scaled_width
+            else:
+                if current_row:
+                    rows.append(normalize_row(current_row, container_width, target_row_height, gap))
+                current_row = [img]
+                current_row_width = scaled_width
+
+        if current_row:
+            rows.append(normalize_row(current_row, container_width, target_row_height, gap))
+
+        return rows
+
+    # Handle first row with custom image count
+    if section_options.get('firstRowImageCount') and len(images) >= section_options['firstRowImageCount']:
+        first_row_count = section_options['firstRowImageCount']
+        first_image_large = section_options.get('firstImageLarge', False)
+
+        # If firstImageLarge, separate videos from first image row
+        if first_image_large:
+            # First, render all videos in their own rows
+            while image_index < len(images) and images[image_index].get('isVideo'):
+                img = images[image_index]
+                aspect_ratio = img['width'] / img['height']
+                scaled_width = target_row_height * aspect_ratio
+                img['scaledWidth'] = scaled_width
+                rows.append(normalize_row([img], container_width, target_row_height, gap))
+                image_index += 1
+
+            # Then render first non-video image(s) in full width row
+            for i in range(first_row_count):
+                if image_index + i < len(images):
+                    img = images[image_index + i]
+                    aspect_ratio = img['width'] / img['height']
+                    scaled_width = target_row_height * aspect_ratio
+                    img['scaledWidth'] = scaled_width
+                    current_row.append(img)
+
+            if current_row:
+                rows.append(normalize_row(current_row, container_width, target_row_height, gap))
+                current_row = []
+                image_index += first_row_count
+        else:
+            # Original behavior - include all items in first row
+            for i in range(min(first_row_count, len(images))):
+                img = images[i]
+                aspect_ratio = img['width'] / img['height']
+                scaled_width = target_row_height * aspect_ratio
+                img['scaledWidth'] = scaled_width
+                current_row.append(img)
+
+            rows.append(normalize_row(current_row, container_width, target_row_height, gap))
+            current_row = []
+            image_index = first_row_count
 
     # Process remaining images
     current_row_width = 0
@@ -185,10 +272,13 @@ def render_gallery_html(rows, gap=10, section_id='', is_animation_project=False,
 
             if is_video:
                 video_path = img['src'].rsplit('.', 1)[0]
-                poster_path = f"{video_path}_thumb.jpg"
+                # Use 1000px thumbnail for first video item (if configured)
+                poster_suffix = '_thumb1000.jpg' if img.get('isFirstItemInSection') else '_thumb.jpg'
+                poster_path = f"{video_path}{poster_suffix}"
                 media_element = f'<video src="{img["src"]}" poster="{poster_path}" style="width: {img["width"]}px; height: {img["height"]}px; object-fit: cover; display: block;" muted loop playsinline{autoplay_attr} data-has-audio="false" loading="lazy"></video>'
             else:
                 image_path = img['src'].rsplit('.', 1)[0]
+                # Use 1000px thumbnail for last image
                 thumbnail_suffix = '_thumb1000.jpg' if img.get('isLastInSection') else '_thumb.jpg'
                 thumbnail_path = f"{image_path}{thumbnail_suffix}"
                 media_element = f'<img src="{thumbnail_path}" data-full-src="{img["src"]}" alt="{img.get("alt", "")}" style="width: {img["width"]}px; height: {img["height"]}px; object-fit: cover; display: block;" loading="lazy">'
@@ -265,11 +355,24 @@ def generate_project_page(project_id, project_info, gallery_data):
         for img_entry in section_text.get('images', []):
             image_descriptions[img_entry['file']] = img_entry.get('description', '')
 
+        # Get section options first to check for special configurations
+        section_options = SECTION_CONFIGS.get(project_id, {}).get(section_key, {})
+        custom_layout = section_options.get('customLayout', False)
+
         for idx, img_src in enumerate(section_data['images']):
+            is_video = img_src.lower().endswith('.mp4')
+
+            # For custom layout, check if this is the first item (video should use large thumb)
+            is_first_item = False
+            if custom_layout and idx == 0:
+                is_first_item = True
+
             # Check if this is the last image in the section
             is_last = (idx == len(section_data['images']) - 1)
-            width, height = get_image_size(img_src, is_last_in_section=is_last)
-            is_video = img_src.lower().endswith('.mp4')
+
+            # Use large thumbnail for first item in custom layout or last image
+            use_large_thumb = is_first_item or (is_last and not custom_layout)
+            width, height = get_image_size(img_src, is_last_in_section=use_large_thumb)
 
             # Get description for this image by filename
             filename = os.path.basename(img_src)
@@ -284,16 +387,18 @@ def generate_project_page(project_id, project_info, gallery_data):
                 'description': description,
                 'index': image_index
             }
+
+            # Mark special images
+            if is_first_item:
+                img_obj['isFirstItemInSection'] = True
+            if is_last and not custom_layout:
+                img_obj['isLastInSection'] = True
+
             images.append(img_obj)
             all_images.append(img_obj)
             image_index += 1
 
-        # Mark last image in section
-        if images:
-            images[-1]['isLastInSection'] = True
-
-        # Get section options
-        section_options = SECTION_CONFIGS.get(project_id, {}).get(section_key, {})
+        # Section options already retrieved above
 
         # Get section title and description (section_text already retrieved above)
         section_title = section_text.get('title', section_key.split('-', 1)[-1].replace('-', ' ').title())
