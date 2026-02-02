@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-top">
+            <div class="mobile-logo-section">
+                <img src="images/logo5.png" alt="Logo" class="mobile-logo">
+                <span class="mobile-name">OLENA KOVTASH</span>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="contact.html">
+                    <img src="images/contacts.png" alt="Contact" class="mobile-contact-icon">
+                </a>
+                <div class="mobile-menu-icon">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav-wrapper">
+            <nav class="mobile-nav">
+                <a href="#brands" data-section="brands">BRANDS</a>
+                <a href="#magazines" data-section="magazines">MAGAZINES</a>
+                <a href="#prints" data-section="prints">PRINTS</a>
+                <a href="#digital" data-section="digital">DIGITAL</a>
+                <a href="#logos" data-section="logos">LOGOS</a>
+                <a href="#illustration" data-section="illustration">ILLUSTRATION</a>
+                <a href="#animation" data-section="animation">ANIMATION</a>
+                <a href="#display" data-section="display">DISPLAY</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -39,7 +69,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="project-grid">
-                <div class="project-item">
+                <div class="project-item" id="brands" data-category="brands">
                     <a href="project-brands.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/1-brands/1-testarossa/WineProfiles_2021_18PDO.jpg" alt="Brands">
@@ -47,7 +77,7 @@
                         <p class="project-label">BRANDS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="magazines" data-category="magazines">
                     <a href="project-magazines.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/2-magazines/1-elle/elle1.jpg" alt="Magazines">
@@ -55,7 +85,7 @@
                         <p class="project-label">MAGAZINES</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="prints" data-category="prints">
                     <a href="project-prints.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/3-print/1-cards_cali/0-77ced741-e43f-469b-91e6-3c7f489f56e0_rw_1920.jpg" alt="Prints">
@@ -63,7 +93,7 @@
                         <p class="project-label">PRINTS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="digital" data-category="digital">
                     <a href="project-digital.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/4-digital/2-email/0-k1.jpg" alt="Digital">
@@ -71,7 +101,7 @@
                         <p class="project-label">DIGITAL</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="logos" data-category="logos">
                     <a href="project-logos.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/5-logos/1-OST/1-Logo_OST_2_big.jpg" alt="Logos">
@@ -79,7 +109,7 @@
                         <p class="project-label">LOGOS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="illustration" data-category="illustration">
                     <a href="project-illustration.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/6-illustrations/6-comic-general/1-comic1.jpg" alt="Illustration">
@@ -87,7 +117,7 @@
                         <p class="project-label">ILLUSTRATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="animation" data-category="animation">
                     <a href="project-animation.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/7-animation/1-three stories/0-effect_match_olenakovtash_thumb.jpg" alt="Animation">
@@ -95,7 +125,7 @@
                         <p class="project-label">ANIMATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" id="display" data-category="display">
                     <a href="project-unsorted.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/8-display/0-IMG_3490-2.jpg" alt="Display">
@@ -103,7 +133,7 @@
                         <p class="project-label">DISPLAY</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="illustration">
                     <a href="project-illustration.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/6-illustrations/7a-comic_zina-lyucia/12-vert.jpg" alt="Illustration">
@@ -111,7 +141,7 @@
                         <p class="project-label">ILLUSTRATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="magazines">
                     <a href="project-magazines.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/2-magazines/2-ellegirl/01cover-e7.jpg" alt="Magazines">
@@ -119,7 +149,7 @@
                         <p class="project-label">MAGAZINES</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="animation">
                     <a href="project-animation.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/7-animation/2-dances/1-olenakovtash_personalitywalk1_thumb.jpg" alt="Animation">
@@ -127,7 +157,7 @@
                         <p class="project-label">ANIMATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="prints">
                     <a href="project-prints.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/3-print/4-zoomer/1-zoomer26.jpg" alt="Prints">
@@ -135,7 +165,7 @@
                         <p class="project-label">PRINTS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="logos">
                     <a href="project-logos.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/5-logos/3-Zoloti-maky/1-ZM_logo_black-bckg.jpg" alt="Logos">
@@ -143,7 +173,7 @@
                         <p class="project-label">LOGOS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="illustration">
                     <a href="project-illustration.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/6-illustrations/1-kids-books/1IMG_7709.JPG" alt="Illustration">
@@ -151,7 +181,7 @@
                         <p class="project-label">ILLUSTRATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="brands">
                     <a href="project-brands.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/1-brands/2-passion-embrace/PE_behance_tango2-2-cover.jpg" alt="Brands">
@@ -159,7 +189,7 @@
                         <p class="project-label">BRANDS</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="magazines">
                     <a href="project-magazines.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/2-magazines/3-cosmo/cosmo0.jpg" alt="Magazines">
@@ -167,7 +197,7 @@
                         <p class="project-label">MAGAZINES</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="digital">
                     <a href="project-digital.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/4-digital/1-elle-icon/0-f0478846311553.584fc37478ad7.jpg" alt="Digital">
@@ -175,7 +205,7 @@
                         <p class="project-label">DIGITAL</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="illustration">
                     <a href="project-illustration.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/6-illustrations/2-character-design/0okovtash_style-variations.jpg" alt="Illustration">
@@ -183,7 +213,7 @@
                         <p class="project-label">ILLUSTRATION</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="display">
                     <a href="project-unsorted.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/8-display/3-IMAGE-2019-07-01-09-46-16.jpg" alt="Display">
@@ -191,7 +221,7 @@
                         <p class="project-label">DISPLAY</p>
                     </a>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="animation">
                     <a href="project-animation.html">
                         <div class="project-thumbnail">
                             <img src="images/gallery/7-animation/3-testarossa-winery/1Easter-2.gif" alt="Animation">
@@ -205,6 +235,7 @@
     <script src="homepage-covers.js"></script>
     <script src="smooth-hover.js"></script>
     <script src="menu-sync.js"></script>
+    <script src="mobile-scroll-spy.js"></script>
     <script src="image-protection.js"></script>
 </body>
 </html>
