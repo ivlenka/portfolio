@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const section = document.getElementById(sectionId);
 
             if (section) {
-                const headerHeight = document.querySelector('.mobile-header').offsetHeight;
+                const headerHeight = 100; // Fixed header height
                 const targetPos = section.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
