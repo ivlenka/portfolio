@@ -23,7 +23,7 @@ echo "Scanning gallery directory..."
 # Function to list image and video files in a directory
 list_images() {
     local dir="$1"
-    find "$dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb.jpg" | sort
+    find "$dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb*" | sort
 }
 
 # Start JSON
@@ -119,7 +119,7 @@ echo "  }" >> "$OUTPUT_FILE"
 echo "}" >> "$OUTPUT_FILE"
 
 # Count total media files (images + videos, excluding thumbnails)
-total_media=$(find "$GALLERY_BASE" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb.jpg" | wc -l)
+total_media=$(find "$GALLERY_BASE" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.svg" -o -iname "*.mp4" -o -iname "*.mov" \) ! -name "*_thumb*" | wc -l)
 
 echo "✓ Gallery data generated: $OUTPUT_FILE"
 echo "  Found $total_media media files (images + videos)"

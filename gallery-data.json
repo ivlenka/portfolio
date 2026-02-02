@@ -56,9 +56,9 @@
             "images/gallery/1-brands/3-pivotpoint/6-PP_posters3_new.jpg",
             "images/gallery/1-brands/3-pivotpoint/7-IMG_3595.jpg",
             "images/gallery/1-brands/3-pivotpoint/7-print_t-shirt_PP_1_image.jpg",
-            "images/gallery/1-brands/3-pivotpoint/7-Screenshot 2026-01-15 at 2.48.10\u202fPM.png",
+            "images/gallery/1-brands/3-pivotpoint/7-Screenshot 2026-01-15 at 2.48.10 PM.png",
             "images/gallery/1-brands/3-pivotpoint/8-pink_PP.jpg",
-            "images/gallery/1-brands/3-pivotpoint/8-Screenshot 2026-01-15 at 2.48.29\u202fPM.png",
+            "images/gallery/1-brands/3-pivotpoint/8-Screenshot 2026-01-15 at 2.48.29 PM.png",
             "images/gallery/1-brands/3-pivotpoint/8-yellow_PP.jpg",
             "images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2.mp4",
             "images/gallery/1-brands/3-pivotpoint/8b-pink_t.jpg",
@@ -66,7 +66,7 @@
             "images/gallery/1-brands/3-pivotpoint/9-print_t-shirt_PP_5_image.jpg",
             "images/gallery/1-brands/3-pivotpoint/9B-PP_posters4.jpg",
             "images/gallery/1-brands/3-pivotpoint/9c-print_t-shirt_PP_2_image.jpg",
-            "images/gallery/1-brands/3-pivotpoint/9d-Screenshot 2026-01-15 at 2.48.58\u202fPM.png"
+            "images/gallery/1-brands/3-pivotpoint/9d-Screenshot 2026-01-15 at 2.48.58 PM.png"
           ]
         },
         "4-happytowasteless": {
@@ -90,7 +90,7 @@
         },
         "5-springerschool": {
           "images": [
-            "images/gallery/1-brands/5-springerschool/1-Screenshot 2026-01-15 at 3.34.09\u202fPM.jpg",
+            "images/gallery/1-brands/5-springerschool/1-Screenshot 2026-01-15 at 3.34.09 PM.jpg",
             "images/gallery/1-brands/5-springerschool/2-8Springer_merch_cool_L.jpg",
             "images/gallery/1-brands/5-springerschool/2ab--9bat-shirts3.jpg",
             "images/gallery/1-brands/5-springerschool/2b-haSpringer_walkathon_logo-green.jpg",
@@ -101,8 +101,8 @@
             "images/gallery/1-brands/5-springerschool/5-Springer_merch_detected_L.jpg",
             "images/gallery/1-brands/5-springerschool/6-BEE_tee_logo_PRINT4.jpg",
             "images/gallery/1-brands/5-springerschool/7-IMG_6662.jpg",
-            "images/gallery/1-brands/5-springerschool/8-Screenshot 2026-01-15 at 3.34.27\u202fPM.jpg",
-            "images/gallery/1-brands/5-springerschool/9-Screenshot 2026-01-15 at 3.37.02\u202fPM.jpg",
+            "images/gallery/1-brands/5-springerschool/8-Screenshot 2026-01-15 at 3.34.27 PM.jpg",
+            "images/gallery/1-brands/5-springerschool/9-Screenshot 2026-01-15 at 3.37.02 PM.jpg",
             "images/gallery/1-brands/5-springerschool/9at-shirts.jpg",
             "images/gallery/1-brands/5-springerschool/9b-02.jpg",
             "images/gallery/1-brands/5-springerschool/9b-t-shirts4.jpg",
@@ -613,9 +613,11 @@
         },
         "8-sketchbook": {
           "images": [
+            "images/gallery/6-illustrations/8-sketchbook/1-cat.jpg",
             "images/gallery/6-illustrations/8-sketchbook/10aefafb-c4c4-47b1-a39f-e86d16e13088_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/12c4ee69-03cc-4728-927d-d0f31e1c88e7_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/2-5b881887824735.5faef96b2cb9c.jpg",
+            "images/gallery/6-illustrations/8-sketchbook/2-rose.jpg",
             "images/gallery/6-illustrations/8-sketchbook/250da87a-7fc3-4b5b-9134-210627ac7b66_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/42bcb902-7178-4bad-a343-9f98b1534f1b_rw_3840.jpg",
             "images/gallery/6-illustrations/8-sketchbook/52bd86107798431.5faf004ecda65.jpg",
@@ -670,7 +672,16 @@
         },
         "4-leaky people": {
           "images": [
-            "images/gallery/7-animation/4-leaky people/LeakyPeople_final_low.mp4"
+            "images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low.mp4",
+            "images/gallery/7-animation/4-leaky people/1-credits4.jpg",
+            "images/gallery/7-animation/4-leaky people/2-credits7.jpg",
+            "images/gallery/7-animation/4-leaky people/3-credits5.jpg",
+            "images/gallery/7-animation/4-leaky people/4-credits6.jpg",
+            "images/gallery/7-animation/4-leaky people/5-IMG_1946.JPG",
+            "images/gallery/7-animation/4-leaky people/6-IMG_1947.JPG",
+            "images/gallery/7-animation/4-leaky people/7-IMG_1955.JPG",
+            "images/gallery/7-animation/4-leaky people/8-IMG_1956.JPG",
+            "images/gallery/7-animation/4-leaky people/9-OlenaKovtash_Character_version2.jpg"
           ]
         },
         "5-work-in-progress": {
@@ -702,6 +713,7 @@
             "images/gallery/8-display/3g-IMG_3808.jpg",
             "images/gallery/8-display/4-2-2-pastel.jpg",
             "images/gallery/8-display/4-IMG_3803.jpg",
+            "images/gallery/8-display/4-waiting.jpg",
             "images/gallery/8-display/4a-IMG_0976.jpg",
             "images/gallery/8-display/4b-IMG_3806.jpg"
           ]
