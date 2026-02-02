@@ -86,18 +86,36 @@ html {
     text-decoration: none;
     font-size: 14px;
     line-height: 1.2;
-    transition: color 0.2s;
+    position: relative;
+    padding-left: 0;
+    transition: padding-left 0.2s, color 0.2s;
 }
 
-.top-nav a:hover {
-    color: #000000;
+.top-nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    background-color: #000000;
+    opacity: 0;
+    transition: width 0.2s, height 0.2s, opacity 0.2s, left 0.2s;
 }
 
+.top-nav a:hover,
 .top-nav a.active {
-    text-decoration: underline;
-    text-decoration-color: #000000;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    color: #000000;
+    padding-left: 15px;
+}
+
+.top-nav a:hover::before,
+.top-nav a.active::before {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    left: 0;
 }
 
 .projects-menu {
@@ -131,17 +149,38 @@ html {
     font-size: 14px;
     line-height: 1.2;
     transition: color 0.2s;
+    position: relative;
+    padding-left: 0;
+    transition: padding-left 0.2s, color 0.2s;
 }
 
-.project-links a:hover {
+.project-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    background-color: #000000;
+    opacity: 0;
+    transition: width 0.2s, height 0.2s, opacity 0.2s, left 0.2s;
+}
+
+.project-links a:hover,
+.project-links a.active,
+.project-links a.highlight {
     color: #000000;
+    padding-left: 15px;
 }
 
-.project-links a.active {
-    text-decoration: underline;
-    text-decoration-color: #000000;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+.project-links a:hover::before,
+.project-links a.active::before,
+.project-links a.highlight::before {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    left: 0;
 }
 
 /* Main Content Styles */
