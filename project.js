@@ -660,7 +660,9 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
             } else {
                 // Load thumbnail image for dimensions (not full image)
                 const imagePath = imageObj.src.substring(0, imageObj.src.lastIndexOf('.'));
-                const thumbnailPath = `${imagePath}_thumb.jpg`;
+                // Use higher quality thumbnail (1000px) for last image in section
+                const thumbnailSuffix = imageObj.isLastInSection ? '_thumb1000.jpg' : '_thumb.jpg';
+                const thumbnailPath = `${imagePath}${thumbnailSuffix}`;
                 const img = new Image();
                 img.onload = () => {
                     imageObj.width = img.naturalWidth;
@@ -675,15 +677,15 @@ async function renderDynamicGallery(projectId, sectionTitles = {}, sectionOption
 
     // Load all images with dimensions
     for (const section of sections) {
+        // Mark the last image in this section for higher quality thumbnail BEFORE loading dimensions
+        if (section.images.length > 0) {
+            section.images[section.images.length - 1].isLastInSection = true;
+        }
+
         const loadedImages = await Promise.all(
             section.images.map(img => loadImageDimensions(img))
         );
         section.images = loadedImages;
-
-        // Mark the last image in this section for higher quality thumbnail
-        if (loadedImages.length > 0) {
-            loadedImages[loadedImages.length - 1].isLastInSection = true;
-        }
 
         allImages = allImages.concat(loadedImages);
     }

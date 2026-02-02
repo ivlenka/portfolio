@@ -66,14 +66,16 @@ SECTION_CONFIGS = {
     }
 }
 
-def get_image_size(image_path):
+def get_image_size(image_path, is_last_in_section=False):
     """Get image dimensions from thumbnail using sips"""
     import subprocess
     import re
 
     # Use thumbnail for dimensions
     base_path = image_path.rsplit('.', 1)[0]
-    thumb_path = f"{base_path}_thumb.jpg"
+    # Use higher quality thumbnail (1000px) for last image in section
+    thumbnail_suffix = '_thumb1000.jpg' if is_last_in_section else '_thumb.jpg'
+    thumb_path = f"{base_path}{thumbnail_suffix}"
 
     # Try thumbnail first, then original
     for path in [thumb_path, image_path]:
@@ -263,8 +265,10 @@ def generate_project_page(project_id, project_info, gallery_data):
         for img_entry in section_text.get('images', []):
             image_descriptions[img_entry['file']] = img_entry.get('description', '')
 
-        for img_src in section_data['images']:
-            width, height = get_image_size(img_src)
+        for idx, img_src in enumerate(section_data['images']):
+            # Check if this is the last image in the section
+            is_last = (idx == len(section_data['images']) - 1)
+            width, height = get_image_size(img_src, is_last_in_section=is_last)
             is_video = img_src.lower().endswith('.mp4')
 
             # Get description for this image by filename
