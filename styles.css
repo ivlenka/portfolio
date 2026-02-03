@@ -480,6 +480,14 @@ html {
     gap: 0px;
 }
 
+.mobile-logo-section a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    line-height: 0;
+}
+
 .mobile-logo {
     width: 81px;
     height: auto;
@@ -489,13 +497,19 @@ html {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.5px;
-    display: inline;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 .mobile-name-link {
     text-decoration: none;
     color: inherit;
-    display: inline;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 .mobile-header-icons {
@@ -686,6 +700,9 @@ html {
         text-align: center;
         position: relative;
         height: auto;
+        margin: 0;
+        width: 100vw;
+        scroll-snap-align: end;
     }
 
     .mobile-footer-line {
@@ -697,6 +714,7 @@ html {
         color: #ffffff;
         text-decoration: none;
         transition: opacity 0.3s ease;
+        line-height: 0;
     }
 
     .mobile-instagram-link:hover {
@@ -707,6 +725,7 @@ html {
         width: 20px;
         height: 20px;
         color: #ffffff;
+        display: block;
     }
 }
 
@@ -734,18 +753,24 @@ html {
         display: none !important;
     }
 
-    html, body {
+    html {
         margin: 0;
         padding: 0;
         overflow-x: hidden;
         height: 100%;
     }
 
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
     body.home-page {
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
-        height: auto;
     }
 
     .mobile-carousels-container {
@@ -755,7 +780,15 @@ html {
         padding: 0;
     }
 
-    .container {
+    body.home-page .container {
+        display: none !important;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    body:not(.home-page) .container {
         margin: 0;
         padding: 0;
     }
