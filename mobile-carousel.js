@@ -26,20 +26,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!track || originalSlides.length === 0) return null;
 
-        // Clone all slides for seamless infinite loop
-        const clones = [];
-        originalSlides.forEach(function(slide) {
-            const clone = slide.cloneNode(true);
-            track.appendChild(clone);
-            clones.push(clone);
-        });
+        // Clone all slides THREE times for seamless infinite loop
+        // This ensures we always have content visible during transitions
+        const allSlidesArray = [...originalSlides];
 
-        // Get all slides including clones
-        const allSlides = track.querySelectorAll('.carousel-slide');
+        // Add two more full sets of clones
+        for (let i = 0; i < 2; i++) {
+            originalSlides.forEach(function(slide) {
+                const clone = slide.cloneNode(true);
+                track.appendChild(clone);
+                allSlidesArray.push(clone);
+            });
+        }
+
         const realSlidesCount = originalSlides.length;
-        const totalSlides = allSlides.length;
+        const totalSlides = allSlidesArray.length;
 
-        let currentSlide = 1; // Start at second image to avoid white space
+        // Start in the middle set to allow seamless looping in both directions
+        let currentSlide = realSlidesCount;
         let isTransitioning = false;
         let autoPlayInterval = null;
         let isActive = false;
@@ -47,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate slide width (50% of viewport)
         const slideWidth = window.innerWidth * 0.5;
 
-        // Initialize position - start at second image to fill visible area
+        // Initialize position - start at middle set
         track.style.transition = 'none';
-        track.style.transform = `translateX(-${slideWidth}px)`;
+        const initialOffset = -currentSlide * slideWidth;
+        track.style.transform = `translateX(${initialOffset}px)`;
 
         // Force reflow to ensure initial position is set
         void track.offsetWidth;
@@ -58,25 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
         function showSlide(index, animate = true) {
             if (!animate) {
                 track.style.transition = 'none';
+                currentSlide = index;
+                const offset = -index * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
+
+                // Force reflow
+                void track.offsetWidth;
+
                 isTransitioning = false;
             } else {
                 track.style.transition = 'transform 0.8s ease-in-out';
+                currentSlide = index;
                 isTransitioning = true;
-            }
 
-            // Move track - use slide width (50vw)
-            const offset = -index * slideWidth;
-            track.style.transform = `translateX(${offset}px)`;
-
-            currentSlide = index;
-
-            if (animate) {
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 800);
-            } else {
-                // Force reflow to ensure no-transition takes effect
-                void track.offsetWidth;
+                const offset = -index * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
             }
         }
 
@@ -84,16 +85,49 @@ document.addEventListener('DOMContentLoaded', function() {
         track.addEventListener('transitionend', function(e) {
             if (e.target !== track) return;
 
-            // If we've reached the cloned section, jump back to start
-            if (currentSlide >= realSlidesCount) {
-                const jumpToSlide = currentSlide - realSlidesCount;
-                showSlide(jumpToSlide, false);
+            isTransitioning = false;
+
+            // If we're in the last set, jump to middle set
+            if (currentSlide >= realSlidesCount * 2) {
+                const equivalentSlide = currentSlide - realSlidesCount;
+
+                // Jump instantly with no transition
+                track.style.transition = 'none';
+                currentSlide = equivalentSlide;
+                const offset = -equivalentSlide * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
+
+                // Force reflow
+                void track.offsetWidth;
+
+                // Re-enable transitions
+                setTimeout(function() {
+                    track.style.transition = 'transform 0.8s ease-in-out';
+                }, 20);
+            }
+            // If we're in the first set, jump to middle set
+            else if (currentSlide < realSlidesCount) {
+                const equivalentSlide = currentSlide + realSlidesCount;
+
+                // Jump instantly with no transition
+                track.style.transition = 'none';
+                currentSlide = equivalentSlide;
+                const offset = -equivalentSlide * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
+
+                // Force reflow
+                void track.offsetWidth;
+
+                // Re-enable transitions
+                setTimeout(function() {
+                    track.style.transition = 'transform 0.8s ease-in-out';
+                }, 20);
             }
         });
 
         // Next slide
         function nextSlide() {
-            if (!isTransitioning) {
+            if (!isTransitioning && isActive) {
                 showSlide(currentSlide + 1, true);
             }
         }

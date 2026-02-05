@@ -386,7 +386,7 @@ html {
 
     .carousel-track {
         display: flex;
-        height: 50vh;
+        height: 45vh;
         transition: transform 0.8s ease-in-out;
         will-change: transform;
         width: fit-content;
@@ -425,7 +425,7 @@ html {
         left: 0;
         right: 0;
         width: 100vw;
-        height: 50vh;
+        height: 45vh;
         display: flex;
         align-items: center;
         justify-content: center;
