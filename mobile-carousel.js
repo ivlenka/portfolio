@@ -59,6 +59,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Force reflow to ensure initial position is set
         void track.offsetWidth;
 
+        // Mark initial slide as active
+        updateActiveSlide(currentSlide);
+
+        // Update active slide class
+        function updateActiveSlide(index) {
+            // Remove active class from all slides
+            allSlidesArray.forEach(function(slide) {
+                slide.classList.remove('active');
+            });
+
+            // Add active class to current slide
+            if (allSlidesArray[index]) {
+                allSlidesArray[index].classList.add('active');
+            }
+        }
+
         // Show specific slide with optional transition
         function showSlide(index, animate = true) {
             if (!animate) {
@@ -71,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 void track.offsetWidth;
 
                 isTransitioning = false;
+
+                // Update active slide
+                updateActiveSlide(index);
             } else {
                 track.style.transition = 'transform 0.8s ease-in-out';
                 currentSlide = index;
@@ -78,6 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const offset = -index * slideWidth;
                 track.style.transform = `translateX(${offset}px)`;
+
+                // Update active slide
+                updateActiveSlide(index);
             }
         }
 
@@ -91,37 +113,49 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentSlide >= realSlidesCount * 2) {
                 const equivalentSlide = currentSlide - realSlidesCount;
 
-                // Jump instantly with no transition
+                // Disable all transitions temporarily
+                track.classList.add('no-transition');
                 track.style.transition = 'none';
+
                 currentSlide = equivalentSlide;
                 const offset = -equivalentSlide * slideWidth;
                 track.style.transform = `translateX(${offset}px)`;
 
+                // Update active slide immediately (before reflow)
+                updateActiveSlide(equivalentSlide);
+
                 // Force reflow
                 void track.offsetWidth;
 
-                // Re-enable transitions
+                // Re-enable transitions after a brief delay
                 setTimeout(function() {
+                    track.classList.remove('no-transition');
                     track.style.transition = 'transform 0.8s ease-in-out';
-                }, 20);
+                }, 50);
             }
             // If we're in the first set, jump to middle set
             else if (currentSlide < realSlidesCount) {
                 const equivalentSlide = currentSlide + realSlidesCount;
 
-                // Jump instantly with no transition
+                // Disable all transitions temporarily
+                track.classList.add('no-transition');
                 track.style.transition = 'none';
+
                 currentSlide = equivalentSlide;
                 const offset = -equivalentSlide * slideWidth;
                 track.style.transform = `translateX(${offset}px)`;
 
+                // Update active slide immediately (before reflow)
+                updateActiveSlide(equivalentSlide);
+
                 // Force reflow
                 void track.offsetWidth;
 
-                // Re-enable transitions
+                // Re-enable transitions after a brief delay
                 setTimeout(function() {
+                    track.classList.remove('no-transition');
                     track.style.transition = 'transform 0.8s ease-in-out';
-                }, 20);
+                }, 50);
             }
         });
 

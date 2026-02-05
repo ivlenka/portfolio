@@ -417,6 +417,18 @@ html {
         object-fit: cover;
         display: block;
         pointer-events: none;
+        filter: grayscale(100%);
+        opacity: 0.3;
+        transition: filter 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .carousel-slide.active img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    .carousel-track.no-transition .carousel-slide img {
+        transition: none !important;
     }
 
     .carousel-overlay {
