@@ -505,16 +505,21 @@
         grid-row: auto !important;
     }
 
+    /* Hide sound toggle button on mobile for animation videos */
+    .sound-toggle-btn {
+        display: none !important;
+    }
+
     /* Mobile Play Button for Animation Videos */
     .mobile-play-btn {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
+        width: 36px;
+        height: 36px;
         background: rgba(255, 255, 255, 0.9);
-        border: 1.5px solid #000000;
+        border: 1px solid #000000;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -526,15 +531,15 @@
     }
 
     .mobile-play-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         color: #000000;
-        margin-left: 3px;
+        margin-left: 2px;
     }
 
     .mobile-play-btn.playing {
         background: rgba(0, 0, 0, 0.9);
-        border-color: #000000;
+        border: 1px solid #000000;
     }
 
     .mobile-play-btn.playing svg {
@@ -545,7 +550,7 @@
     /* Inverted play button for dark videos */
     .mobile-play-btn.inverted {
         background: rgba(0, 0, 0, 0.9);
-        border-color: #ffffff;
+        border: 1px solid #ffffff;
     }
 
     .mobile-play-btn.inverted svg {
@@ -554,7 +559,7 @@
 
     .mobile-play-btn.inverted.playing {
         background: rgba(255, 255, 255, 0.9);
-        border-color: #ffffff;
+        border: 1px solid #ffffff;
     }
 
     .mobile-play-btn.inverted.playing svg {

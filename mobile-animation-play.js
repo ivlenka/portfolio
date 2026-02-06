@@ -45,30 +45,71 @@ document.addEventListener('DOMContentLoaded', function() {
         playBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
+            e.stopImmediatePropagation();
 
             if (video.paused) {
-                video.play();
-                playBtn.innerHTML = pauseIcon;
-                playBtn.classList.add('playing');
+                // Remove muted attribute and ensure audio
+                video.removeAttribute('muted');
+                video.muted = false;
+                video.volume = 1.0;
+
+                console.log('Playing video with sound:', {
+                    muted: video.muted,
+                    volume: video.volume,
+                    hasAudio: video.mozHasAudio || video.webkitAudioDecodedByteCount > 0
+                });
+
+                video.play().then(function() {
+                    console.log('Video playing successfully');
+                    playBtn.style.display = 'none';
+                }).catch(function(error) {
+                    console.log('Play error:', error);
+                    // Try again with user interaction
+                    video.muted = false;
+                    video.play();
+                    playBtn.style.display = 'none';
+                });
             } else {
                 video.pause();
-                playBtn.innerHTML = playIcon;
-                playBtn.classList.remove('playing');
+                playBtn.style.display = 'flex';
             }
+        }, true);
+
+        // Show button when video is paused
+        video.addEventListener('pause', function() {
+            playBtn.style.display = 'flex';
         });
 
-        // Update button when video ends
+        // Show button when video is playing (in case we want to pause)
+        video.addEventListener('play', function() {
+            playBtn.style.display = 'none';
+        });
+
+        // Show button when video ends
         video.addEventListener('ended', function() {
-            playBtn.innerHTML = playIcon;
-            playBtn.classList.remove('playing');
+            playBtn.style.display = 'flex';
         });
 
-        // Prevent lightbox from opening when clicking on video
+        // Allow clicking video to pause, prevent lightbox
+        video.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            if (!video.paused) {
+                video.pause();
+            }
+            return false;
+        }, true);
+
+        // Prevent lightbox from opening when clicking on video wrapper
         wrapper.addEventListener('click', function(e) {
-            if (e.target === video || e.target.closest('.mobile-play-btn')) {
+            if (e.target === video || e.target === playBtn || e.target.closest('.mobile-play-btn')) {
                 e.preventDefault();
                 e.stopPropagation();
+                e.stopImmediatePropagation();
+                return false;
             }
-        });
+        }, true);
     });
 });
