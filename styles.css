@@ -597,7 +597,7 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 12px;
+    padding: 6px 9px;
     background-color: rgba(255, 255, 255, 0.9);
     color: #888888;
     text-decoration: none;
@@ -611,8 +611,14 @@ html {
     flex: 0 0 auto;
 }
 
-.mobile-nav a:nth-child(4),
-.mobile-nav a:nth-child(8) {
+/* Items at start of row - extend background to left edge */
+.mobile-nav a.row-start {
+    margin-left: -20px;
+    padding-left: 29px;
+}
+
+/* Items at end of row - extend background to right edge */
+.mobile-nav a.row-end {
     flex: 1 1 auto;
     justify-content: flex-start;
 }
