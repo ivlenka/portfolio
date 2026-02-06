@@ -189,6 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Activate this carousel
         function activate() {
             isActive = true;
+            // Immediately advance to next slide when activated
+            nextSlide();
             startAutoPlay();
         }
 
