@@ -63,11 +63,24 @@ html {
     font-weight: bold;
     letter-spacing: 0.5px;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
     line-height: 1.2;
+}
+
+.designer-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin-top: 0;
+    margin-bottom: 65px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    line-height: 1.2;
+    color: #000000;
 }
 
 .top-nav {
@@ -84,7 +97,7 @@ html {
 .top-nav a {
     color: #888888;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     position: relative;
     padding-left: 0;
@@ -150,7 +163,7 @@ html {
 .project-links a {
     color: #888888;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     transition: color 0.2s;
     position: relative;
@@ -939,15 +952,16 @@ img {
 
 .contact-item {
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1.6;
 }
 
 .contact-item strong {
-    color: #999999b5;
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #999999a3;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .contact-item a {
@@ -961,11 +975,12 @@ img {
 }
 
 .contact-form-title {
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #999999a3;
     text-transform: uppercase;
-    letter-spacing: 1px;
     margin: 40px 0 30px 0;
-    color: #999999b5;
 }
 
 .contact-form {
@@ -991,7 +1006,7 @@ img {
     padding: 12px 15px;
     background-color: #1a1a1a;
     border: 1px solid #333;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
     font-family: Arial, sans-serif;
     font-size: 14px;
     transition: border-color 0.3s ease;
@@ -1010,19 +1025,19 @@ img {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
     opacity: 1;
 }
 
 .form-group input::-webkit-input-placeholder,
 .form-group textarea::-webkit-input-placeholder {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
     opacity: 1;
 }
 
 .form-group input::-moz-placeholder,
 .form-group textarea::-moz-placeholder {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
     opacity: 1;
 }
 
