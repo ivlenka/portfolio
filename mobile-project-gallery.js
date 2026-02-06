@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.classList.add('mobile-hidden');
             });
 
+            // Hide all rows initially on mobile to prevent empty rows from taking up space
+            const allRows = Array.from(layout.querySelectorAll('.bin-packed-row'));
+            allRows.forEach(function(row) {
+                row.style.setProperty('display', 'none', 'important');
+            });
+
         // Function to show next batch
         function showNextBatch() {
             const endIndex = Math.min(currentlyVisible + imagesPerLoad, allImages.length);
@@ -53,6 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 allImages[i].style.setProperty('display', 'block', 'important');
                 allImages[i].classList.remove('mobile-hidden');
                 allImages[i].classList.add('mobile-visible');
+
+                // Also show the parent row
+                const parentRow = allImages[i].closest('.bin-packed-row');
+                if (parentRow) {
+                    parentRow.style.setProperty('display', 'flex', 'important');
+                }
             }
 
             currentlyVisible = endIndex;

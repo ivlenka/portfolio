@@ -425,8 +425,10 @@
         margin-bottom: 15px !important;
     }
 
+    /* On mobile, don't remove margin from last-child since rows are restructured */
+    /* The last visible image needs consistent spacing before the button */
     .gallery-image-wrapper:last-child {
-        margin-bottom: 0 !important;
+        margin-bottom: 15px !important;
     }
 
     .gallery-image-wrapper img,
@@ -453,7 +455,7 @@
 
     /* Mobile see-more button styling (created by JS) */
     .mobile-see-more-container {
-        margin-top: 38px !important;
+        margin-top: 0 !important;
         margin-bottom: 30px !important;
         display: flex;
         justify-content: center;
