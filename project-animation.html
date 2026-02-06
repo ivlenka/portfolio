@@ -8,6 +8,57 @@
     <link rel="stylesheet" href="project-styles.css">
 </head>
 <body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-top">
+            <div class="mobile-logo-section">
+                <a href="index.html">
+                    <img src="images/logo5.png" alt="Logo" class="mobile-logo">
+                </a>
+                <span class="mobile-name">OLENA KOVTASH</span>
+            </div>
+            <div class="mobile-subtitle-section">
+                <div class="mobile-subtitle-line">VISUAL</div>
+                <div class="mobile-subtitle-line">DESIGNER</div>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="contact.html">
+                    <img src="images/contacts.png" alt="Contact" class="mobile-contact-icon">
+                </a>
+                <div class="mobile-menu-icon" id="mobile-menu-toggle">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-burger-menu" id="mobile-burger-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-menu-divider">PROJECTS</div>
+            <a href="project-brands.html">Brands</a>
+            <a href="project-magazines.html">Magazines</a>
+            <a href="project-prints.html">Prints</a>
+            <a href="project-digital.html">Digital</a>
+            <a href="project-logos.html">Logos</a>
+            <a href="project-illustration.html">Illustration</a>
+            <a href="project-animation.html" class="active">Animation</a>
+            <a href="project-unsorted.html">Display</a>
+        </div>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        <div class="mobile-nav-wrapper">
+            <nav class="mobile-nav">
+                <a href="project-brands.html">BRANDS</a>
+                <a href="project-magazines.html">MAGAZINES</a>
+                <a href="project-prints.html">PRINTS</a>
+                <a href="project-digital.html">DIGITAL</a>
+                <a href="project-logos.html">LOGOS</a>
+                <a href="project-illustration.html">ILLUSTRATION</a>
+                <a href="project-animation.html" class="active">ANIMATION</a>
+                <a href="project-unsorted.html">DISPLAY</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -238,7 +289,7 @@
     <div class="bin-packed-layout">
 <div class="bin-packed-row" style="margin-bottom: 10px;" data-section="4-leaky people">
 <div class="gallery-image-wrapper animation-video" style="margin-right: 0px; cursor: pointer;" data-index="15">
-                <video src="images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low.mp4" poster="images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low_thumb1000.jpg" style="width: 1000.0px; height: 564.0px; object-fit: cover; display: block;" muted loop playsinline data-has-audio="false" loading="lazy"></video>
+                <video src="images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low.mp4" poster="images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low_thumb1000.jpg" style="width: 1000.0px; height: 562.0px; object-fit: cover; display: block;" muted loop playsinline data-has-audio="false" loading="lazy"></video>
                 
                 <button class="sound-toggle-btn inverted" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -428,6 +479,9 @@
         <button class="lightbox-arrow next" id="lightboxNext">&#8250;</button>
     </div>
 
+    <script src="mobile-menu.js"></script>
+    <script src="mobile-menu-alignment.js"></script>
+    <script src="mobile-project-gallery.js"></script>
     <script src="lightbox.js"></script>
     <script src="image-protection.js"></script>
     <script>
@@ -589,13 +643,13 @@
   {
     "src": "images/gallery/7-animation/4-leaky people/0-LeakyPeople_final_low.mp4",
     "width": 1000,
-    "height": 564,
+    "height": 562,
     "isVideo": true,
     "alt": "",
     "description": "",
     "index": 15,
     "isFirstItemInSection": true,
-    "scaledWidth": 531.9148936170212
+    "scaledWidth": 533.8078291814946
   },
   {
     "src": "images/gallery/7-animation/4-leaky people/1-credits4.jpg",
