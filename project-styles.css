@@ -504,6 +504,62 @@
         grid-column: 1 !important;
         grid-row: auto !important;
     }
+
+    /* Mobile Play Button for Animation Videos */
+    .mobile-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1.5px solid #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s ease;
+        padding: 0;
+    }
+
+    .mobile-play-btn svg {
+        width: 24px;
+        height: 24px;
+        color: #000000;
+        margin-left: 3px;
+    }
+
+    .mobile-play-btn.playing {
+        background: rgba(0, 0, 0, 0.9);
+        border-color: #000000;
+    }
+
+    .mobile-play-btn.playing svg {
+        color: #ffffff;
+        margin-left: 0;
+    }
+
+    /* Inverted play button for dark videos */
+    .mobile-play-btn.inverted {
+        background: rgba(0, 0, 0, 0.9);
+        border-color: #ffffff;
+    }
+
+    .mobile-play-btn.inverted svg {
+        color: #ffffff;
+    }
+
+    .mobile-play-btn.inverted.playing {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #ffffff;
+    }
+
+    .mobile-play-btn.inverted.playing svg {
+        color: #000000;
+    }
 }
 
 /* Lightbox Styles */
