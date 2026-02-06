@@ -361,6 +361,131 @@
 }
 
 @media (max-width: 768px) {
+    /* Hide desktop sidebar on mobile */
+    .sidebar {
+        display: none !important;
+    }
+
+    /* Main content full width with proper spacing */
+    .main-content {
+        margin-left: 0 !important;
+        margin-top: 140px !important;
+        padding: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Category title */
+    .project-category {
+        font-size: 18px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Gallery sections */
+    .gallery-section {
+        margin-bottom: 50px;
+    }
+
+    /* Section titles */
+    .project-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    /* Section descriptions */
+    .project-description {
+        font-size: 13px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    /* Single column layout for images */
+    .bin-packed-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .bin-packed-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0 !important;
+    }
+
+    .bin-packed-row:not(:last-child) {
+        margin-bottom: 15px !important;
+    }
+
+    .gallery-image-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .gallery-image-wrapper:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .gallery-image-wrapper img,
+    .gallery-image-wrapper video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 70vh;
+        object-fit: contain !important;
+    }
+
+    /* Hide desktop see-more buttons initially on mobile */
+    .see-more-container {
+        display: none !important;
+    }
+
+    /* Force hide images with mobile-hidden class */
+    .gallery-image-wrapper.mobile-hidden {
+        display: none !important;
+    }
+
+    .gallery-image-wrapper.mobile-visible {
+        display: block !important;
+    }
+
+    /* Mobile see-more button styling (created by JS) */
+    .mobile-see-more-container {
+        margin-top: 38px !important;
+        margin-bottom: 30px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-see-more-btn {
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        padding: 10px 30px !important;
+        font-size: 13px !important;
+        height: 38px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-see-more-btn:active {
+        opacity: 0.8;
+    }
+
+    /* Image overlay on mobile */
+    .gallery-image-overlay {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .gallery-image-wrapper:active .gallery-image-overlay {
+        opacity: 1;
+    }
+
     .project-images {
         grid-template-columns: 1fr;
     }
