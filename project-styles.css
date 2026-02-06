@@ -43,6 +43,7 @@ body:has(.contact-info) .main-content {
 
 .about-text .project-description {
     max-width: 800px;
+    margin-bottom: 3.6em;
 }
 
 @media (min-width: 768px) {
