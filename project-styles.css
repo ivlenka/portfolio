@@ -374,11 +374,13 @@
         width: 100% !important;
     }
 
-    /* Category title */
+    /* Hide category title on mobile */
     .project-category {
-        font-size: 18px;
-        margin-bottom: 30px;
-        text-align: center;
+        display: none !important;
+    }
+
+    .project-header {
+        margin-bottom: 0 !important;
     }
 
     /* Gallery sections */

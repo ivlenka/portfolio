@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Section ' + sectionIndex + ' layout found');
 
             const allImages = Array.from(layout.querySelectorAll('.gallery-image-wrapper'));
-            const imagesPerLoad = 10;
+            const imagesPerLoad = 7;
             let currentlyVisible = 0;
 
             console.log('Section ' + sectionIndex + ' has ' + allImages.length + ' images');
