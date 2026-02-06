@@ -13,11 +13,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let activeCarousel = null;
 
+    // Map category names to project page URLs
+    const categoryToPage = {
+        'brands': 'project-brands.html',
+        'magazines': 'project-magazines.html',
+        'prints': 'project-prints.html',
+        'digital': 'project-digital.html',
+        'logos': 'project-logos.html',
+        'illustration': 'project-illustration.html',
+        'animation': 'project-animation.html',
+        'display': 'project-unsorted.html'
+    };
+
     // Initialize each carousel
     const carouselControllers = [];
     carousels.forEach(function(carousel) {
         const controller = initCarousel(carousel);
         carouselControllers.push(controller);
+
+        // Add click handler to navigate to project page
+        const category = carousel.getAttribute('data-category');
+        const pageUrl = categoryToPage[category];
+
+        if (pageUrl) {
+            carousel.addEventListener('click', function(e) {
+                // Only navigate if clicking on the carousel itself or slides, not overlay text
+                if (!e.target.closest('.carousel-overlay')) {
+                    window.location.href = pageUrl;
+                }
+            });
+
+            // Add cursor pointer style
+            carousel.style.cursor = 'pointer';
+        }
     });
 
     function initCarousel(carousel) {
