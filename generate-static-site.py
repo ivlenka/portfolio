@@ -445,8 +445,9 @@ def generate_project_page(project_id, project_info, gallery_data):
     # Create lightbox images array as JSON
     lightbox_images_json = json.dumps(all_images, indent=2)
 
-    # Add mobile-animation-play.js script for animation project
-    animation_script = '<script src="mobile-animation-play.js"></script>' if is_animation_project else ''
+    # Add mobile animation scripts for animation project
+    animation_scripts = '''<script src="mobile-animation-play.js"></script>
+    <script src="mobile-animation-gifs.js"></script>''' if is_animation_project else ''
 
     # Generate complete HTML
     html_content = f'''<!DOCTYPE html>
@@ -568,7 +569,7 @@ def generate_project_page(project_id, project_info, gallery_data):
     <script src="mobile-menu.js"></script>
     <script src="mobile-menu-alignment.js"></script>
     <script src="mobile-project-gallery.js"></script>
-    {animation_script}
+    {animation_scripts}
     <script src="lightbox.js"></script>
     <script src="image-protection.js"></script>
     <script>
