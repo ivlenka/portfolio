@@ -516,18 +516,32 @@ html {
     transform: translateY(-20%);
 }
 
+.mobile-name-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 10px 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .mobile-name {
     font-size: clamp(12px, 5vw, 25px);
     font-weight: bold;
     letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
     line-height: 1;
     margin: 0;
-    padding: 0 10px 0 2px;
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
+    padding: 0;
+}
+
+.mobile-subtitle {
+    font-size: clamp(8px, 3.2vw, 16px);
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    margin: 2px 0 0 0;
+    padding: 0;
+    color: #888888;
 }
 
 .mobile-name-link {
