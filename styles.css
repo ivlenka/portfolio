@@ -611,7 +611,9 @@ html {
     flex: 0 0 auto;
 }
 
-.mobile-nav a:nth-child(1) {
+.mobile-nav a:nth-child(1),
+.mobile-nav a:nth-child(4),
+.mobile-nav a:nth-child(8) {
     padding-left: 20px;
 }
 
@@ -680,11 +682,11 @@ html {
 }
 
 .mobile-menu-divider {
-    padding: 20px 0 8px 0;
+    padding: 35px 0 8px 0;
     color: #888888;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
 }
 
