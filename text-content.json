@@ -1,6 +1,19 @@
 {
+  "header": {
+    "subtitle": "visual designer"
+  },
+  "about": {
+    "description": [
+      "I'm a designer and graphic artist. Lines, shapes, spots, and spaces are my essential elements. I aim for compositions that feel balanced, harmony that feels exact, and production that stays clean. I think through images, rhythm, and contrast. Ideas come from observation, movement, and everyday details. I enjoy shaping visual stories that feel quiet, clear, and honest — where every element has a reason to exist.",
+      "For me, less is always more."
+    ]
+  },
   "contact": {
-    "description": "Add your contact information here (email, phone, social media links, etc.)"
+    "description": "Add your contact information here (email, phone, social media links, etc.)",
+    "successMessage": {
+      "title": "Thank you for reaching out.",
+      "message": "Your message has been sent successfully. I'll get back to you as soon as possible."
+    }
   },
   "projects": {
     "brands": {

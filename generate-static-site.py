@@ -445,6 +445,9 @@ def generate_project_page(project_id, project_info, gallery_data):
     # Create lightbox images array as JSON
     lightbox_images_json = json.dumps(all_images, indent=2)
 
+    # Add mobile-animation-play.js script for animation project
+    animation_script = '<script src="mobile-animation-play.js"></script>' if is_animation_project else ''
+
     # Generate complete HTML
     html_content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -456,6 +459,57 @@ def generate_project_page(project_id, project_info, gallery_data):
     <link rel="stylesheet" href="project-styles.css">
 </head>
 <body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-top">
+            <div class="mobile-logo-section">
+                <a href="index.html">
+                    <img src="images/logo5.png" alt="Logo" class="mobile-logo">
+                </a>
+                <span class="mobile-name">OLENA KOVTASH</span>
+            </div>
+            <div class="mobile-subtitle-section">
+                <div class="mobile-subtitle-line">VISUAL</div>
+                <div class="mobile-subtitle-line">DESIGNER</div>
+            </div>
+            <div class="mobile-header-icons">
+                <a href="contact.html">
+                    <img src="images/contacts.png" alt="Contact" class="mobile-contact-icon">
+                </a>
+                <div class="mobile-menu-icon" id="mobile-menu-toggle">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-burger-menu" id="mobile-burger-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-menu-divider">PROJECTS</div>
+            <a href="project-brands.html"{"" if project_id != "brands" else ' class="active"'}>Brands</a>
+            <a href="project-magazines.html"{"" if project_id != "magazines" else ' class="active"'}>Magazines</a>
+            <a href="project-prints.html"{"" if project_id != "prints" else ' class="active"'}>Prints</a>
+            <a href="project-digital.html"{"" if project_id != "digital" else ' class="active"'}>Digital</a>
+            <a href="project-logos.html"{"" if project_id != "logos" else ' class="active"'}>Logos</a>
+            <a href="project-illustration.html"{"" if project_id != "illustration" else ' class="active"'}>Illustration</a>
+            <a href="project-animation.html"{"" if project_id != "animation" else ' class="active"'}>Animation</a>
+            <a href="project-unsorted.html"{"" if project_id != "unsorted" else ' class="active"'}>Display</a>
+        </div>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        <div class="mobile-nav-wrapper">
+            <nav class="mobile-nav">
+                <a href="project-brands.html"{"" if project_id != "brands" else ' class="active"'}>BRANDS</a>
+                <a href="project-magazines.html"{"" if project_id != "magazines" else ' class="active"'}>MAGAZINES</a>
+                <a href="project-prints.html"{"" if project_id != "prints" else ' class="active"'}>PRINTS</a>
+                <a href="project-digital.html"{"" if project_id != "digital" else ' class="active"'}>DIGITAL</a>
+                <a href="project-logos.html"{"" if project_id != "logos" else ' class="active"'}>LOGOS</a>
+                <a href="project-illustration.html"{"" if project_id != "illustration" else ' class="active"'}>ILLUSTRATION</a>
+                <a href="project-animation.html"{"" if project_id != "animation" else ' class="active"'}>ANIMATION</a>
+                <a href="project-unsorted.html"{"" if project_id != "unsorted" else ' class="active"'}>DISPLAY</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -464,6 +518,7 @@ def generate_project_page(project_id, project_info, gallery_data):
                     <img src="images/logo5.png" alt="Logo" class="logo">
                 </a>
                 <h1 class="name">OLENA KOVTASH</h1>
+                <p class="designer-subtitle">visual designer</p>
                 <nav class="top-nav">
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
@@ -510,6 +565,10 @@ def generate_project_page(project_id, project_info, gallery_data):
         <button class="lightbox-arrow next" id="lightboxNext">&#8250;</button>
     </div>
 
+    <script src="mobile-menu.js"></script>
+    <script src="mobile-menu-alignment.js"></script>
+    <script src="mobile-project-gallery.js"></script>
+    {animation_script}
     <script src="lightbox.js"></script>
     <script src="image-protection.js"></script>
     <script>
