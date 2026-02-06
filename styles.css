@@ -1114,4 +1114,18 @@ img {
     .form-group textarea::-moz-placeholder {
         color: rgba(255, 255, 255, 0.5);
     }
+
+    /* Success message mobile spacing */
+    .form-success-message {
+        padding: 40px 20px;
+    }
+
+    .form-success-message h3 {
+        font-size: 16px;
+    }
+
+    .form-success-message p {
+        font-size: 14px;
+        max-width: 100%;
+    }
 }
