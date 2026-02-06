@@ -1068,16 +1068,16 @@ img {
 
 .form-success-message h3 {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: bold;
     letter-spacing: 0.5px;
     color: #000000;
     margin-bottom: 20px;
 }
 
 .form-success-message p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.8;
-    color: #999999a3;
+    color: rgba(0, 0, 0, 0.6);
     max-width: 400px;
     margin: 0 auto;
 }

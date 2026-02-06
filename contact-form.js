@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
+    const formTitle = document.querySelector('.contact-form-title');
 
     if (form) {
         form.addEventListener('submit', async function(e) {
@@ -24,11 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
 
                 if (data.success) {
+                    // Hide form title with fade out
+                    if (formTitle) {
+                        formTitle.style.transition = 'opacity 0.5s ease';
+                        formTitle.style.opacity = '0';
+                    }
+
                     // Hide form with fade out
                     form.style.transition = 'opacity 0.5s ease';
                     form.style.opacity = '0';
 
                     setTimeout(() => {
+                        if (formTitle) {
+                            formTitle.style.display = 'none';
+                        }
                         form.style.display = 'none';
                         // Show success message with fade in
                         successMessage.classList.add('show');
