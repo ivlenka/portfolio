@@ -1002,7 +1002,7 @@ img {
     padding: 12px 15px;
     background-color: #1a1a1a;
     border: 1px solid #333;
-    color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
     font-family: Arial, sans-serif;
     font-size: 14px;
     transition: border-color 0.3s ease;
@@ -1051,6 +1051,35 @@ img {
 
 .submit-button:hover {
     background-color: #e0e0e0;
+}
+
+.form-success-message {
+    display: none;
+    padding: 60px 40px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-success-message.show {
+    display: block;
+    opacity: 1;
+}
+
+.form-success-message h3 {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.form-success-message p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #999999a3;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 /* Contact Form Mobile Styles */

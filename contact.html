@@ -98,7 +98,7 @@
 
                 <h3 class="contact-form-title">Send a Message</h3>
 
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="98a7937a-2b15-4b38-a597-ca0a73f4a07b">
 
                     <div class="form-group">
@@ -119,10 +119,16 @@
 
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
+
+                <div class="form-success-message" id="successMessage">
+                    <h3>Thank you for reaching out.</h3>
+                    <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+                </div>
             </div>
         </main>
     </div>
     <script src="mobile-menu.js"></script>
     <script src="image-protection.js"></script>
+    <script src="contact-form.js"></script>
 </body>
 </html>
