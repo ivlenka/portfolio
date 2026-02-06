@@ -191,7 +191,7 @@ html {
 .main-content {
     margin-left: 250px;
     flex: 1;
-    padding: 116px 80px 60px 80px;
+    padding: 140px 80px 60px 80px;
     background-color: #f5f5f5;
     max-width: 1600px;
 }
@@ -690,7 +690,7 @@ html {
 
 .mobile-burger-menu a {
     display: block;
-    padding: 12px 20px 12px 0;
+    padding: 12px 25px 12px 0;
     color: #000000;
     text-decoration: none;
     font-size: 13.5px;
@@ -731,7 +731,7 @@ html {
 }
 
 .mobile-menu-divider {
-    padding: 38.5px 20px 8px 0;
+    padding: 38.5px 25px 8px 0;
     color: #888888;
     font-size: 11px;
     font-weight: bold;
@@ -768,8 +768,8 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #000000;
-        padding: 5px 0;
+        background-color: #ffffff;
+        padding: 5px 0 12px 0;
         text-align: center;
         position: relative;
         height: auto;
@@ -783,8 +783,10 @@ html {
     }
 
     .mobile-instagram-link {
-        display: inline-block;
-        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
         text-decoration: none;
         transition: opacity 0.3s ease;
         line-height: 0;
@@ -795,10 +797,16 @@ html {
     }
 
     .instagram-icon {
-        width: 20px;
-        height: 20px;
-        color: #ffffff;
+        width: 40px;
+        height: 40px;
+        color: #000000;
         display: block;
+        stroke-width: 1.5;
+    }
+
+    .instagram-icon rect,
+    .instagram-icon circle:not(:last-child) {
+        stroke-width: 1.5;
     }
 }
 
@@ -850,7 +858,7 @@ html {
         width: 100vw;
         height: auto;
         margin: 0;
-        padding: 104px 0 0 0;
+        padding: 126px 0 0 0;
     }
 
     body.home-page .container {

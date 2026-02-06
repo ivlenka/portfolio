@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Handle button click
             seeMoreBtn.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
                 console.log('!!! Button clicked in section ' + sectionIndex);
                 const scrollPosition = window.pageYOffset;
                 showNextBatch();
@@ -114,11 +115,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {
                     const firstNewImage = allImages[currentlyVisible - imagesPerLoad];
                     if (firstNewImage) {
+                        // Temporarily add a class to prevent overlay from showing
+                        firstNewImage.classList.add('no-overlay-temp');
+
                         const imageTop = firstNewImage.getBoundingClientRect().top + window.pageYOffset;
                         window.scrollTo({
                             top: Math.max(scrollPosition, imageTop - 160),
                             behavior: 'smooth'
                         });
+
+                        // Remove the class after scroll completes
+                        setTimeout(function() {
+                            firstNewImage.classList.remove('no-overlay-temp');
+                        }, 1000);
                     }
                 }, 100);
             });
