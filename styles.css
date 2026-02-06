@@ -637,11 +637,12 @@ html {
     background-color: rgba(255, 255, 255, 1);
     color: #000000;
     font-weight: 600;
+    font-size: 12.1px;
 }
 
 .mobile-nav a.active::before {
-    width: 6px;
-    height: 6px;
+    width: 6.6px;
+    height: 6.6px;
     margin-right: 4px;
 }
 
