@@ -123,10 +123,6 @@ html {
     padding-left: 15px;
 }
 
-.top-nav a.active {
-    font-size: 13.3px;
-}
-
 .top-nav a:hover::before,
 .top-nav a.active::before {
     width: 8px;
@@ -952,7 +948,7 @@ img {
 
 .contact-item {
     margin-bottom: 25px;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
 }
 

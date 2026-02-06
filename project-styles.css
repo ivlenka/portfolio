@@ -7,7 +7,7 @@
 /* About and Contact Page Styles */
 body:has(.about-content) .main-content,
 body:has(.contact-info) .main-content {
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 /* About Page Styles */
