@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
 
                 if (data.success) {
+                    // Blur any focused input to reset mobile zoom
+                    if (document.activeElement) {
+                        document.activeElement.blur();
+                    }
+
+                    // Reset viewport zoom on mobile
+                    window.scrollTo(0, 0);
+
                     // Hide form title with fade out
                     if (formTitle) {
                         formTitle.style.transition = 'opacity 0.5s ease';
@@ -42,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         form.style.display = 'none';
                         // Show success message with fade in
                         successMessage.classList.add('show');
+
+                        // Additional viewport reset after message appears
+                        window.scrollTo(0, 0);
                     }, 500);
                 } else {
                     // Show error message

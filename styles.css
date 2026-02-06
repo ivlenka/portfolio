@@ -1093,11 +1093,11 @@ img {
         color: #999999a3;
     }
 
-    /* Make input text 50% transparent and 10% smaller */
+    /* Make input text 100% white and 10% smaller */
     .form-group input,
     .form-group textarea {
         font-size: 12.6px;
-        color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
     }
 
     .form-group input::placeholder,
