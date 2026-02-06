@@ -583,7 +583,7 @@ html {
 }
 
 .mobile-nav-wrapper {
-    padding: 0 0 7px 0;
+    padding: 0 0 7px 20px;
 }
 
 .mobile-nav {
@@ -609,12 +609,6 @@ html {
     white-space: nowrap;
     position: relative;
     flex: 0 0 auto;
-}
-
-.mobile-nav a:nth-child(1),
-.mobile-nav a:nth-child(4),
-.mobile-nav a:nth-child(8) {
-    padding-left: 20px;
 }
 
 .mobile-nav a:nth-child(4),
