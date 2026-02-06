@@ -140,7 +140,10 @@ function renderBinPackedLayout(rows, gap = 10, sectionId = '', isAnimationProjec
                 // Generate thumbnail path (video_name_thumb.jpg)
                 const videoPath = img.src.substring(0, img.src.lastIndexOf('.'));
                 const posterPath = `${videoPath}_thumb.jpg`;
-                mediaElement = `<video src="${img.src}" poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false" loading="lazy"></video>`;
+                mediaElement = `<video poster="${posterPath}" style="width: ${img.width}px; height: ${img.height}px; object-fit: cover; display: block;" muted loop playsinline${autoplayAttr} data-has-audio="false" preload="metadata">
+                    <source src="${img.src}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>`;
             } else {
                 // Use thumbnail in grid, store full path for lightbox
                 const imagePath = img.src.substring(0, img.src.lastIndexOf('.'));

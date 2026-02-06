@@ -1,0 +1,21 @@
+# Force correct MIME types for video files
+AddType video/mp4 .mp4 .m4v
+AddType video/webm .webm
+AddType video/ogg .ogv
+
+# Enable CORS for video files (helps with some browsers)
+<FilesMatch "\.(mp4|m4v|webm|ogv)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+# Enable gzip compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache video files for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+</IfModule>

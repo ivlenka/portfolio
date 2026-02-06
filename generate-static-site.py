@@ -275,7 +275,10 @@ def render_gallery_html(rows, gap=10, section_id='', is_animation_project=False,
                 # Use 1000px thumbnail for first video item (if configured)
                 poster_suffix = '_thumb1000.jpg' if img.get('isFirstItemInSection') else '_thumb.jpg'
                 poster_path = f"{video_path}{poster_suffix}"
-                media_element = f'<video src="{img["src"]}" poster="{poster_path}" style="width: {img["width"]}px; height: {img["height"]}px; object-fit: cover; display: block;" muted loop playsinline{autoplay_attr} data-has-audio="false" loading="lazy"></video>'
+                media_element = f'''<video poster="{poster_path}" style="width: {img["width"]}px; height: {img["height"]}px; object-fit: cover; display: block;" muted loop playsinline{autoplay_attr} data-has-audio="false" preload="metadata">
+                    <source src="{img["src"]}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>'''
             else:
                 image_path = img['src'].rsplit('.', 1)[0]
                 # Use 1000px thumbnail for last image

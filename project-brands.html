@@ -8,57 +8,6 @@
     <link rel="stylesheet" href="project-styles.css">
 </head>
 <body>
-    <!-- Mobile Header -->
-    <header class="mobile-header">
-        <div class="mobile-header-top">
-            <div class="mobile-logo-section">
-                <a href="index.html">
-                    <img src="images/logo5.png" alt="Logo" class="mobile-logo">
-                </a>
-                <span class="mobile-name">OLENA KOVTASH</span>
-            </div>
-            <div class="mobile-subtitle-section">
-                <div class="mobile-subtitle-line">VISUAL</div>
-                <div class="mobile-subtitle-line">DESIGNER</div>
-            </div>
-            <div class="mobile-header-icons">
-                <a href="contact.html">
-                    <img src="images/contacts.png" alt="Contact" class="mobile-contact-icon">
-                </a>
-                <div class="mobile-menu-icon" id="mobile-menu-toggle">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-        <div class="mobile-burger-menu" id="mobile-burger-menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <div class="mobile-menu-divider">PROJECTS</div>
-            <a href="project-brands.html" class="active">Brands</a>
-            <a href="project-magazines.html">Magazines</a>
-            <a href="project-prints.html">Prints</a>
-            <a href="project-digital.html">Digital</a>
-            <a href="project-logos.html">Logos</a>
-            <a href="project-illustration.html">Illustration</a>
-            <a href="project-animation.html">Animation</a>
-            <a href="project-unsorted.html">Display</a>
-        </div>
-        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-        <div class="mobile-nav-wrapper">
-            <nav class="mobile-nav">
-                <a href="project-brands.html" class="active">BRANDS</a>
-                <a href="project-magazines.html">MAGAZINES</a>
-                <a href="project-prints.html">PRINTS</a>
-                <a href="project-digital.html">DIGITAL</a>
-                <a href="project-logos.html">LOGOS</a>
-                <a href="project-illustration.html">ILLUSTRATION</a>
-                <a href="project-animation.html">ANIMATION</a>
-                <a href="project-unsorted.html">DISPLAY</a>
-            </nav>
-        </div>
-    </header>
-
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -422,7 +371,10 @@
                 
             </div>
 <div class="gallery-image-wrapper animation-video" style="margin-right: 0px; cursor: pointer;" data-index="40">
-                <video src="images/gallery/1-brands/3-pivotpoint/5-PP-sm_blue.mp4" poster="images/gallery/1-brands/3-pivotpoint/5-PP-sm_blue_thumb.jpg" style="width: 211.2780359806903px; height: 375.7036204677547px; object-fit: cover; display: block;" muted loop playsinline autoplay data-has-audio="false" loading="lazy"></video>
+                <video poster="images/gallery/1-brands/3-pivotpoint/5-PP-sm_blue_thumb.jpg" style="width: 211.2780359806903px; height: 375.7036204677547px; object-fit: cover; display: block;" muted loop playsinline autoplay data-has-audio="false" preload="metadata">
+                    <source src="images/gallery/1-brands/3-pivotpoint/5-PP-sm_blue.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 
                 <button class="sound-toggle-btn" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -490,7 +442,10 @@
 </div>
 <div class="bin-packed-row hidden-row" style="margin-bottom: 10px;" data-section="3-pivotpoint">
 <div class="gallery-image-wrapper animation-video" style="margin-right: 10px; cursor: pointer;" data-index="48">
-                <video src="images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2.mp4" poster="images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2_thumb.jpg" style="width: 177.70338379427434px; height: 315.999741056764px; object-fit: cover; display: block;" muted loop playsinline autoplay data-has-audio="false" loading="lazy"></video>
+                <video poster="images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2_thumb.jpg" style="width: 177.70338379427434px; height: 315.999741056764px; object-fit: cover; display: block;" muted loop playsinline autoplay data-has-audio="false" preload="metadata">
+                    <source src="images/gallery/1-brands/3-pivotpoint/8a-PP-sm_pink2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 
                 <button class="sound-toggle-btn" data-muted="true" style="display: none;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -847,9 +802,6 @@
         <button class="lightbox-arrow next" id="lightboxNext">&#8250;</button>
     </div>
 
-    <script src="mobile-menu.js"></script>
-    <script src="mobile-menu-alignment.js"></script>
-    <script src="mobile-project-gallery.js"></script>
     <script src="lightbox.js"></script>
     <script src="image-protection.js"></script>
     <script>

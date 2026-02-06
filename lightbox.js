@@ -229,7 +229,6 @@ function openLightbox(index) {
 
     if (currentMedia.isVideo) {
         const video = document.createElement('video');
-        video.src = currentMedia.src;
 
         // Add poster thumbnail
         const videoPath = currentMedia.src.substring(0, currentMedia.src.lastIndexOf('.'));
@@ -243,6 +242,14 @@ function openLightbox(index) {
         video.style.maxHeight = '90vh';
         video.style.objectFit = 'contain';
         video.style.display = 'block';
+        video.setAttribute('preload', 'metadata');
+
+        // Create source element with explicit type
+        const source = document.createElement('source');
+        source.src = currentMedia.src;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+
         lightboxImageWrapper.insertBefore(video, lightboxDescription);
     } else {
         const img = document.createElement('img');
