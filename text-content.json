@@ -9,7 +9,7 @@
       "sections": {
         "1-testarossa": {
           "title": "Testarossa Winery",
-          "description": "test test test test",
+          "description": "Testarossa Winery is a California winery known for handcrafted wines and intimate tasting experiences. I worked across print, digital, and events to shape a cohesive visual world for the brand — from wine labels and packaging to large-scale graphics and immersive event spaces. My focus was on clear design, strong typography, and smooth guest journeys, creating visuals that feel warm, intentional, and true to the winery’s story.",
           "images": [
             {
               "file": "0_TR.jpg",
@@ -123,7 +123,7 @@
         },
         "2-passion-embrace": {
           "title": "Passion Embrace",
-          "description": "",
+          "description": "Passion Embrace is a beauty brand inspired by tango — bold lipstick, close movement, shared emotion. I shaped the digital experience with rhythm and flow, turning the brand’s energy into a smooth, intuitive design. In print and packaging, I focused on mood, texture, and restraint, keeping every detail elegant and connected. For video, I guided the visual story — capturing motion, touch, and color as one.",
           "images": [
             {
               "file": "0_PE.jpg",
@@ -159,21 +159,10 @@
             }
           ]
         },
-        "3-mezzaluna": {
-          "title": "Mezzaluna",
-          "description": ""
-        },
-        "4-montecucco": {
-          "title": "Montecucco Winery",
-          "description": ""
-        },
-        "5-iCoffee": {
-          "title": "iCoffee",
-          "description": ""
-        },
+        
         "3-pivotpoint": {
           "title": "Pivotpoint",
-          "description": "",
+          "description": "Pivot Point Dance Company is a contemporary dance company exploring movement, presence, and connection. I work inside the company as both dancer and designer, creating the visual language for live performances. I design merch and show identities — posters, tickets, social content, and reels — using contrast, rhythm, and color to echo the choreography. This is where movement becomes graphic, and design moves with the body.",
           "images": [
             {
               "file": "1-green_PP.jpg",
@@ -258,8 +247,8 @@
           ]
         },
         "4-happytowasteless": {
-          "title": "Happytowasteless",
-          "description": "",
+          "title": "@happytowasteless",
+          "description": "@happytowasteless is a local, woman-owned brand sharing skills through masterclasses and workshops. I designed brochures that feel light and intentional, with black-and-white graphics giving space to the content. Every page carries a calm, thoughtful touch, letting the workshops speak for themselves.",
           "images": [
             {
               "file": "1ba-add-IMG_3731-2.jpg",
@@ -324,8 +313,8 @@
           ]
         },
         "5-springerschool": {
-          "title": "Springerschool",
-          "description": "",
+          "title": "Springer Elementary School",
+          "description": "Springer Elementary School is a lively place where learning is fun and full of energy. I refresh all the event merch — t-shirts, keychains, and souvenirs — bringing funny bees, playful kids’ illustrations, and school icons to life. Each year, I lead the walkathon designs, making the event colorful, cheerful, and full of smiles for students, families, and teachers.",
           "images": [
             {
               "file": "1-Screenshot 2026-01-15 at 3.34.09 PM.jpg",
@@ -413,7 +402,7 @@
       "sections": {
         "1-elle": {
           "title": "ELLE",
-          "description": "",
+          "description": "ELLE is a global fashion and lifestyle magazine. I design media kits and marketing materials for the brand. Charts and graphics present information with clarity and visual balance. Data becomes part of the editorial language.",
           "images": [
             {
               "file": "elle1.jpg",
@@ -435,7 +424,7 @@
         },
         "2-ellegirl": {
           "title": "ELLE Girl",
-          "description": "",
+          "description": "ELLEgirl was a fashion and beauty magazine for older teens, a younger take on the ELLE spirit with style and trend at its heart. As art director, I led a full redesign of the magazine, shaping layouts, concepts, and visual flow from start to print. The new look helped redefine the brand and was awarded Magazine of the Year. ",
           "images": [
             {
               "file": "01cover-e7.jpg",
@@ -569,7 +558,7 @@
         },
         "3-cosmo": {
           "title": "Cosmopolitan",
-          "description": "",
+          "description": "Cosmopolitan is one of the most widely read magazines in the world. I work as senior designer on the national edition and lead fashion and beauty photoshoots. I shaped editorial layouts while guiding the visual direction of shoots, keeping the look strong, current, and unmistakably Cosmo. ",
           "images": [
             {
               "file": "cosmo0.jpg",
@@ -639,7 +628,7 @@
         },
         "4-tech": {
           "title": "Tech Magazines",
-          "description": "",
+          "description": "Technology magazines focused on complex ideas and detailed information. I design layouts and icons that bring order and clarity to technical content. An industrial visual language shapes the pages and supports understanding. Design stays functional, structured, and direct.",
           "images": [
             {
               "file": "1-9ef16446319947.5850068f9420e.jpg",
@@ -686,8 +675,8 @@
       "description": "",
       "sections": {
         "1-cards_cali": {
-          "title": "California Cards",
-          "description": "",
+          "title": "California Postcards",
+          "description": "California Postcards. I draw places in California that feel personal and memorable. I use ink and bold, bright colors for the backgrounds. Each postcard captures moments from my life around these places.",
           "images": [
             {
               "file": "0-77ced741-e43f-469b-91e6-3c7f489f56e0_rw_1920.jpg",
@@ -751,17 +740,10 @@
             }
           ]
         },
-        "2-souvenir_canada": {
-          "title": "Canada Souvenir",
-          "description": ""
-        },
-        "3-cards_somaek": {
-          "title": "Somaek Cards",
-          "description": ""
-        },
+        
         "4-zoomer": {
-          "title": "Zoomer Magazine",
-          "description": "",
+          "title": "Zoomer Activity Box",
+          "description": "Kids Activity Box. The box contains materials, guides, and indoor quest activities to explore one artist. I connect each activity to the artist through their work, style, and portrait. The design makes learning hands-on, visual, and playful.",
           "images": [
             {
               "file": "1-zoomer26.jpg",
@@ -825,21 +807,10 @@
             }
           ]
         },
-        "5-toronto-calendar": {
-          "title": "Toronto Calendar",
-          "description": ""
-        },
-        "6-cards_inktober": {
-          "title": "Inktober Cards",
-          "description": ""
-        },
-        "7-books_for_ukr": {
-          "title": "Books for Ukraine",
-          "description": ""
-        },
+        
         "0-labels": {
-          "title": "Labels",
-          "description": "",
+          "title": "Wine Labels",
+          "description": "Wine labels focused on what matters inside the bottle. I use minimal visual elements to highlight information, clarity, and paper texture. Every detail serves a purpose. Nothing else lives on the label except what matters — means nothing else in the bottle except the natural wine and its pure taste.",
           "images": [
             {
               "file": "0-hale.jpg",
@@ -892,8 +863,8 @@
           ]
         },
         "2-cards-odesa": {
-          "title": "Cards Odesa",
-          "description": "",
+          "title": "Odesa Postcards",
+          "description": "Odesa Postcards. I capture Odesa from the inside — small pieces of daily life and hidden corners. I use ink and white pen on craft-colored paper, like pages from a notebook. The postcards feel personal, intimate, and lived-in.",
           "images": [
             {
               "file": "0-IMG_3288 2.JPG",
@@ -958,8 +929,8 @@
           ]
         },
         "3-cards-italy": {
-          "title": "Cards Italy",
-          "description": "",
+          "title": "Italy Postcards",
+          "description": "Italy Postcards. I document Italy during travel, noticing the rhythm between crowded tourist spots and quiet corners of small towns. I use ink pen and color markers on textured white paper. Each postcard records a fleeting moment and the contrast of public and private spaces.",
           "images": [
             {
               "file": "0-IMG_3687-2.jpg",
@@ -1044,8 +1015,8 @@
           ]
         },
         "5-vizitki": {
-          "title": "Vizitki",
-          "description": "",
+          "title": "Business Cards",
+          "description": "My personal business cards. Each card is unique, made from my drawings — no two look the same. I use a soft grey for the front, black and white for essentials, and bright toxic yellow on the back. The yellow acts as a spark — a sign of creativity, energy, and a playful touch that surprises. Means nothing - just The yellow is just a little surprise.",
           "images": [
             {
               "file": "1-card.jpg",
@@ -1129,7 +1100,7 @@
       "sections": {
         "1-elle-icon": {
           "title": "ELLE Icon",
-          "description": "",
+          "description": "ELLE Magazine App Icon. The icon represents ELLE’s fashion and elegant style. I keep the design clear and simple but bright and neat so it works well on the phone interface.",
           "images": [
             {
               "file": "0-f0478846311553.584fc37478ad7.jpg",
@@ -1147,7 +1118,7 @@
         },
         "2-email": {
           "title": "Email Campaigns",
-          "description": "",
+          "description": "Italian Swimsuits Newsletter. I used my line drawings of women’s figures to highlight the style and grace of the swimsuits. Pale colors give the feeling of soft sun and relaxation.",
           "images": [
             {
               "file": "0-k1.jpg",
@@ -1197,7 +1168,7 @@
         },
         "3-monster-bow": {
           "title": "Monster Bow Game",
-          "description": "",
+          "description": "Monster Bow is a kids’ game full of dark, silly creatures — vampires, bones, bats, spiders, and more. I use bold, bright colors and funny illustrations to make the characters fun, not scary. Players create their own bows from these spooky pieces, mixing monsters and details in playful ways.",
           "images": [
             {
               "file": "0-IMG_0745.JPG",
@@ -1276,8 +1247,8 @@
       "description": "",
       "sections": {
         "1-OST": {
-          "title": "OST",
-          "description": "",
+          "title": "Osteopathic Manual Practice Logo",
+          "description": "The clinic needed a logo that felt professional, thoughtful, and future-ready for a school or academy. I created a simple two-color design in grey and orange, using a tensegrity symbol to show a balanced human body. Hands surround the symbol to express care and warmth. The logo works at any size — on signage, print, digital, and merchandise. The client chose the elegant version with text, happy with the concept and visual connections.",
           "images": [
             {
               "file": "1-Logo_OST_2_big.jpg",
@@ -1321,13 +1292,9 @@
             }
           ]
         },
-        "2-Testarossa": {
-          "title": "Testarossa Winery",
-          "description": ""
-        },
         "3-Zoloti-maky": {
-          "title": "Zoloti Maky",
-          "description": "",
+          "title": "Zoloti Maky Logo",
+          "description": "Zoloti Maky is a Ukrainian dance ensemble, “Golden Poppies.” I designed a logo inspired by the round headpiece, or vinok, decorated with poppies. The circle reflects both the shape of the headpiece and the traditional circle dances in Ukrainian folk dance. The logo uses white and orange on black, keeping it bold, simple, and symbolic.",
           "images": [
             {
               "file": "0aa21fb4-4214-48b7-a60a-4976127d4604.jpg",
@@ -1383,21 +1350,10 @@
             }
           ]
         },
-        "4-marusya": {
-          "title": "Marusya",
-          "description": ""
-        },
-        "5-rusalka": {
-          "title": "Rusalka",
-          "description": ""
-        },
-        "6-horilka": {
-          "title": "Horilka",
-          "description": ""
-        },
+       
         "2-L": {
-          "title": "L",
-          "description": "",
+          "title": "Linguamill Logo",
+          "description": "Linguamill is a linguistic company with multiple branches and services. I created two logo concepts. The first uses a paperclip, showing connection and flexibility, and works across different branches. The second is based on a note sheet, a brighter, more contrasted version that highlights learning and communication. Both ideas stay simple, versatile, and recognizable.",
           "images": [
             {
               "file": "0-Untitled_Artwork-2 1.jpg",
@@ -1442,8 +1398,8 @@
           ]
         },
         "4-NEN": {
-          "title": "Nen",
-          "description": "",
+          "title": "NEN Logo",
+          "description": "NEN is a digital media platform about motherhood — honest, funny, and supportive. I designed the logo using traditional pink and blue, but placed the pregnant woman drawing upside down to echo the motto: “No, it is normal.” The design plays with expectations while keeping the message clear and approachable.",
           "images": [
             {
               "file": "1-2cb3f646318573.584ffcfdca206.jpg",
@@ -1480,8 +1436,8 @@
           ]
         },
         "5-Miele": {
-          "title": "Miele",
-          "description": "",
+          "title": "Miele Logo",
+          "description": "Miele is a local, woman-owned cake-baking company. I designed a logo with long, slim curves to show the sweetness and elegance of the brand. The style feels delicate and playful, reflecting the name — Miele means honey in Italian.",
           "images": [
             {
               "file": "1-logo_miele.jpg",
