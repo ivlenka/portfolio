@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     animationVideos.forEach(function(video) {
         const wrapper = video.closest('.gallery-image-wrapper');
 
+        // Remove muted attribute from video element immediately
+        video.removeAttribute('muted');
+        video.muted = false;
+        video.defaultMuted = false;
+
         // Check if video is inverted (dark background)
         const isInverted = wrapper.classList.contains('inverted') ||
                           wrapper.querySelector('.sound-toggle-btn.inverted');
@@ -48,27 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopImmediatePropagation();
 
             if (video.paused) {
-                // Remove muted attribute and ensure audio
-                video.removeAttribute('muted');
+                // Ensure unmuted
                 video.muted = false;
                 video.volume = 1.0;
 
-                console.log('Playing video with sound:', {
-                    muted: video.muted,
-                    volume: video.volume,
-                    hasAudio: video.mozHasAudio || video.webkitAudioDecodedByteCount > 0
-                });
+                // Load and play
+                video.load(); // Reload to ensure unmuted state
 
-                video.play().then(function() {
-                    console.log('Video playing successfully');
+                var playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video playing with audio');
+                        playBtn.style.display = 'none';
+                    }).catch(function(error) {
+                        console.log('Play failed:', error);
+                        playBtn.style.display = 'none';
+                    });
+                } else {
                     playBtn.style.display = 'none';
-                }).catch(function(error) {
-                    console.log('Play error:', error);
-                    // Try again with user interaction
-                    video.muted = false;
-                    video.play();
-                    playBtn.style.display = 'none';
-                });
+                }
             } else {
                 video.pause();
                 playBtn.style.display = 'flex';
