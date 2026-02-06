@@ -732,7 +732,7 @@ html {
 
 .mobile-menu-divider {
     padding: 38.5px 25px 8px 0;
-    color: #888888;
+    color: #999999a3;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -1040,4 +1040,38 @@ img {
 
 .submit-button:hover {
     background-color: #e0e0e0;
+}
+
+/* Contact Form Mobile Styles */
+@media (max-width: 768px) {
+    /* Style labels like burger menu PROJECTS */
+    .contact-item strong,
+    .contact-form-title {
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        color: #999999a3;
+    }
+
+    /* Make input text 50% transparent and 10% smaller */
+    .form-group input,
+    .form-group textarea {
+        font-size: 12.6px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input::-webkit-input-placeholder,
+    .form-group textarea::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input::-moz-placeholder,
+    .form-group textarea::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
 }
