@@ -398,15 +398,16 @@ body:has(.contact-info) .main-content {
     /* Section titles */
     .project-title {
         font-size: 16px;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
         text-align: left;
     }
 
     /* Section descriptions */
     .project-description {
         font-size: 13px;
-        margin-bottom: 15px;
-        line-height: 1.5;
+        margin-bottom: 25px;
+        margin-right: 10px;
+        line-height: 1.9;
     }
 
     /* Single column layout for images */
