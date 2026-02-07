@@ -19,10 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Remove muted attribute from video element immediately
+        // Prepare video for iOS playback
         video.removeAttribute('muted');
         video.muted = false;
         video.defaultMuted = false;
+        video.setAttribute('playsinline', 'true');
+        video.setAttribute('webkit-playsinline', 'true');
+
+        // Ensure video source is loaded
+        if (video.readyState < 3) { // Not HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
+            video.load();
+        }
 
         // Check if video is inverted (dark background)
         const isInverted = wrapper.classList.contains('inverted') ||
@@ -60,16 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             e.stopImmediatePropagation();
 
-            console.log('Play button clicked for video');
+            console.log('Play button clicked for video:', video.src);
 
             if (video.paused) {
-                // Ensure unmuted
+                // iOS-friendly playback - don't call load(), just play directly
                 video.muted = false;
                 video.volume = 1.0;
 
-                // Load and play
-                video.load(); // Reload to ensure unmuted state
-
+                // Try to play with audio first
                 var playPromise = video.play();
 
                 if (playPromise !== undefined) {
@@ -77,8 +82,29 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log('Video playing with audio');
                         playBtn.style.display = 'none';
                     }).catch(function(error) {
-                        console.log('Play failed:', error);
-                        playBtn.style.display = 'none';
+                        console.log('Play with audio failed:', error);
+
+                        // iOS fallback: If audio play fails, try muted playback
+                        video.muted = true;
+                        var mutedPlayPromise = video.play();
+
+                        if (mutedPlayPromise !== undefined) {
+                            mutedPlayPromise.then(function() {
+                                console.log('Video playing muted (iOS fallback)');
+                                playBtn.style.display = 'none';
+
+                                // Try to unmute after playing starts
+                                setTimeout(function() {
+                                    video.muted = false;
+                                    console.log('Attempted to unmute after playback started');
+                                }, 100);
+                            }).catch(function(mutedError) {
+                                console.log('Even muted play failed:', mutedError);
+                                playBtn.style.display = 'none';
+                            });
+                        } else {
+                            playBtn.style.display = 'none';
+                        }
                     });
                 } else {
                     playBtn.style.display = 'none';
