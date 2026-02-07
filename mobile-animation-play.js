@@ -10,10 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only run on animation project page
     if (!window.location.pathname.includes('project-animation')) return;
 
-    const animationVideos = document.querySelectorAll('.gallery-image-wrapper.animation-video video');
-
-    animationVideos.forEach(function(video) {
+    // Function to add play button to a video
+    function addPlayButton(video) {
         const wrapper = video.closest('.gallery-image-wrapper');
+
+        // Skip if already has a play button
+        if (wrapper.querySelector('.mobile-play-btn')) {
+            return;
+        }
 
         // Remove muted attribute from video element immediately
         video.removeAttribute('muted');
@@ -115,5 +119,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
         }, true);
+    }
+
+    // Process all animation videos initially
+    const animationVideos = document.querySelectorAll('.gallery-image-wrapper.animation-video video');
+    animationVideos.forEach(function(video) {
+        addPlayButton(video);
+    });
+
+    // Observer to add play buttons when new videos become visible (after "See more" clicked)
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1) { // Element node
+                    // Check if the node itself is a video wrapper
+                    if (node.classList && node.classList.contains('gallery-image-wrapper')) {
+                        const video = node.querySelector('video');
+                        if (video) {
+                            addPlayButton(video);
+                        }
+                    }
+                    // Also check children
+                    const videos = node.querySelectorAll && node.querySelectorAll('.gallery-image-wrapper.animation-video video');
+                    if (videos) {
+                        videos.forEach(function(video) {
+                            addPlayButton(video);
+                        });
+                    }
+                }
+            });
+
+            // Also check for style changes (display: none -> display: block)
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                const target = mutation.target;
+                if (target.classList && target.classList.contains('gallery-image-wrapper')) {
+                    const video = target.querySelector('video');
+                    if (video && target.style.display !== 'none') {
+                        addPlayButton(video);
+                    }
+                }
+            }
+        });
+    });
+
+    // Start observing the document for changes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
     });
 });
