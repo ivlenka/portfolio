@@ -30,21 +30,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.activeElement.blur();
                     }
 
-                    // Force viewport zoom reset on mobile by manipulating viewport meta tag
+                    // Force viewport zoom reset on mobile - multiple techniques for Safari
                     const viewport = document.querySelector('meta[name=viewport]');
                     if (viewport) {
                         const originalContent = viewport.getAttribute('content');
                         // Temporarily disable zoom to force reset
                         viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
 
-                        // Restore original viewport after a brief moment
+                        // Multiple resets for Safari iOS
+                        setTimeout(() => {
+                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                        }, 50);
+
                         setTimeout(() => {
                             viewport.setAttribute('content', originalContent);
-                        }, 100);
+                        }, 150);
                     }
 
-                    // Reset scroll position
-                    window.scrollTo(0, 0);
+                    // Multiple scroll resets for Safari
+                    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    setTimeout(() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    }, 50);
 
                     // Hide form title with fade out
                     if (formTitle) {
@@ -64,8 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Show success message with fade in
                         successMessage.classList.add('show');
 
-                        // Additional scroll reset after message appears
-                        window.scrollTo(0, 0);
+                        // Additional scroll resets after message appears for Safari
+                        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+                        // Final scroll reset after a short delay
+                        setTimeout(() => {
+                            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                        }, 100);
                     }, 500);
                 } else {
                     // Show error message
