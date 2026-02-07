@@ -138,8 +138,28 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             e.stopImmediatePropagation();
 
+            console.log('Video clicked, paused:', video.paused);
+
             if (!video.paused) {
                 video.pause();
+                playBtn.style.display = 'flex';
+                console.log('Video paused, showing play button');
+            }
+            return false;
+        }, true);
+
+        // Also handle touch events for better mobile support
+        video.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            console.log('Video touched, paused:', video.paused);
+
+            if (!video.paused) {
+                video.pause();
+                playBtn.style.display = 'flex';
+                console.log('Video paused via touch, showing play button');
             }
             return false;
         }, true);
