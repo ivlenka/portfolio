@@ -59,32 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
                     }, 50);
 
-                    // Hide form title with fade out
+                    // Hide form and title immediately (no fade)
                     if (formTitle) {
-                        formTitle.style.transition = 'opacity 0.5s ease';
-                        formTitle.style.opacity = '0';
+                        formTitle.style.display = 'none';
                     }
+                    form.style.display = 'none';
 
-                    // Hide form with fade out
-                    form.style.transition = 'opacity 0.5s ease';
-                    form.style.opacity = '0';
+                    // Show success message immediately
+                    successMessage.classList.add('show');
 
+                    // Additional scroll resets after message appears for Safari
                     setTimeout(() => {
-                        if (formTitle) {
-                            formTitle.style.display = 'none';
-                        }
-                        form.style.display = 'none';
-                        // Show success message with fade in
-                        successMessage.classList.add('show');
-
-                        // Additional scroll resets after message appears for Safari
                         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    }, 50);
 
-                        // Final scroll reset after a short delay
-                        setTimeout(() => {
-                            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-                        }, 100);
-                    }, 500);
+                    // Final scroll reset after a short delay
+                    setTimeout(() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    }, 100);
                 } else {
                     // Show error message
                     alert('There was an error sending your message. Please try again or email directly to olena@kovtash.com');
