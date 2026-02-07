@@ -50,11 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
         playBtn.innerHTML = playIcon;
         wrapper.appendChild(playBtn);
 
+        // Disable lightbox on this wrapper
+        wrapper.removeAttribute('data-index');
+        wrapper.style.cursor = 'default';
+
         // Handle play/pause
         playBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
+
+            console.log('Play button clicked for video');
 
             if (video.paused) {
                 // Ensure unmuted
@@ -81,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.pause();
                 playBtn.style.display = 'flex';
             }
+
+            return false;
         }, true);
 
         // Show button when video is paused
