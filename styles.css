@@ -1117,7 +1117,8 @@ img {
 
     /* Success message mobile spacing */
     .form-success-message {
-        padding: 40px 20px;
+        padding: 60px 20px 80px 20px;
+        margin-top: 40px;
     }
 
     .form-success-message h3 {
