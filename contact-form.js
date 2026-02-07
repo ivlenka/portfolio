@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitButton = form.querySelector('.submit-button');
             const originalButtonText = submitButton.textContent;
 
+            // Add default subject if user didn't provide one
+            const subjectField = document.getElementById('subject');
+            if (!subjectField.value || subjectField.value.trim() === '') {
+                formData.set('subject', 'New message from Portfolio website');
+            }
+
             // Disable button and show loading state
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
