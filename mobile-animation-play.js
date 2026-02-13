@@ -1,14 +1,14 @@
 /**
- * Mobile Animation Play - Add play buttons to animation videos on mobile
- * Only runs on animation project page on mobile devices
+ * Mobile Video Play - Add play buttons to all videos on mobile
+ * Runs on all project pages on mobile devices
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Only run on mobile
     if (window.innerWidth > 768) return;
 
-    // Only run on animation project page
-    if (!window.location.pathname.includes('project-animation')) return;
+    // Only run on project pages
+    if (!window.location.pathname.includes('project-')) return;
 
     // Function to add play button to a video
     function addPlayButton(video) {
@@ -61,11 +61,79 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.removeAttribute('data-index');
         wrapper.style.cursor = 'default';
 
+        // Flag to prevent double-firing on mobile (touchend + click)
+        var touchHandled = false;
+
+        // Handle play button clicks (both touch and click)
+        playBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            touchHandled = true;
+            setTimeout(function() { touchHandled = false; }, 500);
+
+            console.log('Play button touched for video:', video.src);
+
+            if (video.paused) {
+                // iOS-friendly playback - don't call load(), just play directly
+                video.muted = false;
+                video.volume = 1.0;
+
+                // Try to play with audio first
+                var playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video playing with audio');
+                        playBtn.style.display = 'none';
+                    }).catch(function(error) {
+                        console.log('Play with audio failed:', error);
+
+                        // iOS fallback: If audio play fails, try muted playback
+                        video.muted = true;
+                        var mutedPlayPromise = video.play();
+
+                        if (mutedPlayPromise !== undefined) {
+                            mutedPlayPromise.then(function() {
+                                console.log('Video playing muted (iOS fallback)');
+                                playBtn.style.display = 'none';
+
+                                // Try to unmute after playing starts
+                                setTimeout(function() {
+                                    video.muted = false;
+                                    console.log('Attempted to unmute after playback started');
+                                }, 100);
+                            }).catch(function(mutedError) {
+                                console.log('Even muted play failed:', mutedError);
+                                playBtn.style.display = 'none';
+                            });
+                        } else {
+                            playBtn.style.display = 'none';
+                        }
+                    });
+                } else {
+                    playBtn.style.display = 'none';
+                }
+            } else {
+                video.pause();
+                playBtn.style.display = 'flex';
+            }
+
+            return false;
+        }, true);
+
         // Handle play/pause
         playBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
+
+            // Ignore click if touch was just handled
+            if (touchHandled) {
+                console.log('Play button click ignored - touch was just handled');
+                return false;
+            }
 
             console.log('Play button clicked for video:', video.src);
 
@@ -132,10 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
             playBtn.style.display = 'flex';
         });
 
-        // Flag to prevent double-firing on mobile (touchend + click)
-        var touchHandled = false;
-
-        // Also handle touch events for better mobile support
+        // Also handle touch events for better mobile support (shares touchHandled flag with button)
         video.addEventListener('touchend', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -221,9 +286,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, true);
     }
 
-    // Process all animation videos initially
-    const animationVideos = document.querySelectorAll('.gallery-image-wrapper.animation-video video');
-    animationVideos.forEach(function(video) {
+    // Process all videos initially
+    const allVideos = document.querySelectorAll('.gallery-image-wrapper video');
+    allVideos.forEach(function(video) {
         addPlayButton(video);
     });
 
@@ -240,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     // Also check children
-                    const videos = node.querySelectorAll && node.querySelectorAll('.gallery-image-wrapper.animation-video video');
+                    const videos = node.querySelectorAll && node.querySelectorAll('.gallery-image-wrapper video');
                     if (videos) {
                         videos.forEach(function(video) {
                             addPlayButton(video);
