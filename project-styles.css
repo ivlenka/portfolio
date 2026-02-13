@@ -508,20 +508,9 @@ body:has(.contact-info) .main-content {
         opacity: 0.8;
     }
 
-    /* Image overlay on mobile */
+    /* Completely disable image overlay on mobile - no functionality needed */
     .gallery-image-overlay {
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .gallery-image-wrapper:active .gallery-image-overlay {
-        opacity: 1;
-    }
-
-    /* Prevent overlay from showing during scroll animation */
-    .gallery-image-wrapper.no-overlay-temp .gallery-image-overlay,
-    .gallery-image-wrapper.no-overlay-temp:active .gallery-image-overlay {
-        opacity: 0 !important;
+        display: none !important;
     }
 
     .project-images {
