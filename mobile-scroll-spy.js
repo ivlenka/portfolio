@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.querySelector(`.mobile-carousel[data-category="${sectionId}"]`);
 
             if (carousel) {
-                carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const offsetTop = carousel.offsetTop - 126; // 126px padding from top
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         });
     });
