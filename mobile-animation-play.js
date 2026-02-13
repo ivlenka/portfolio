@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             playBtn.style.display = 'flex';
         });
 
-        // Allow clicking video to pause, prevent lightbox
+        // Allow clicking video to toggle play/pause, prevent lightbox
         video.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -144,6 +144,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.pause();
                 playBtn.style.display = 'flex';
                 console.log('Video paused, showing play button');
+            } else {
+                // Video is paused, resume playback
+                video.muted = false;
+                video.volume = 1.0;
+                var playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video resumed with audio');
+                        playBtn.style.display = 'none';
+                    }).catch(function(error) {
+                        console.log('Resume with audio failed:', error);
+                        playBtn.style.display = 'none';
+                    });
+                } else {
+                    playBtn.style.display = 'none';
+                }
             }
             return false;
         }, true);
@@ -160,6 +177,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.pause();
                 playBtn.style.display = 'flex';
                 console.log('Video paused via touch, showing play button');
+            } else {
+                // Video is paused, resume playback
+                video.muted = false;
+                video.volume = 1.0;
+                var playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video resumed via touch with audio');
+                        playBtn.style.display = 'none';
+                    }).catch(function(error) {
+                        console.log('Resume via touch with audio failed:', error);
+                        playBtn.style.display = 'none';
+                    });
+                } else {
+                    playBtn.style.display = 'none';
+                }
             }
             return false;
         }, true);
