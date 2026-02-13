@@ -30,10 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Section ' + sectionIndex + ' layout found');
 
             const allImages = Array.from(layout.querySelectorAll('.gallery-image-wrapper'));
-            const imagesPerLoad = 7;
+
+            // Check if this is the food section (5-food)
+            const isFoodSection = layout.querySelector('[data-section="5-food"]') !== null;
+            const imagesPerLoad = isFoodSection ? 8 : 7;
             let currentlyVisible = 0;
 
             console.log('Section ' + sectionIndex + ' has ' + allImages.length + ' images');
+            console.log('Is food section: ' + isFoodSection + ', images per load: ' + imagesPerLoad);
             console.log('Will create button: ' + (allImages.length > imagesPerLoad));
 
             // Only proceed if there are images

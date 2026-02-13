@@ -449,6 +449,26 @@ body:has(.contact-info) .main-content {
         object-fit: contain !important;
     }
 
+    /* Food section: 2 images per row on mobile */
+    .bin-packed-row[data-section="5-food"] {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    .bin-packed-row[data-section="5-food"] .gallery-image-wrapper {
+        width: calc(50% - 5px) !important;
+        margin-right: 0 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .bin-packed-row[data-section="5-food"] .gallery-image-wrapper img,
+    .bin-packed-row[data-section="5-food"] .gallery-image-wrapper video {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+
     /* Hide desktop see-more buttons initially on mobile */
     .see-more-container {
         display: none !important;
