@@ -533,6 +533,41 @@ body:has(.contact-info) .main-content {
         display: none !important;
     }
 
+    /* Mobile Sound Toggle Button for Autoplay Videos */
+    .mobile-sound-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.675);
+        border: 1px solid #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s ease;
+        padding: 0;
+    }
+
+    .mobile-sound-btn svg {
+        width: 16px;
+        height: 16px;
+        color: #000000;
+    }
+
+    /* Inverted sound button for dark videos */
+    .mobile-sound-btn.inverted {
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid #ffffff;
+    }
+
+    .mobile-sound-btn.inverted svg {
+        color: #ffffff;
+    }
+
     /* Mobile Play Button for Animation Videos */
     .mobile-play-btn {
         position: absolute;
