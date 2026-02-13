@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Prepare video for iOS playback
+        // Prepare video for iOS playback and disable autoplay on mobile
         video.removeAttribute('muted');
+        video.removeAttribute('autoplay'); // Disable autoplay on mobile for user control
         video.muted = false;
         video.defaultMuted = false;
+        video.pause(); // Ensure video is paused initially
         video.setAttribute('playsinline', 'true');
         video.setAttribute('webkit-playsinline', 'true');
 
