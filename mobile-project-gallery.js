@@ -113,14 +113,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 console.log('!!! Button clicked in section ' + sectionIndex);
                 const scrollPosition = window.pageYOffset;
+                const startIndex = currentlyVisible;
                 showNextBatch();
 
                 // Smooth scroll to first newly revealed image
                 setTimeout(function() {
-                    const firstNewImage = allImages[currentlyVisible - imagesPerLoad];
+                    const firstNewImage = allImages[startIndex];
                     if (firstNewImage) {
-                        // Temporarily add a class to prevent overlay from showing
-                        firstNewImage.classList.add('no-overlay-temp');
+                        // Temporarily add class to ALL newly revealed images to prevent overlay
+                        for (let i = startIndex; i < currentlyVisible; i++) {
+                            allImages[i].classList.add('no-overlay-temp');
+                        }
 
                         const imageTop = firstNewImage.getBoundingClientRect().top + window.pageYOffset;
                         window.scrollTo({
@@ -130,8 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Remove the class after scroll completes
                         setTimeout(function() {
-                            firstNewImage.classList.remove('no-overlay-temp');
-                        }, 1000);
+                            for (let i = startIndex; i < currentlyVisible; i++) {
+                                allImages[i].classList.remove('no-overlay-temp');
+                            }
+                        }, 1500);
                     }
                 }, 100);
             });
