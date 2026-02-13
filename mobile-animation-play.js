@@ -132,44 +132,17 @@ document.addEventListener('DOMContentLoaded', function() {
             playBtn.style.display = 'flex';
         });
 
-        // Allow clicking video to toggle play/pause, prevent lightbox
-        video.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-
-            console.log('Video clicked, paused:', video.paused);
-
-            if (!video.paused) {
-                video.pause();
-                playBtn.style.display = 'flex';
-                console.log('Video paused, showing play button');
-            } else {
-                // Video is paused, resume playback
-                video.muted = false;
-                video.volume = 1.0;
-                var playPromise = video.play();
-
-                if (playPromise !== undefined) {
-                    playPromise.then(function() {
-                        console.log('Video resumed with audio');
-                        playBtn.style.display = 'none';
-                    }).catch(function(error) {
-                        console.log('Resume with audio failed:', error);
-                        playBtn.style.display = 'none';
-                    });
-                } else {
-                    playBtn.style.display = 'none';
-                }
-            }
-            return false;
-        }, true);
+        // Flag to prevent double-firing on mobile (touchend + click)
+        var touchHandled = false;
 
         // Also handle touch events for better mobile support
         video.addEventListener('touchend', function(e) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
+
+            touchHandled = true;
+            setTimeout(function() { touchHandled = false; }, 500);
 
             console.log('Video touched, paused:', video.paused);
 
@@ -189,6 +162,45 @@ document.addEventListener('DOMContentLoaded', function() {
                         playBtn.style.display = 'none';
                     }).catch(function(error) {
                         console.log('Resume via touch with audio failed:', error);
+                        playBtn.style.display = 'none';
+                    });
+                } else {
+                    playBtn.style.display = 'none';
+                }
+            }
+            return false;
+        }, true);
+
+        // Allow clicking video to toggle play/pause, prevent lightbox
+        video.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            // Ignore click if touch was just handled
+            if (touchHandled) {
+                console.log('Click ignored - touch was just handled');
+                return false;
+            }
+
+            console.log('Video clicked, paused:', video.paused);
+
+            if (!video.paused) {
+                video.pause();
+                playBtn.style.display = 'flex';
+                console.log('Video paused, showing play button');
+            } else {
+                // Video is paused, resume playback
+                video.muted = false;
+                video.volume = 1.0;
+                var playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video resumed with audio');
+                        playBtn.style.display = 'none';
+                    }).catch(function(error) {
+                        console.log('Resume with audio failed:', error);
                         playBtn.style.display = 'none';
                     });
                 } else {
