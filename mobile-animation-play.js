@@ -135,17 +135,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Prevent video from autoplaying when scrolled into view
         // This stops any browser autoplay behavior
-        video.addEventListener('play', function(e) {
-            // If video starts playing without user interaction, pause it
+        video.addEventListener('play', function preventAutoplay(e) {
+            // If video starts playing without user interaction, pause it immediately
             if (!wrapper.classList.contains('user-playing')) {
+                console.log('Preventing autoplay for:', video.src);
+                e.preventDefault();
                 video.pause();
             }
-        });
+        }, true);
 
-        // Ensure video source is loaded
+        // Also listen to 'playing' event as a backup
+        video.addEventListener('playing', function preventAutoplayPlaying(e) {
+            if (!wrapper.classList.contains('user-playing')) {
+                console.log('Preventing autoplay (playing event) for:', video.src);
+                video.pause();
+            }
+        }, true);
+
+        // Ensure video source is loaded but stay paused
         if (video.readyState < 3) { // Not HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
             video.load();
         }
+
+        // Force pause after load
+        setTimeout(function() {
+            if (!wrapper.classList.contains('user-playing')) {
+                video.pause();
+            }
+        }, 100);
 
         // Check if video is inverted (dark background)
         const isInverted = wrapper.classList.contains('inverted') ||
