@@ -236,6 +236,11 @@ function initLightbox(images) {
         const video = wrapper.querySelector('video');
         const soundBtn = wrapper.querySelector('.sound-toggle-btn');
 
+        // Skip if no data-index (lightbox disabled for this element)
+        if (!wrapper.hasAttribute('data-index')) {
+            return;
+        }
+
         // Click to open lightbox
         wrapper.addEventListener('click', function(e) {
             // Don't open lightbox if clicking the sound button
