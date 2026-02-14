@@ -133,6 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
         video.setAttribute('playsinline', 'true');
         video.setAttribute('webkit-playsinline', 'true');
 
+        // Prevent video from autoplaying when scrolled into view
+        // This stops any browser autoplay behavior
+        video.addEventListener('play', function(e) {
+            // If video starts playing without user interaction, pause it
+            if (!wrapper.classList.contains('user-playing')) {
+                video.pause();
+            }
+        });
+
         // Ensure video source is loaded
         if (video.readyState < 3) { // Not HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
             video.load();
@@ -183,6 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Play button touched for video:', video.src);
 
             if (video.paused) {
+                // Mark as user-initiated play
+                wrapper.classList.add('user-playing');
+
                 // iOS-friendly playback - don't call load(), just play directly
                 video.muted = false;
                 video.volume = 1.0;
@@ -224,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 video.pause();
+                wrapper.classList.remove('user-playing');
                 playBtn.style.display = 'flex';
             }
 
@@ -245,6 +258,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Play button clicked for video:', video.src);
 
             if (video.paused) {
+                // Mark as user-initiated play
+                wrapper.classList.add('user-playing');
+
                 // iOS-friendly playback - don't call load(), just play directly
                 video.muted = false;
                 video.volume = 1.0;
@@ -286,6 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 video.pause();
+                wrapper.classList.remove('user-playing');
                 playBtn.style.display = 'flex';
             }
 
@@ -320,10 +337,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!video.paused) {
                 video.pause();
+                wrapper.classList.remove('user-playing');
                 playBtn.style.display = 'flex';
                 console.log('Video paused via touch, showing play button');
             } else {
                 // Video is paused, resume playback
+                wrapper.classList.add('user-playing');
                 video.muted = false;
                 video.volume = 1.0;
                 var playPromise = video.play();
@@ -359,10 +378,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!video.paused) {
                 video.pause();
+                wrapper.classList.remove('user-playing');
                 playBtn.style.display = 'flex';
                 console.log('Video paused, showing play button');
             } else {
                 // Video is paused, resume playback
+                wrapper.classList.add('user-playing');
                 video.muted = false;
                 video.volume = 1.0;
                 var playPromise = video.play();
