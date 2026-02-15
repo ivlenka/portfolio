@@ -266,7 +266,8 @@ def render_gallery_html(rows, gap=10, section_id='', is_animation_project=False,
             is_monster_bow_video = '3-monster-bow' in img['src'] and is_video
 
             animation_class = ' animation-video' if (is_animation_project or is_pivot_point_video or is_ost_video or is_monster_bow_video) else ''
-            autoplay_attr = ' autoplay' if (is_pivot_point_video or is_ost_video or is_monster_bow_video) else ''
+            # Only add autoplay for Pivot Point and Monster Bow (not animation page)
+            autoplay_attr = ' autoplay' if ((is_pivot_point_video or is_monster_bow_video) and not is_animation_project) else ''
 
             margin_right = gap if img_index < len(row) - 1 else 0
 
