@@ -52,7 +52,7 @@
             setTimeout(() => {
                 imgElement.src = newImage;
                 imgElement.style.opacity = '1';
-            }, 1000); // Wait for fade out to complete
+            }, 1500); // Wait for fade out to complete
         }
     }
 
