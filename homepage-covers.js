@@ -83,15 +83,12 @@
 
                 if (!link || !img) return;
 
-                // Extract project ID from link
-                const href = link.getAttribute('href');
-                const match = href.match(/id=([^&]+)/);
-                if (!match) return;
+                // Extract project ID from item's id attribute or data-category
+                const projectId = item.id || item.getAttribute('data-category');
+                if (!projectId) return;
 
-                const projectId = match[1];
-
-                // Change image every 15-30 seconds (random interval per cover)
-                const interval = 15000 + Math.random() * 15000;
+                // Change image every 5-30 seconds (random interval per cover)
+                const interval = 5000 + Math.random() * 25000;
                 setInterval(() => {
                     changeCoverImage(projectId, img);
                 }, interval);
