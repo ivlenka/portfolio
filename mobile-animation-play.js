@@ -133,31 +133,59 @@ document.addEventListener('DOMContentLoaded', function() {
         video.setAttribute('playsinline', 'true');
         video.setAttribute('webkit-playsinline', 'true');
 
-        // Prevent video from autoplaying when scrolled into view
-        // This stops any browser autoplay behavior
+        // AGGRESSIVE autoplay prevention for Safari mobile
+        // This completely prevents any autoplay behavior - simple and predictable
+
+        // 1. Prevent on 'play' event
         video.addEventListener('play', function preventAutoplay(e) {
-            // If video starts playing without user interaction, pause it immediately
             if (!wrapper.classList.contains('user-playing')) {
-                console.log('Preventing autoplay for:', video.src);
+                console.log('Preventing autoplay (play event):', video.src);
                 e.preventDefault();
                 video.pause();
             }
         }, true);
 
-        // Also listen to 'playing' event as a backup
+        // 2. Prevent on 'playing' event as backup
         video.addEventListener('playing', function preventAutoplayPlaying(e) {
             if (!wrapper.classList.contains('user-playing')) {
-                console.log('Preventing autoplay (playing event) for:', video.src);
+                console.log('Preventing autoplay (playing event):', video.src);
                 video.pause();
             }
         }, true);
 
-        // Ensure video source is loaded but stay paused
+        // 3. Continuous monitoring - aggressively pause any unauthorized playback
+        var preventIntervalId = setInterval(function() {
+            if (!wrapper.classList.contains('user-playing') && !video.paused) {
+                console.log('Interval: Force pausing video');
+                video.pause();
+            }
+        }, 200); // Check every 200ms
+
+        // 4. Pause on scroll events
+        var scrollPauseHandler = function() {
+            if (!wrapper.classList.contains('user-playing') && !video.paused) {
+                console.log('Scroll: Force pausing video');
+                video.pause();
+            }
+        };
+        window.addEventListener('scroll', scrollPauseHandler, { passive: true });
+
+        // 5. Prevent on all video loading events
+        ['loadeddata', 'canplay', 'canplaythrough', 'loadedmetadata'].forEach(function(eventName) {
+            video.addEventListener(eventName, function() {
+                if (!wrapper.classList.contains('user-playing') && !video.paused) {
+                    console.log('Loading event (' + eventName + '): Force pausing');
+                    video.pause();
+                }
+            });
+        });
+
+        // 6. Ensure video source is loaded but stay paused
         if (video.readyState < 3) { // Not HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
             video.load();
         }
 
-        // Force pause after load
+        // 7. Force pause after load
         setTimeout(function() {
             if (!wrapper.classList.contains('user-playing')) {
                 video.pause();
