@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to add sound toggle button for autoplay videos
-    function addSoundToggleButton(video, wrapper) {
+    function addSoundToggleButton(video, wrapper, showOnlyWhenPlaying) {
         // Check if video is inverted (dark background)
         const isInverted = wrapper.classList.contains('inverted') ||
                           wrapper.querySelector('.sound-toggle-btn.inverted');
@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create sound toggle button
         const soundBtn = document.createElement('button');
         soundBtn.className = 'mobile-sound-btn' + (isInverted ? ' inverted' : '');
+
+        // If showOnlyWhenPlaying is true, start hidden
+        if (showOnlyWhenPlaying) {
+            soundBtn.style.display = 'none';
+        }
 
         // Muted icon (speaker with X)
         const mutedIcon = `
@@ -99,6 +104,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Video muted');
             }
         }
+
+        // If showOnlyWhenPlaying is true, show button on play and hide on pause
+        if (showOnlyWhenPlaying) {
+            video.addEventListener('play', function() {
+                soundBtn.style.display = 'flex';
+            });
+
+            video.addEventListener('pause', function() {
+                soundBtn.style.display = 'none';
+            });
+        }
     }
 
     // Function to add play button or sound toggle to a video
@@ -148,12 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Add sound toggle button for Pivot Point videos (always) AND animation page videos (excluding Testarossa)
             if (isPivotPoint) {
-                // Pivot Point videos always get sound button
-                addSoundToggleButton(video, wrapper);
+                // Pivot Point videos always get sound button (always visible)
+                addSoundToggleButton(video, wrapper, false);
             } else if (isAnimationPage && !isTestarossa) {
-                // Animation page videos get sound button (except Testarossa which has no audio)
-                // Show button immediately - Safari mobile doesn't support audio detection well
-                addSoundToggleButton(video, wrapper);
+                // Animation page videos get sound button (only visible when playing)
+                addSoundToggleButton(video, wrapper, true);
             }
 
             return; // Don't add play button
