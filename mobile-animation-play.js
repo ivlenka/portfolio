@@ -92,14 +92,17 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // Check if we're on the animation page
+        const isAnimationPage = window.location.pathname.includes('project-animation');
+
         // Check video source to determine section
         const videoSrc = video.querySelector('source')?.src || video.src || '';
         const isPivotPoint = videoSrc.includes('pivotpoint');
         const isMonsterBow = videoSrc.includes('monster-bow');
-        const isAutoplayVideo = isPivotPoint || isMonsterBow;
+        const isAutoplayVideo = isPivotPoint || isMonsterBow || isAnimationPage;
 
         if (isAutoplayVideo) {
-            // For Pivot Point and Monster Bow: Keep autoplay, disable lightbox
+            // For Pivot Point, Monster Bow, and Animation page: Keep autoplay, disable lightbox
             video.setAttribute('playsinline', 'true');
             video.setAttribute('webkit-playsinline', 'true');
 
@@ -115,8 +118,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }, true);
 
-            // Add sound toggle button for Pivot Point videos only
-            if (isPivotPoint) {
+            // Add sound toggle button for Pivot Point videos AND animation page videos
+            if (isPivotPoint || isAnimationPage) {
                 addSoundToggleButton(video, wrapper);
             }
 
