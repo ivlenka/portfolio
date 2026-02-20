@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const videoSrc = video.querySelector('source')?.src || video.src || '';
         const isPivotPoint = videoSrc.includes('pivotpoint');
         const isMonsterBow = videoSrc.includes('monster-bow');
+        const isTestarossa = videoSrc.includes('testarossa');
         const isAutoplayVideo = isPivotPoint || isMonsterBow || isAnimationPage;
 
         if (isAutoplayVideo) {
@@ -124,10 +125,29 @@ document.addEventListener('DOMContentLoaded', function() {
             video.setAttribute('playsinline', 'true');
             video.setAttribute('webkit-playsinline', 'true');
 
-            // Enable autoplay on mobile for animation page videos
+            // For animation page videos: setup viewport-based autoplay
             if (isAnimationPage) {
-                video.setAttribute('autoplay', 'true');
                 video.muted = true;
+                video.pause(); // Start paused
+
+                // Use IntersectionObserver to autoplay only when in viewport
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            // Video entered viewport - play it
+                            video.play().catch(function(err) {
+                                console.log('Autoplay prevented:', err);
+                            });
+                        } else {
+                            // Video left viewport - pause it
+                            video.pause();
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // Video needs to be 50% visible to play
+                });
+
+                observer.observe(wrapper);
             }
 
             // Disable lightbox on this wrapper
@@ -142,11 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }, true);
 
-            // Add sound toggle button for Pivot Point videos (always) AND animation page videos (only if has audio)
+            // Add sound toggle button for Pivot Point videos (always) AND animation page videos (only if has audio, excluding Testarossa)
             if (isPivotPoint) {
                 // Pivot Point videos always get sound button
                 addSoundToggleButton(video, wrapper);
-            } else if (isAnimationPage) {
+            } else if (isAnimationPage && !isTestarossa) {
                 // Animation page videos only get sound button if they have audio
                 // Check immediately if possible
                 if (checkVideoHasAudio(video)) {
