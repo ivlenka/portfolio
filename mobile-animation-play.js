@@ -130,24 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.muted = true;
                 video.pause(); // Start paused
 
-                // Use IntersectionObserver to autoplay only when in viewport
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            // Video entered viewport - play it
-                            video.play().catch(function(err) {
-                                console.log('Autoplay prevented:', err);
-                            });
-                        } else {
-                            // Video left viewport - pause it
-                            video.pause();
-                        }
-                    });
-                }, {
-                    threshold: 0.5 // Video needs to be 50% visible to play
-                });
-
-                observer.observe(wrapper);
+                // Mark this video as an animation page video
+                wrapper.setAttribute('data-animation-video', 'true');
             }
 
             // Disable lightbox on this wrapper
@@ -579,4 +563,64 @@ document.addEventListener('DOMContentLoaded', function() {
         attributes: true,
         attributeFilter: ['style', 'class']
     });
+
+    // Animation page: Play only the video closest to center of viewport
+    const isAnimationPage = window.location.pathname.includes('project-animation');
+    if (isAnimationPage) {
+        let ticking = false;
+
+        function findAndPlayCenteredVideo() {
+            const viewportCenter = window.innerHeight / 2;
+            const allAnimationVideos = document.querySelectorAll('[data-animation-video="true"]');
+
+            let closestVideo = null;
+            let closestDistance = Infinity;
+
+            allAnimationVideos.forEach(function(wrapper) {
+                const video = wrapper.querySelector('video');
+                if (!video) return;
+
+                const rect = wrapper.getBoundingClientRect();
+                const videoCenter = rect.top + (rect.height / 2);
+                const distanceFromCenter = Math.abs(viewportCenter - videoCenter);
+
+                // Only consider videos that are at least partially visible
+                if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                    if (distanceFromCenter < closestDistance) {
+                        closestDistance = distanceFromCenter;
+                        closestVideo = video;
+                    }
+                }
+            });
+
+            // Pause all videos first
+            allAnimationVideos.forEach(function(wrapper) {
+                const video = wrapper.querySelector('video');
+                if (video && video !== closestVideo) {
+                    video.pause();
+                }
+            });
+
+            // Play only the centered one
+            if (closestVideo && closestVideo.paused) {
+                closestVideo.play().catch(function(err) {
+                    console.log('Autoplay prevented:', err);
+                });
+            }
+
+            ticking = false;
+        }
+
+        // Throttled scroll handler
+        function onScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(findAndPlayCenteredVideo);
+                ticking = true;
+            }
+        }
+
+        // Check initially and on scroll
+        window.addEventListener('scroll', onScroll, { passive: true });
+        setTimeout(findAndPlayCenteredVideo, 500); // Initial check after page loads
+    }
 });
