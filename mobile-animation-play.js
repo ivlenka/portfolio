@@ -146,34 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }, true);
 
-            // Add sound toggle button for Pivot Point videos (always) AND animation page videos (only if has audio, excluding Testarossa)
+            // Add sound toggle button for Pivot Point videos (always) AND animation page videos (excluding Testarossa)
             if (isPivotPoint) {
                 // Pivot Point videos always get sound button
                 addSoundToggleButton(video, wrapper);
             } else if (isAnimationPage && !isTestarossa) {
-                // Animation page videos only get sound button if they have audio
-                // Check immediately if possible
-                if (checkVideoHasAudio(video)) {
-                    addSoundToggleButton(video, wrapper);
-                }
-
-                // Also check after metadata loads (for better detection)
-                video.addEventListener('loadedmetadata', function checkAudioOnLoad() {
-                    if (checkVideoHasAudio(video) && !wrapper.querySelector('.mobile-sound-btn')) {
-                        addSoundToggleButton(video, wrapper);
-                    }
-                }, { once: true });
-
-                // Final check after video has played for a bit (for webkit browsers)
-                video.addEventListener('playing', function checkWebkitAudio() {
-                    setTimeout(function() {
-                        if (typeof video.webkitAudioDecodedByteCount !== 'undefined' &&
-                            video.webkitAudioDecodedByteCount > 0 &&
-                            !wrapper.querySelector('.mobile-sound-btn')) {
-                            addSoundToggleButton(video, wrapper);
-                        }
-                    }, 500);
-                }, { once: true });
+                // Animation page videos get sound button (except Testarossa which has no audio)
+                // Show button immediately - Safari mobile doesn't support audio detection well
+                addSoundToggleButton(video, wrapper);
             }
 
             return; // Don't add play button
