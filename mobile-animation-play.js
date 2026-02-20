@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only run on project pages
     if (!window.location.pathname.includes('project-')) return;
 
+    // Function to check if video has audio
+    function checkVideoHasAudio(video) {
+        // Method 1: Check audioTracks API
+        if (video.audioTracks && video.audioTracks.length > 0) {
+            return true;
+        }
+        // Method 2: Mozilla-specific property
+        if (typeof video.mozHasAudio !== 'undefined' && video.mozHasAudio) {
+            return true;
+        }
+        // Method 3: Webkit - check audio decoded bytes (only after playing a bit)
+        if (typeof video.webkitAudioDecodedByteCount !== 'undefined' && video.webkitAudioDecodedByteCount > 0) {
+            return true;
+        }
+        // Default: assume no audio (will recheck after metadata loads)
+        return false;
+    }
+
     // Function to add sound toggle button for autoplay videos
     function addSoundToggleButton(video, wrapper) {
         // Check if video is inverted (dark background)
@@ -106,6 +124,12 @@ document.addEventListener('DOMContentLoaded', function() {
             video.setAttribute('playsinline', 'true');
             video.setAttribute('webkit-playsinline', 'true');
 
+            // Enable autoplay on mobile for animation page videos
+            if (isAnimationPage) {
+                video.setAttribute('autoplay', 'true');
+                video.muted = true;
+            }
+
             // Disable lightbox on this wrapper
             wrapper.removeAttribute('data-index');
             wrapper.style.cursor = 'default';
@@ -118,9 +142,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }, true);
 
-            // Add sound toggle button for Pivot Point videos AND animation page videos
-            if (isPivotPoint || isAnimationPage) {
+            // Add sound toggle button for Pivot Point videos (always) AND animation page videos (only if has audio)
+            if (isPivotPoint) {
+                // Pivot Point videos always get sound button
                 addSoundToggleButton(video, wrapper);
+            } else if (isAnimationPage) {
+                // Animation page videos only get sound button if they have audio
+                // Check immediately if possible
+                if (checkVideoHasAudio(video)) {
+                    addSoundToggleButton(video, wrapper);
+                }
+
+                // Also check after metadata loads (for better detection)
+                video.addEventListener('loadedmetadata', function checkAudioOnLoad() {
+                    if (checkVideoHasAudio(video) && !wrapper.querySelector('.mobile-sound-btn')) {
+                        addSoundToggleButton(video, wrapper);
+                    }
+                }, { once: true });
+
+                // Final check after video has played for a bit (for webkit browsers)
+                video.addEventListener('playing', function checkWebkitAudio() {
+                    setTimeout(function() {
+                        if (typeof video.webkitAudioDecodedByteCount !== 'undefined' &&
+                            video.webkitAudioDecodedByteCount > 0 &&
+                            !wrapper.querySelector('.mobile-sound-btn')) {
+                            addSoundToggleButton(video, wrapper);
+                        }
+                    }, 500);
+                }, { once: true });
             }
 
             return; // Don't add play button
